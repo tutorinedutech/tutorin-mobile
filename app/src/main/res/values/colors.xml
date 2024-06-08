@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="base_black">#000814</color>
+    <color name="base_yellowish">#FFFBEE</color>
+    <color name="base_pure_white">#FFFFFFFF</color>
+    <color name="tertiary_dark_blue">#001D3D</color>
+    <color name="tertiary_blue">#003566</color>
+    <color name="primary_yellow">#FFC300</color>
+    <color name="secondary_yellow">#FFD60A</color>
+    <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#FFD60A</color>
+    <color name="tertiary_yellow">#FFF0BF</color>
+    <color name="partially_yellow">#FFF6D9</color>
+
+    <color name="error">#FF5656</color>
+    <color name="success">#5CFF80</color>
+    <color name="alert">#FFE76D</color>
+    <color name="info">#6DD3FF</color>
 </resources>

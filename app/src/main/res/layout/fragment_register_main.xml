@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/register_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    app:layoutDescription="@xml/fragment_register_main_scene"
+    tools:context=".ui.auth.register.main.RegisterMain">
+
+    <!-- Main Register -->
+    <ImageView
+        android:id="@+id/btn_register_learner"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/btn_register_learner"
+        android:rotation="-90"
+        android:src="@drawable/forward"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/primary_yellow" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/plus_jakarta_sans_regular"
+        android:text="@string/tv_learner"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/btn_register_learner"
+        app:layout_constraintStart_toStartOf="@id/btn_register_learner"
+        app:layout_constraintTop_toBottomOf="@id/btn_register_learner" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/plus_jakarta_sans_regular"
+        android:text="@string/tv_tutor"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/btn_register_tutor"
+        app:layout_constraintEnd_toEndOf="@id/btn_register_tutor"
+        app:layout_constraintStart_toStartOf="@id/btn_register_tutor" />
+
+    <ImageView
+        android:id="@+id/btn_register_tutor"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/btn_register_tutor"
+        android:rotation="90"
+        android:src="@drawable/forward"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="@color/primary_yellow" />
+
+    <TextView
+        android:id="@+id/tv_header_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/plus_jakarta_sans_bold"
+        android:text="@string/tv_header_register"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_desc_register_1"
+        app:layout_constraintEnd_toEndOf="@id/tv_desc_register_1"
+        app:layout_constraintStart_toStartOf="@id/tv_desc_register_1" />
+
+    <TextView
+        android:id="@+id/tv_desc_register_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/plus_jakarta_sans_regular"
+        android:text="@string/tv_desc_register_1"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_desc_register_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/plus_jakarta_sans_regular"
+        android:text="@string/tv_desc_register_2"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/tv_desc_register_1"
+        app:layout_constraintStart_toStartOf="@+id/tv_desc_register_1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_desc_register_1" />
+
+    <!-- End Main Register -->
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

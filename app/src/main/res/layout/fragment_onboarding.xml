@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fm_onboarding"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_yellowish"
+    android:paddingHorizontal="20dp"
+    android:paddingBottom="25dp"
+    app:layoutDescription="@xml/fragment_onboarding_scene"
+    tools:context=".ui.auth.onboarding.Onboarding">
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/pos_4"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="5dp"
+        app:altSrc="@drawable/circle_active"
+        app:layout_constraintBottom_toBottomOf="@id/pos_3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/pos_3"
+        app:layout_constraintTop_toTopOf="@id/pos_3"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/circle_disable" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/pos_3"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="5dp"
+        app:altSrc="@drawable/circle_active"
+        app:layout_constraintBottom_toBottomOf="@id/pos_2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/pos_2"
+        app:layout_constraintTop_toTopOf="@id/pos_2"
+        app:srcCompat="@drawable/circle_disable" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/pos_2"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="5dp"
+        app:altSrc="@drawable/circle_active"
+        app:layout_constraintBottom_toBottomOf="@id/pos_1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/pos_1"
+        app:layout_constraintTop_toTopOf="@id/pos_1"
+        app:srcCompat="@drawable/circle_disable" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/pos_1"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="35dp"
+        app:altSrc="@drawable/circle_active"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/circle_disable" />
+
+    <ImageView
+        android:id="@+id/img_tutorin"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/img_tutorin"
+        android:src="@drawable/tutorin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Onboarding 1 -->
+    <ImageView
+        android:id="@+id/img_onboarding_1"
+        android:layout_width="0dp"
+        android:layout_height="400dp"
+        android:contentDescription="@string/img_onboarding_1"
+        android:scaleType="fitCenter"
+        android:src="@drawable/onboarding_1"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="391dp" />
+
+    <TextView
+        android:id="@+id/tv_onboarding_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/plus_jakarta_sans_regular"
+        android:text="@string/tv_onboarding_1"
+        android:textColor="@color/tertiary_dark_blue"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@id/img_onboarding_1"
+        app:layout_constraintStart_toStartOf="@id/img_onboarding_1"
+        app:layout_constraintTop_toBottomOf="@id/img_onboarding_1"
+        app:lineHeight="34dp" />
+
+    <TextView
+        android:id="@+id/tv_desc_onboarding_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/plus_jakarta_sans_regular"
+        android:text="@string/tv_desc_onbaording_1"
+        android:textColor="@color/tertiary_dark_blue"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/tv_onboarding_1"
+        app:layout_constraintStart_toStartOf="@id/tv_onboarding_1"
+        app:layout_constraintTop_toBottomOf="@id/tv_onboarding_1" />
+
+    <!--    End Onboarding 1 -->
+
+    <!--    Onboarding 2 -->
+    <ImageView
+        android:id="@+id/img_onboarding_2"
+        android:layout_width="0dp"
+        android:layout_height="400dp"
+        android:contentDescription="@string/img_onboarding_2"
+        android:scaleType="fitCenter"
+        android:src="@drawable/onboarding_2"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="391dp" />
+
+    <TextView
+        android:id="@+id/tv_onboarding_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/plus_jakarta_sans_regular"
+        android:text="@string/tv_onboarding_2"
+        android:textColor="@color/tertiary_dark_blue"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@id/img_onboarding_2"
+        app:layout_constraintStart_toStartOf="@id/img_onboarding_2"
+        app:layout_constraintTop_toBottomOf="@id/img_onboarding_2"
+        app:lineHeight="34dp" />
+
+    <TextView
+        android:id="@+id/tv_desc_onboarding_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/plus_jakarta_sans_regular"
+        android:text="@string/tv_desc_onbaording_2"
+        android:textColor="@color/tertiary_dark_blue"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/tv_onboarding_2"
+        app:layout_constraintStart_toStartOf="@id/tv_onboarding_2"
+        app:layout_constraintTop_toBottomOf="@id/tv_onboarding_2" />
+
+    <!--    End Onbooarding 2 -->
+
+    <!--    Onboarding 3 -->
+    <ImageView
+        android:id="@+id/img_onboarding_3"
+        android:layout_width="0dp"
+        android:layout_height="400dp"
+        android:contentDescription="@string/img_onboarding_3"
+        android:scaleType="fitCenter"
+        android:src="@drawable/onboarding_3"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="391dp" />
+
+    <TextView
+        android:id="@+id/tv_onboarding_3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/plus_jakarta_sans_regular"
+        android:text="@string/tv_onboarding_3"
+        android:textColor="@color/tertiary_dark_blue"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@id/img_onboarding_3"
+        app:layout_constraintStart_toStartOf="@id/img_onboarding_3"
+        app:layout_constraintTop_toBottomOf="@id/img_onboarding_3"
+        app:lineHeight="34dp" />
+
+    <TextView
+        android:id="@+id/tv_desc_onboarding_3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/plus_jakarta_sans_regular"
+        android:text="@string/tv_desc_onbaording_3"
+        android:textColor="@color/tertiary_dark_blue"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/tv_onboarding_3"
+        app:layout_constraintStart_toStartOf="@id/tv_onboarding_3"
+        app:layout_constraintTop_toBottomOf="@id/tv_onboarding_3" />
+    <!--    End Onboarding 3 -->
+
+    <!--    Onboarding 4 -->
+    <ImageView
+        android:id="@+id/img_onboarding_4"
+        android:layout_width="0dp"
+        android:layout_height="400dp"
+        android:contentDescription="@string/img_onboarding_4"
+        android:scaleType="fitCenter"
+        android:src="@drawable/onboarding_4"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="391dp" />
+
+    <TextView
+        android:id="@+id/tv_onboarding_4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/plus_jakarta_sans_regular"
+        android:text="@string/tv_onboarding_4"
+        android:textColor="@color/tertiary_dark_blue"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@id/img_onboarding_4"
+        app:layout_constraintStart_toStartOf="@id/img_onboarding_4"
+        app:layout_constraintTop_toBottomOf="@id/img_onboarding_4"
+        app:lineHeight="34dp" />
+
+    <TextView
+        android:id="@+id/tv_desc_onboarding_4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/plus_jakarta_sans_regular"
+        android:text="@string/tv_desc_onbaording_4"
+        android:textColor="@color/tertiary_dark_blue"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/tv_onboarding_4"
+        app:layout_constraintStart_toStartOf="@id/tv_onboarding_4"
+        app:layout_constraintTop_toBottomOf="@id/tv_onboarding_4" />
+    <!-- End Onboarding 4 -->
+
+    <Button
+        android:id="@+id/btn_lewati"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/plus_jakarta_sans_bold"
+        android:paddingHorizontal="5dp"
+        android:text="@string/btn_lewati"
+        android:textColor="@color/tertiary_dark_blue"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_next"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_next" />
+
+    <ImageButton
+        android:id="@+id/btn_next"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/bg_btn_square"
+        android:contentDescription="@string/cd_btn_next"
+        android:fontFamily="@font/plus_jakarta_sans_bold"
+        android:src="@drawable/forward"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:tint="@color/base_yellowish" />
+
+    <Button
+        android:id="@+id/btn_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:height="60dp"
+        android:backgroundTint="@color/primary_yellow"
+        android:drawableEnd="@drawable/forward"
+        android:text="@string/btn_end"
+        app:cornerRadius="20dp"
+        app:drawableTint="@color/base_yellowish"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:tint="@color/base_yellowish" />
+
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

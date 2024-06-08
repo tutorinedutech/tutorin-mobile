@@ -1,3 +1,35 @@
 <resources>
-    <string name="app_name">Tutorin Edutech</string>
+    <string name="app_name">Tutorin</string>
+    <string name="app_name_lowercase">tutorin</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="img_onboarding_1">Image best mentor</string>
+    <string name="img_onboarding_2">Image quality mentor</string>
+    <string name="img_onboarding_3">Image all your search in one app</string>
+    <string name="img_onboarding_4">Image make price as you go</string>
+    <string name="tv_masuk">Masuk</string>
+    <string name="img_login">Gambar login ke aplikasi</string>
+    <string name="tv_ask_login">Belum memiliki akun? <u>Daftar sekarang</u></string>
+    <string name="et_hint_username">Username</string>
+    <string name="et_hint_password">Password</string>
+    <string name="btn_login">Masuk</string>
+    <string name="img_tutorin">text typography tutorin</string>
+    <string name="tv_onboarding_1">Temukan Mentor Terbaik dengan AI Pintar</string>
+    <string name="tv_onboarding_2">Mentor Berkualitas Tinggi Hanya Sejauh Klik</string>
+    <string name="tv_onboarding_3">Seluruh Urusan dalam Satu Aplikasi</string>
+    <string name="tv_onboarding_4">Dapatkan Penawaran Terbaik di Lokasi Anda</string>
+    <string name="tv_desc_onbaording_1">Selamat datang di Tutorin!, Cukup isi kolom keinginan anda, dan biarkan AI kami mencocokkan Anda dengan mentor yang tepat.</string>
+    <string name="tv_desc_onbaording_2">Telusuri profil mereka, lihat kualifikasi, dan pilih mentor yang sesuai dengan bidang dan pengalaman yang Anda butuhkan.</string>
+    <string name="tv_desc_onbaording_3">Mencari mentor, menjadwalkan sesi, hingga berkomunikasi, lakukan semuanya dalam 1 aplikasi.</string>
+    <string name="tv_desc_onbaording_4">Kami memahami kebutuhan  anda dan memberikan penawaran yang tepat berdasarkan lokasi anda berada.</string>
+    <string name="btn_lewati">Lewati</string>
+    <string name="cd_btn_next">Selanjutnya</string>
+    <string name="btn_end">Selesaikan</string>
+    <string name="tv_header_register">Register</string>
+    <string name="tv_desc_register_1">Buat akun baru dan nikmati pengalaman mencari mentor dengan mudah dan cepat di aplikasi Tutorin.</string>
+    <string name="tv_desc_register_2">Silahkan swipe untuk memilih</string>
+    <string name="btn_register_learner">Arah penunjuk atas ke register learner page</string>
+    <string name="btn_register_tutor">Arah penunjuk atas ke register tutor page</string>
+    <string name="tv_tutor">Tutor</string>
+    <string name="tv_learner">Learner</string>
 </resources>

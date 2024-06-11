@@ -5,23 +5,24 @@
     android:id="@+id/register_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
+    android:layout_marginHorizontal="20dp"
     app:layoutDescription="@xml/fragment_register_main_scene"
     tools:context=".ui.auth.register.main.RegisterMain">
 
     <!-- Main Register -->
     <ImageView
-        android:id="@+id/btn_register_learner"
+        android:id="@+id/btn_view_register_learner"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:background="@android:color/transparent"
-        android:contentDescription="@string/btn_register_learner"
+        android:contentDescription="@string/btn_view_register_learner"
         android:rotation="-90"
         android:src="@drawable/forward"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/primary_yellow" />
+        app:tint="@color/primary_yellow"
+        tools:alpha="0" />
 
     <TextView
         android:id="@+id/textView"
@@ -30,9 +31,10 @@
         android:fontFamily="@font/plus_jakarta_sans_regular"
         android:text="@string/tv_learner"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@id/btn_register_learner"
-        app:layout_constraintStart_toStartOf="@id/btn_register_learner"
-        app:layout_constraintTop_toBottomOf="@id/btn_register_learner" />
+        app:layout_constraintEnd_toEndOf="@id/btn_view_register_learner"
+        app:layout_constraintStart_toStartOf="@id/btn_view_register_learner"
+        app:layout_constraintTop_toBottomOf="@id/btn_view_register_learner"
+        tools:alpha="0" />
 
     <TextView
         android:id="@+id/textView2"
@@ -41,22 +43,24 @@
         android:fontFamily="@font/plus_jakarta_sans_regular"
         android:text="@string/tv_tutor"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@id/btn_register_tutor"
-        app:layout_constraintEnd_toEndOf="@id/btn_register_tutor"
-        app:layout_constraintStart_toStartOf="@id/btn_register_tutor" />
+        app:layout_constraintBottom_toTopOf="@id/btn_view_register_tutor"
+        app:layout_constraintEnd_toEndOf="@id/btn_view_register_tutor"
+        app:layout_constraintStart_toStartOf="@id/btn_view_register_tutor"
+        tools:alpha="0" />
 
     <ImageView
-        android:id="@+id/btn_register_tutor"
+        android:id="@+id/btn_view_register_tutor"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:background="@android:color/transparent"
-        android:contentDescription="@string/btn_register_tutor"
+        android:contentDescription="@string/btn_view_register_tutor"
         android:rotation="90"
         android:src="@drawable/forward"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:tint="@color/primary_yellow" />
+        app:tint="@color/primary_yellow"
+        tools:alpha="0" />
 
     <TextView
         android:id="@+id/tv_header_register"
@@ -67,7 +71,8 @@
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@id/tv_desc_register_1"
         app:layout_constraintEnd_toEndOf="@id/tv_desc_register_1"
-        app:layout_constraintStart_toStartOf="@id/tv_desc_register_1" />
+        app:layout_constraintStart_toStartOf="@id/tv_desc_register_1"
+        tools:alpha="0" />
 
     <TextView
         android:id="@+id/tv_desc_register_1"
@@ -80,7 +85,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:alpha="0" />
 
     <TextView
         android:id="@+id/tv_desc_register_2"
@@ -92,8 +98,290 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@id/tv_desc_register_1"
         app:layout_constraintStart_toStartOf="@+id/tv_desc_register_1"
-        app:layout_constraintTop_toBottomOf="@+id/tv_desc_register_1" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_desc_register_1"
+        tools:alpha="0" />
 
     <!-- End Main Register -->
+
+    <!-- Learner Register -->
+
+    <LinearLayout
+        android:id="@+id/sv_learner"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/img_register_learner"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:contentDescription="@string/img_register_learner"
+            android:scaleType="fitCenter"
+            android:src="@drawable/register" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
+            android:text="Register Learner"
+            android:textSize="35sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/partially_yellow"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="username"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:hint="@string/et_hint_username"
+                android:inputType="text"
+                android:paddingVertical="10dp"
+                android:textSize="18sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/partially_yellow"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="emailAddress"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:hint="Email"
+                android:inputType="text"
+                android:paddingVertical="10dp"
+                android:textSize="18sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/partially_yellow"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="password"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:hint="@string/et_hint_password"
+                android:inputType="textVisiblePassword"
+                android:paddingVertical="10dp"
+                android:textSize="18sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/partially_yellow"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="password"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:hint="Re Password"
+                android:inputType="textVisiblePassword"
+                android:paddingVertical="10dp"
+                android:textSize="18sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/btn_selanjutnya_learner"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="@color/primary_yellow"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
+            android:paddingVertical="10dp"
+            android:text="@string/btn_selanjutnya"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            app:cornerRadius="18dp" />
+
+        <TextView
+            android:id="@+id/tv_ask_login_learner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/plus_jakarta_sans_regular"
+            android:text="@string/tv_ask_register" />
+    </LinearLayout>
+
+    <!-- End Learner Register -->
+
+    <!-- Tutor Register -->
+
+    <LinearLayout
+        android:id="@+id/sv_tutor"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/img_register_tutor"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:contentDescription="@string/img_register_learner"
+            android:scaleType="fitCenter"
+            android:src="@drawable/register" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
+            android:text="Register Tutor"
+            android:textSize="35sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/partially_yellow"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="username"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:hint="@string/et_hint_username"
+                android:inputType="text"
+                android:paddingVertical="10dp"
+                android:textSize="18sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/partially_yellow"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="emailAddress"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:hint="@string/et_hint_email"
+                android:inputType="text"
+                android:paddingVertical="10dp"
+                android:textSize="18sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/partially_yellow"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="password"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:hint="@string/et_hint_password"
+                android:inputType="textVisiblePassword"
+                android:paddingVertical="10dp"
+                android:textSize="18sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/partially_yellow"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="password"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:hint="@string/et_hint_repassword"
+                android:inputType="textVisiblePassword"
+                android:paddingVertical="10dp"
+                android:textSize="18sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/btn_selanjutnya_tutor"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="@color/primary_yellow"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
+            android:text="@string/btn_selanjutnya"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            app:cornerRadius="18dp" />
+
+        <TextView
+            android:id="@+id/tv_ask_login_tentor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/plus_jakarta_sans_regular"
+            android:text="@string/tv_ask_register" />
+    </LinearLayout>
+
+    <!-- End Tutor Register -->
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

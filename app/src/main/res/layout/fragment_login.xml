@@ -41,6 +41,7 @@
             android:fontFamily="@font/plus_jakarta_sans_regular"
             android:hint="@string/et_hint_username"
             android:inputType="text"
+            android:paddingVertical="10dp"
             android:textSize="18sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -63,6 +64,7 @@
             android:fontFamily="@font/plus_jakarta_sans_regular"
             android:hint="@string/et_hint_password"
             android:inputType="textVisiblePassword"
+            android:paddingVertical="10dp"
             android:textSize="18sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -73,9 +75,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        android:height="55dp"
         android:backgroundTint="@color/primary_yellow"
         android:fontFamily="@font/plus_jakarta_sans_bold"
-        android:paddingVertical="11dp"
         android:text="@string/btn_login"
         android:textSize="18sp"
         app:cornerRadius="18dp" />

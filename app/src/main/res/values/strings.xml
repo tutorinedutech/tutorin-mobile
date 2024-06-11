@@ -10,8 +10,11 @@
     <string name="tv_masuk">Masuk</string>
     <string name="img_login">Gambar login ke aplikasi</string>
     <string name="tv_ask_login">Belum memiliki akun? <u>Daftar sekarang</u></string>
+    <string name="tv_ask_register">Sudah memiliki akun? <u>Login sekarang</u></string>
     <string name="et_hint_username">Username</string>
     <string name="et_hint_password">Password</string>
+    <string name="et_hint_repassword">Re Password</string>
+    <string name="et_hint_email">Email</string>
     <string name="btn_login">Masuk</string>
     <string name="img_tutorin">text typography tutorin</string>
     <string name="tv_onboarding_1">Temukan Mentor Terbaik dengan AI Pintar</string>
@@ -28,8 +31,10 @@
     <string name="tv_header_register">Register</string>
     <string name="tv_desc_register_1">Buat akun baru dan nikmati pengalaman mencari mentor dengan mudah dan cepat di aplikasi Tutorin.</string>
     <string name="tv_desc_register_2">Silahkan swipe untuk memilih</string>
-    <string name="btn_register_learner">Arah penunjuk atas ke register learner page</string>
-    <string name="btn_register_tutor">Arah penunjuk atas ke register tutor page</string>
+    <string name="btn_view_register_learner">Arah penunjuk atas ke register learner page</string>
+    <string name="btn_view_register_tutor">Arah penunjuk atas ke register tutor page</string>
+    <string name="img_register_learner">Gambar orang mendaftar ke aplikasi</string>
+    <string name="btn_selanjutnya">Selanjutnya</string>
     <string name="tv_tutor">Tutor</string>
     <string name="tv_learner">Learner</string>
 </resources>

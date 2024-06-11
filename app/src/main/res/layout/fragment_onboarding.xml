@@ -6,8 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/base_yellowish"
-    android:paddingHorizontal="20dp"
-    android:paddingBottom="25dp"
     app:layoutDescription="@xml/fragment_onboarding_scene"
     tools:context=".ui.auth.onboarding.Onboarding">
 
@@ -52,7 +50,7 @@
         android:id="@+id/pos_1"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginStart="5dp"
+        android:layout_marginStart="20dp"
         android:layout_marginBottom="35dp"
         app:altSrc="@drawable/circle_active"
         app:layout_constraintBottom_toTopOf="parent"
@@ -78,6 +76,7 @@
         android:contentDescription="@string/img_onboarding_1"
         android:scaleType="fitCenter"
         android:src="@drawable/onboarding_1"
+        app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="391dp" />
 
@@ -117,6 +116,7 @@
         android:contentDescription="@string/img_onboarding_2"
         android:scaleType="fitCenter"
         android:src="@drawable/onboarding_2"
+        app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="391dp" />
 
@@ -156,6 +156,7 @@
         android:contentDescription="@string/img_onboarding_3"
         android:scaleType="fitCenter"
         android:src="@drawable/onboarding_3"
+        app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="391dp" />
 
@@ -194,6 +195,7 @@
         android:contentDescription="@string/img_onboarding_4"
         android:scaleType="fitCenter"
         android:src="@drawable/onboarding_4"
+        app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="391dp" />
 

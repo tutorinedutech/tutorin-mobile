@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_tutor"
+    app:startDestination="@id/homeTutor">
+
+    <fragment
+        android:id="@+id/homeTutor"
+        android:name="com.dicoding.tutorinedutech.ui.tutor.home.HomeTutor"
+        android:label="fragment_home_tutor"
+        tools:layout="@layout/fragment_home_tutor" >
+        <action
+            android:id="@+id/action_homeTutor_to_detailTentoringTutor"
+            app:destination="@id/detailTentoringTutor" />
+        <action
+            android:id="@+id/action_homeTutor_to_profileTutor"
+            app:destination="@id/profileTutor" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailTentoringTutor"
+        android:name="com.dicoding.tutorinedutech.ui.tutor.detail_tentoring.DetailTentoringTutor"
+        android:label="fragment_detail_tentoring_tutor"
+        tools:layout="@layout/fragment_detail_tentoring_tutor" />
+    <fragment
+        android:id="@+id/profileTutor"
+        android:name="com.dicoding.tutorinedutech.ui.tutor.profile.ProfileTutor"
+        android:label="fragment_profile_tutor"
+        tools:layout="@layout/fragment_profile_tutor" />
+</navigation>

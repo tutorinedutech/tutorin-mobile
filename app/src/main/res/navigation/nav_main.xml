@@ -5,4 +5,5 @@
     app:startDestination="@id/auth_navigation">
 
     <include app:graph="@navigation/nav_auth" />
+    <include app:graph="@navigation/nav_tutor" />
 </navigation>

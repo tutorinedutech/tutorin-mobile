@@ -64,4 +64,8 @@ dependencies {
     //    For Navigation Android
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+
+    //    For Blurry Effect
+    implementation("jp.wasabeef:blurry:4.0.1")
+
 }

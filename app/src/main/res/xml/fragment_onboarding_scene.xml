@@ -6,9 +6,8 @@
     <Transition
         motion:constraintSetEnd="@+id/onboarding_1"
         motion:constraintSetStart="@id/start_2"
-        motion:duration="1000"
-        motion:autoTransition="animateToEnd"
-        motion:motionInterpolator="linear">
+        motion:duration="1000" motion:motionInterpolator="cubic(0,1,1,1)"
+        motion:autoTransition="animateToEnd">
        <KeyFrameSet>
        </KeyFrameSet>
     </Transition>
@@ -56,7 +55,7 @@
             android:layout_height="20dp"
             android:layout_marginBottom="35dp"
             motion:layout_constraintBottom_toTopOf="parent"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="5dp"
             motion:layout_constraintHorizontal_bias="0.5"
             motion:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="35dp" />
@@ -92,17 +91,7 @@
 
     <ConstraintSet
         android:id="@+id/start_2"
-        motion:deriveConstraintsFrom="@+id/start" >
-        <Constraint
-            android:id="@+id/img_tutorin"
-            motion:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintTop_toTopOf="parent"
-            motion:layout_constraintStart_toStartOf="parent"
-            android:scaleX="0.9" />
-    </ConstraintSet>
+        motion:deriveConstraintsFrom="@+id/start" />
 
     <ConstraintSet android:id="@+id/onboarding_1">
         <Constraint
@@ -115,7 +104,7 @@
             android:id="@+id/pos_1"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="5dp"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="35dp" >
@@ -128,24 +117,20 @@
             motion:layout_constraintEnd_toEndOf="parent"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            motion:layout_constraintTop_toTopOf="parent"
-            android:layout_marginEnd="20dp" />
+            motion:layout_constraintTop_toTopOf="parent" />
         <Constraint
             android:layout_height="60dp"
             motion:layout_constraintEnd_toEndOf="parent"
             android:layout_width="60dp"
             android:id="@+id/btn_next"
-            motion:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="20dp"
-            android:layout_marginEnd="20dp" />
+            motion:layout_constraintBottom_toBottomOf="parent" />
         <Constraint
             android:id="@+id/btn_lewati"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             motion:layout_constraintBottom_toBottomOf="@+id/btn_next"
             motion:layout_constraintTop_toTopOf="@+id/btn_next"
-            motion:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="20dp" />
+            motion:layout_constraintStart_toStartOf="parent" />
         <Constraint
             android:layout_height="400dp"
             android:layout_width="0dp"
@@ -198,8 +183,8 @@
     <Transition
         motion:constraintSetStart="@+id/start"
         motion:constraintSetEnd="@+id/start_2"
-        motion:duration="3000"
-        motion:autoTransition="animateToEnd" motion:motionInterpolator="linear" />
+        motion:duration="1000"
+        motion:autoTransition="animateToEnd" motion:motionInterpolator="cubic(0,1,1,1)"/>
     <ConstraintSet
         android:id="@+id/onboarding_2"
         motion:deriveConstraintsFrom="@+id/onboarding_1" >
@@ -221,7 +206,7 @@
             android:id="@+id/pos_1"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="5dp"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="35dp">
@@ -305,9 +290,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             motion:layout_constraintBottom_toBottomOf="parent"
-            android:alpha="1"
-            android:layout_marginBottom="20dp"
-            android:layout_marginEnd="20dp" />
+            android:alpha="1" />
         <Constraint
             android:id="@+id/btn_lewati"
             android:layout_width="wrap_content"
@@ -317,8 +300,7 @@
             motion:layout_constraintStart_toStartOf="parent"
             android:alpha="1"
             android:scaleX="1"
-            android:scaleY="1"
-            android:layout_marginStart="20dp" />
+            android:scaleY="1" />
     </ConstraintSet>
     <ConstraintSet
         android:id="@+id/onboarding_4"
@@ -369,9 +351,7 @@
             motion:layout_constraintEnd_toEndOf="parent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            motion:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="20dp"
-            android:layout_marginEnd="20dp" />
+            motion:layout_constraintBottom_toBottomOf="parent" />
         <Constraint
             android:id="@+id/btn_next"
             motion:layout_constraintEnd_toEndOf="parent"

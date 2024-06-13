@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/search_tutor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_yellowish"
+    android:orientation="vertical"
+    tools:context=".ui.learner.tutors.search.SearchTutor">
+
+    <Toolbar
+        android:id="@+id/tb_register_learner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:title="@string/search_tutor"
+        android:titleTextAppearance="@style/AppTheme.AppBarOverlay"
+        android:titleTextColor="@color/base_black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp">
+
+        <!--   Input Education     -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/partially_yellow"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color"
+            app:style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+            <AutoCompleteTextView
+                android:id="@+id/actv_tingkat_pendidikan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:hint="Tingkat Pendidikan"
+                android:paddingVertical="10dp"
+                android:textSize="18sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--   Input Gender     -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/plus_jakarta_sans_medium"
+            android:text="Jenis Kelamin"
+            android:textSize="18sp" />
+
+        <RadioGroup
+            android:id="@+id/rg_jenis_kelamin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/rb_laki_laki"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="@string/rb_male"
+                app:buttonTint="@color/primary_yellow" />
+
+            <RadioButton
+                android:id="@+id/rb_perempuan"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="@string/rb_female"
+                app:buttonTint="@color/primary_yellow" />
+
+        </RadioGroup>
+
+        <!--   Input Domisili     -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/domicile_edit_text_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/partially_yellow"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="domisili"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:hint="@string/et_hint_domicile"
+                android:inputType="text"
+                android:paddingVertical="10dp"
+                android:textSize="18sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--   Input Bahasa     -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/language_edit_text_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/partially_yellow"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="bahasa"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:hint="@string/et_language"
+                android:inputType="text"
+                android:paddingVertical="10dp"
+                android:textSize="18sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--   Input Mata Pelajaran     -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/topic_edit_text_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/partially_yellow"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="mata pelajaran"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:hint="@string/et_topic"
+                android:inputType="text"
+                android:paddingVertical="10dp"
+                android:textSize="18sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--   Input Education     -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/partially_yellow"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color"
+            app:style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+            <AutoCompleteTextView
+                android:id="@+id/actv_jumlah_sesi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:hint="@string/actv_jumlah_sesi"
+                android:paddingVertical="10dp"
+                android:textSize="18sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--   Input Days     -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/plus_jakarta_sans_medium"
+            android:text="@string/tv_choose_day"
+            android:textSize="18sp" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:columnCount="2"
+            android:rowCount="4">
+
+            <CheckBox
+                android:id="@+id/cb_senin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginTop="2dp"
+                android:button="@drawable/custom_checkbox"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="@string/cb_senin"
+                android:textSize="18sp"
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+            <CheckBox
+                android:id="@+id/cb_jumat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginTop="2dp"
+                android:button="@drawable/custom_checkbox"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="@string/cb_jumat"
+                android:textSize="18sp"
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+            <CheckBox
+                android:id="@+id/cb_selasa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginTop="2dp"
+                android:button="@drawable/custom_checkbox"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="@string/cb_selasa"
+                android:textSize="18sp"
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+            <CheckBox
+                android:id="@+id/cb_sabtu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginTop="2dp"
+                android:button="@drawable/custom_checkbox"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="@string/cb_sabtu"
+                android:textSize="18sp"
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+            <CheckBox
+                android:id="@+id/cb_rabu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginTop="2dp"
+                android:button="@drawable/custom_checkbox"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="@string/cb_rabu"
+                android:textSize="18sp"
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+            <CheckBox
+                android:id="@+id/cb_minggu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginTop="2dp"
+                android:button="@drawable/custom_checkbox"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="@string/cb_minggu"
+                android:textSize="18sp"
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+            <CheckBox
+                android:id="@+id/cb_kamis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginTop="2dp"
+                android:button="@drawable/custom_checkbox"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="@string/cb_kamis"
+                android:textSize="18sp"
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        </GridLayout>
+
+        <!--   Input Time     -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/plus_jakarta_sans_medium"
+            android:text="@string/tv_choose_time"
+            android:textSize="18sp" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:columnCount="2"
+            android:rowCount="4">
+
+            <CheckBox
+                android:id="@+id/cb_clock_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginTop="2dp"
+                android:button="@drawable/custom_checkbox"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="@string/cb_clock_1"
+                android:textSize="18sp"
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+            <CheckBox
+                android:id="@+id/cb_clock_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginTop="2dp"
+                android:button="@drawable/custom_checkbox"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="@string/cb_clock_4"
+                android:textSize="18sp"
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+            <CheckBox
+                android:id="@+id/cb_clock_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginTop="2dp"
+                android:button="@drawable/custom_checkbox"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="@string/cb_clock_2"
+                android:textSize="18sp"
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+            <CheckBox
+                android:id="@+id/cb_clock_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginTop="2dp"
+                android:button="@drawable/custom_checkbox"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="@string/cb_clock_5"
+                android:textSize="18sp"
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+            <CheckBox
+                android:id="@+id/cb_clock_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginTop="2dp"
+                android:button="@drawable/custom_checkbox"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="@string/cb_clock_3"
+                android:textSize="18sp"
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+            <CheckBox
+                android:id="@+id/cb_clock_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginTop="2dp"
+                android:button="@drawable/custom_checkbox"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="@string/cb_clock_6"
+                android:textSize="18sp"
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        </GridLayout>
+
+        <!--   Input Kriteria     -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/criteria_edit_text_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/partially_yellow"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:gravity="top|start"
+                android:hint="@string/et_criteria"
+                android:inputType="textMultiLine"
+                android:minLines="4"
+                android:overScrollMode="always"
+                android:paddingVertical="10dp"
+                android:scrollbars="vertical"
+                android:textSize="18sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_search_tutor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:height="55dp"
+            android:background="@drawable/rectangle_border_28"
+            android:drawableLeft="@drawable/ic_stars"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
+            android:paddingHorizontal="96dp"
+            android:text="@string/btn_search_tutor"
+            android:textSize="18sp"
+            app:cornerRadius="18dp"
+            app:backgroundTint="@null"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

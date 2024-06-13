@@ -6,6 +6,7 @@
     <color name="tertiary_dark_blue">#001D3D</color>
     <color name="tertiary_blue">#003566</color>
     <color name="primary_yellow">#FFC300</color>
+    <color name="darker_yellow">#85680b</color>
     <color name="secondary_yellow">#FFD60A</color>
     <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#FFD60A</color>
     <color name="tertiary_yellow">#FFF0BF</color>

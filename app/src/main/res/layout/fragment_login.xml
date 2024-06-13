@@ -26,13 +26,16 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColorHint="@color/darker_yellow"
         app:boxBackgroundColor="@color/partially_yellow"
         app:boxBackgroundMode="outline"
         app:boxCornerRadiusBottomEnd="20dp"
         app:boxCornerRadiusBottomStart="20dp"
         app:boxCornerRadiusTopEnd="20dp"
         app:boxCornerRadiusTopStart="20dp"
-        app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color">
+        app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color"
+        app:cursorColor="@color/darker_yellow"
+        app:hintTextColor="@color/darker_yellow">
 
         <EditText
             android:layout_width="match_parent"
@@ -49,13 +52,16 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColorHint="@color/darker_yellow"
         app:boxBackgroundColor="@color/partially_yellow"
         app:boxBackgroundMode="outline"
         app:boxCornerRadiusBottomEnd="20dp"
         app:boxCornerRadiusBottomStart="20dp"
         app:boxCornerRadiusTopEnd="20dp"
         app:boxCornerRadiusTopStart="20dp"
-        app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color">
+        app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color"
+        app:cursorColor="@color/darker_yellow"
+        app:hintTextColor="@color/darker_yellow">
 
         <EditText
             android:layout_width="match_parent"

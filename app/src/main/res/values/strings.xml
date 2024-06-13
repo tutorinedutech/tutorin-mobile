@@ -37,4 +37,14 @@
     <string name="btn_selanjutnya">Selanjutnya</string>
     <string name="tv_tutor">Tutor</string>
     <string name="tv_learner">Learner</string>
+
+    <string-array name="tingkat_pendidikan">
+        <item>SD/MI</item>
+        <item>SMP/MTS</item>
+        <item>SMA/MA/SMK</item>
+        <item>D1/D2/D3</item>
+        <item>D4/S1</item>
+        <item>S2</item>
+        <item>S3</item>
+    </string-array>
 </resources>

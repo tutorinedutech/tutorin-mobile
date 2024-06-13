@@ -1,17 +1,36 @@
 package com.dicoding.tutorinedutech.ui.auth.register.tutor
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import androidx.fragment.app.Fragment
 import com.dicoding.tutorinedutech.R
+import com.dicoding.tutorinedutech.databinding.FragmentRegisterTutorBinding
 
 class RegisterTutor : Fragment() {
+    private var _binding: FragmentRegisterTutorBinding? = null
+    private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_register_tutor, container, false)
+    ): View {
+        _binding = FragmentRegisterTutorBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val listTingkatPendidikan = ArrayAdapter(
+            requireContext(),
+            android.R.layout.simple_dropdown_item_1line,
+            resources.getStringArray(R.array.tingkat_pendidikan)
+        )
+
+        binding.apply {
+            actvTingkatPendidikan.setAdapter(listTingkatPendidikan)
+        }
     }
 }

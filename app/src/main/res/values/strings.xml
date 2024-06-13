@@ -76,12 +76,17 @@
     </string-array>
 
     <string-array name="jumlah_sesi">
-        <item>SD/MI</item>
-        <item>SMP/MTS</item>
-        <item>SMA/MA/SMK</item>
-        <item>D1/D2/D3</item>
-        <item>D4/S1</item>
-        <item>S2</item>
-        <item>S3</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
     </string-array>
+
+    <string name="tutor">Tutor</string>
+    <string name="tv_tutor_page_desc">Jangan sampai lupa untuk melakukan jadwal tutoring dengan tutor kamu ya.</string>
+    <string name="bt_photo_validation">Validasi foto Kehadiran</string>
+    <string name="chat_button">chat button</string>
+    <string name="tv_tutor_name">Ilham Alfarizky</string>
+    <string name="tv_tutoring_loc">Google Meet</string>
+    <string name="tv_tutor_topic">Mathematics Expert</string>
+    <string name="tv_time_session">Formatter date and time</string>
 </resources>

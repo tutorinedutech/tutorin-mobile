@@ -89,4 +89,15 @@
     <string name="tv_tutoring_loc">Google Meet</string>
     <string name="tv_tutor_topic">Mathematics Expert</string>
     <string name="tv_time_session">Formatter date and time</string>
+    <string name="tb_detail_tutoring">Detail Tutoring</string>
+    <string name="tv_detail_tutoring_desc">Cek progress tutoring kamu dengan tutor pada bagian dibawah ini</string>
+    <string name="tv_tutor_username">\@ilhamAlfa</string>
+    <string name="tv_validation_desc">Validasi bukti kehadiran yang sudah dikirimkan oleh tutor yang sudah dikirimkan oleh tutor</string>
+    <string name="session_number">Sesi %d</string>
+    <string name="session_location">Real Estate DCafe Yogyakarta, Gambiran, Sorogenen, Grabakan</string>
+    <string name="ic_location">ic location</string>
+    <string name="ic_clock">ic clock</string>
+    <string name="direct_loc">Buka di Maps</string>
+    <string name="ic_error">ic error</string>
+    <string name="ic_forward">ic forward</string>
 </resources>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cv_popular_tutor"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginVertical="8dp"
+    android:backgroundTint="@color/secondary_yellow"
+    card_view:cardCornerRadius="20dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="14dp">
+
+        <TextView
+            android:id="@+id/tv_session_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
+            android:text="@string/session_number"
+            android:textColor="@color/tertiary_blue"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_session_location"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/plus_jakarta_sans_regular"
+            android:text="@string/session_location"
+            app:layout_constraintEnd_toStartOf="@+id/bt_location"
+            app:layout_constraintStart_toEndOf="@+id/iv_ic_location"
+            app:layout_constraintTop_toBottomOf="@+id/tv_session_title" />
+
+        <TextView
+            android:id="@+id/tv_session_date_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/plus_jakarta_sans_regular"
+            android:text="@string/tv_time_session"
+            app:layout_constraintStart_toEndOf="@+id/iv_ic_clock"
+            app:layout_constraintTop_toBottomOf="@+id/tv_session_location" />
+
+        <ImageView
+            android:id="@+id/iv_ic_location"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:contentDescription="@string/ic_location"
+            android:src="@drawable/ic_location"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_session_location"
+            app:layout_constraintStart_toStartOf="@+id/tv_session_title"
+            app:layout_constraintTop_toTopOf="@+id/tv_session_location" />
+
+        <ImageView
+            android:id="@+id/iv_ic_clock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/ic_clock"
+            android:padding="2dp"
+            android:src="@drawable/baseline_access_time_filled_24"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_session_date_time"
+            app:layout_constraintStart_toStartOf="@+id/iv_ic_location"
+            app:layout_constraintTop_toTopOf="@+id/tv_session_date_time" />
+
+        <Button
+            android:id="@+id/bt_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/tertiary_blue"
+            android:fontFamily="@font/plus_jakarta_sans_regular"
+            android:minHeight="0dp"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="6dp"
+            android:text="@string/direct_loc"
+            app:cornerRadius="11dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

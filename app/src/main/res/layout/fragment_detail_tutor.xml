@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detail_result_tutor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_yellowish"
+    tools:context=".ui.learner.tutors.tutoring.detail.DetailTutoring">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Toolbar
+            android:id="@+id/tb_detail_result_tutor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:title="Detail"
+            android:titleTextAppearance="@style/AppTheme.AppBarOverlay"
+            android:titleTextColor="@color/base_black" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="100dp">
+
+            <ImageView
+                android:id="@+id/iv_tutor_profile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:src="@tools:sample/avatars" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_tutor_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/plus_jakarta_sans_semibold"
+            android:text="@string/tv_tutor_name"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/tv_tutor_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/ic_star"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/plus_jakarta_sans_medium"
+            android:text="@string/tv_tutor_rating" />
+
+        <View
+            android:id="@+id/dv_progress_learning"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/material_dynamic_neutral70" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:text="Tingkat Edukasi"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_tutor_education"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="SMA" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:text="Jenis Kelamin"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_tutor_gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="Laki-laki" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:text="Domisili"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_tutor_domicile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="Yogyakarta" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:text="Bahasa"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_tutor_language"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="Indonesia" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:text="Bidang"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_tutor_topic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="Matematika" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:text="Kriteria Mengajar"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_tutor_criteria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="Offline" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:text="Tampilan CV"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/iv_tutor_cv"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginTop="4dp"
+                android:scaleType="fitXY"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/tv_tutor_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:text="Rp. 150.000,00"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btn_daftar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="15dp"
+                android:height="55dp"
+                android:backgroundTint="@color/primary_yellow"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:text="Daftar"
+                android:textSize="18sp"
+                app:cornerRadius="18dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

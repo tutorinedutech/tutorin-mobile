@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:backgroundTint="@color/partially_yellow"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="13dp">
+
+        <TextView
+            android:id="@+id/tv_card_tutoring_learner_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/plus_jakarta_sans_medium"
+            android:maxLines="1"
+            android:scrollHorizontally="false"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@id/status_tutoring"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Teguh Dwi Cahya Kusuma" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/status_tutoring"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/tertiary_blue"
+            android:elevation="0dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_status_tutoring"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="3dp"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:textColor="@color/base_pure_white"
+                tools:text="Akan Berlangsung" />
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/iv_location_card_tutoring"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/location"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_card_tutoring_learner_name"
+            app:tint="@color/tertiary_blue" />
+
+        <TextView
+            android:id="@+id/tv_location_card_tutoring"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/plus_jakarta_sans_regular"
+            android:textColor="@color/base_black"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_location_card_tutoring"
+            app:layout_constraintStart_toEndOf="@+id/iv_location_card_tutoring"
+            app:layout_constraintTop_toTopOf="@+id/iv_location_card_tutoring"
+            tools:text="Google Meet" />
+
+        <ImageView
+            android:id="@+id/iv_datetime_card_tutoring"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/datetime"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_location_card_tutoring"
+            app:tint="@color/tertiary_blue" />
+
+        <TextView
+            android:id="@+id/tv_datetime_card_tutoring"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/plus_jakarta_sans_regular"
+            android:textColor="@color/base_black"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_datetime_card_tutoring"
+            app:layout_constraintStart_toEndOf="@+id/iv_datetime_card_tutoring"
+            app:layout_constraintTop_toTopOf="@+id/iv_datetime_card_tutoring"
+            tools:text="12.45 - 23 Agustus 2024" />
+
+        <Button
+            android:id="@+id/btn_detail_learning"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:height="55dp"
+            android:backgroundTint="@color/primary_yellow"
+            android:fontFamily="@font/plus_jakarta_sans_regular"
+            android:text="Detail Learning"
+            android:textSize="13sp"
+            app:cornerRadius="18dp"
+            app:icon="@drawable/user_detail"
+            app:iconGravity="textStart"
+            app:iconSize="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_datetime_card_tutoring" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

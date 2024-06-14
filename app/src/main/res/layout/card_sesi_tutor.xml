@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cv_sesi_tentoring"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:backgroundTint="@color/secondary_yellow"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="10dp">
+
+        <TextView
+            android:id="@+id/tv_title_sesi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
+            android:includeFontPadding="false"
+            android:textColor="@color/tertiary_blue"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Sesi 1" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/done"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_location_sesi_tentoring"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/location"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_sesi"
+            app:tint="@color/tertiary_blue" />
+
+        <TextView
+            android:id="@+id/tv_location_sesi_tentoring"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/plus_jakarta_sans_regular"
+            android:maxLines="2"
+            android:textColor="@color/base_black"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_location_sesi_tentoring"
+            app:layout_constraintEnd_toStartOf="@id/btn_location_sesi_tentoring"
+            app:layout_constraintStart_toEndOf="@+id/iv_location_sesi_tentoring"
+            app:layout_constraintTop_toTopOf="@+id/iv_location_sesi_tentoring"
+            tools:text="Real Estate DCafe Yogyakarta, Gambiran, Sorogenen, Grabakan" />
+
+        <Button
+            android:id="@+id/btn_location_sesi_tentoring"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:backgroundTint="@color/tertiary_blue"
+            android:fontFamily="@font/plus_jakarta_sans_regular"
+            android:includeFontPadding="false"
+            android:paddingHorizontal="10dp"
+            android:text="Buka di maps"
+            android:textSize="10sp"
+            app:cornerRadius="7dp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_location_sesi_tentoring"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_location_sesi_tentoring" />
+
+        <ImageView
+            android:id="@+id/iv_datetime_sesi_tentoring"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/datetime"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_location_sesi_tentoring"
+            app:tint="@color/tertiary_blue" />
+
+        <TextView
+            android:id="@+id/tv_datetime_sesi_tentoring"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/plus_jakarta_sans_regular"
+            android:textColor="@color/base_black"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_datetime_sesi_tentoring"
+            app:layout_constraintStart_toEndOf="@+id/iv_datetime_sesi_tentoring"
+            app:layout_constraintTop_toTopOf="@+id/iv_datetime_sesi_tentoring"
+            tools:text="12.45 - 23 Agustus 2024" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

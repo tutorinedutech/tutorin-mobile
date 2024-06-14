@@ -100,4 +100,7 @@
     <string name="direct_loc">Buka di Maps</string>
     <string name="ic_error">ic error</string>
     <string name="ic_forward">ic forward</string>
+    <string name="accept">Terima</string>
+    <string name="decline">Tolak</string>
+    <string name="photo_validation">photo validation</string>
 </resources>

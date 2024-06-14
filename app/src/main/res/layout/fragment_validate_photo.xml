@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/detail_tutoring"
+    android:id="@+id/validate_photo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/base_yellowish"
@@ -10,16 +10,16 @@
     tools:context=".ui.learner.tutors.tutoring.detail.DetailTutoring">
 
     <Toolbar
-        android:id="@+id/tb_detail_tutoring"
+        android:id="@+id/tb_validate_photo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:title="@string/tb_detail_tutoring"
+        android:title="Validasi Kehadiran"
         android:titleTextAppearance="@style/AppTheme.AppBarOverlay"
         android:titleTextColor="@color/base_black" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <TextView
@@ -28,63 +28,7 @@
             android:fontFamily="@font/plus_jakarta_sans_regular"
             android:paddingHorizontal="20dp"
             android:paddingBottom="15dp"
-            android:text="@string/tv_detail_tutoring_desc" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_session_validate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/primary_yellow"
-            android:paddingHorizontal="20dp"
-            android:paddingVertical="14dp">
-
-            <ImageView
-                android:id="@+id/iv_icon_error"
-                android:layout_width="29dp"
-                android:layout_height="29dp"
-                android:contentDescription="@string/ic_error"
-                android:src="@drawable/baseline_error_24"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_title_validate"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/tv_title_validate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:fontFamily="@font/plus_jakarta_sans_medium"
-                android:text="@string/bt_photo_validation"
-                android:textSize="20sp"
-                app:layout_constraintStart_toEndOf="@+id/iv_icon_error"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/tv_desc_validate"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:fontFamily="@font/plus_jakarta_sans_regular"
-                android:text="@string/tv_validation_desc"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toStartOf="@+id/iv_icon_forward"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_title_validate" />
-
-            <ImageView
-                android:id="@+id/iv_icon_forward"
-                android:layout_width="20dp"
-                android:layout_height="36dp"
-                android:adjustViewBounds="true"
-                android:contentDescription="@string/ic_forward"
-                android:scaleType="center"
-                android:src="@drawable/forward"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/tertiary_blue" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            android:text="Validasi kehadiran lewat foto dari tutor-mu untuk memastikan sesi tutoring berjalan lancar" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -144,12 +88,86 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_list_tutoring"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:paddingHorizontal="20dp" />
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="15dp"
+            android:background="@color/partially_yellow"
+            android:orientation="vertical"
+            android:padding="14dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/photo_validation"
+                android:scaleType="centerCrop"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/tv_session_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:text="@string/session_number"
+                android:textColor="@color/tertiary_blue"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tv_session_location"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="4dp"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="@string/session_location"
+                app:drawableLeftCompat="@drawable/ic_location" />
+
+            <TextView
+                android:id="@+id/tv_session_date_time"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2dp"
+                android:drawablePadding="4dp"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="@string/tv_time_session"
+                app:drawableLeftCompat="@drawable/ic_clock_2" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/error"
+                android:drawableLeft="@drawable/close"
+                android:drawableTint="@color/base_pure_white"
+                android:paddingHorizontal="60dp"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="@string/decline"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/primary_yellow"
+                android:drawableLeft="@drawable/check"
+                android:drawableTint="@color/base_pure_white"
+                android:paddingHorizontal="60dp"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="@string/accept"
+                app:backgroundTint="@null" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

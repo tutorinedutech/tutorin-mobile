@@ -37,6 +37,9 @@
     <string name="btn_selanjutnya">Selanjutnya</string>
     <string name="tv_tutor">Tutor</string>
     <string name="tv_learner">Learner</string>
+    <string name="tab_incoming_tutor">Incoming</string>
+    <string name="tab_ongoing_tutor">Ongoing</string>
+    <string name="tv_tutoring_done"><u>Selesai</u></string>
     <string name="search_tutor">Temukan Tutor</string>
     <string name="rb_male">Laki laki</string>
     <string name="rb_female">Perempuan</string>

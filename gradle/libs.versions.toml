@@ -1,5 +1,6 @@
 [versions]
 agp = "8.4.0"
+blurry = "4.0.1"
 kotlin = "1.9.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
@@ -18,9 +19,11 @@ navigationSafeArgsGradlePlugin = "2.7.7"
 retrofit = "2.11.0"
 navigationUiKtx = "2.7.7"
 navigationFragmentKtx = "2.7.7"
+viewpager2 = "1.1.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+blurry = { module = "jp.wasabeef:blurry", version.ref = "blurry" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -37,6 +40,7 @@ androidx-exifinterface = { module = "androidx.exifinterface:exifinterface", vers
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationUiKtx" }
+androidx-viewpager2 = { module = "androidx.viewpager2:viewpager2", version.ref = "viewpager2" }
 
 
 [plugins]

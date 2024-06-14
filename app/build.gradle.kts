@@ -66,6 +66,10 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
 
     //    For Blurry Effect
-    implementation("jp.wasabeef:blurry:4.0.1")
+    implementation(libs.blurry)
+
+    //    For Tabview
+    implementation(libs.androidx.viewpager2)
+
 
 }

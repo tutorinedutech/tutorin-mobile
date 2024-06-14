@@ -1,22 +1,22 @@
-package com.dicoding.tutorinedutech.ui.tutor.detail_tentoring
+package com.dicoding.tutorinedutech.ui.tutor.home.incoming
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.dicoding.tutorinedutech.databinding.FragmentDetailTentoringTutorBinding
+import com.dicoding.tutorinedutech.databinding.FragmentTabIncomingTutorBinding
 
-class DetailTentoringTutor : Fragment() {
 
-    private var _binding: FragmentDetailTentoringTutorBinding? = null
+class TabIncomingTutor : Fragment() {
+    private var _binding: FragmentTabIncomingTutorBinding? = null
     private val binding get() = _binding!!
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentDetailTentoringTutorBinding.inflate(inflater, container, false)
+        _binding = FragmentTabIncomingTutorBinding.inflate(inflater, container, false)
         return binding.root
     }
+
 }

@@ -103,4 +103,12 @@
     <string name="accept">Terima</string>
     <string name="decline">Tolak</string>
     <string name="photo_validation">photo validation</string>
+    <string name="tb_result_tutors">Berdasarkan Kriteriamu</string>
+    <string name="tv_teaching_criteria">Senang mengajari di lokasi lokasi cozy seperti di cafe atau relaxing place lainnya, yang dapat membuat otak menjadi segar</string>
+    <string name="result_desc_1">AI kami telah berhasil mengumpulkan tutor sesuai dengan kriteria yang kamu masukkan</string>
+    <string name="result_desc_2">Kamu bisa memilih 1 tutor yang kamu mau, jadi pilih dengan bijak yaa</string>
+    <string name="result_desc_3">Paling cocok dengan kriteriamu</string>
+    <string name="ic_stars">icon stars</string>
+    <string name="result_desc_4">Mentor Lainnya</string>
+    <string name="tutor_education">S1 - Sistem Informasi</string>
 </resources>

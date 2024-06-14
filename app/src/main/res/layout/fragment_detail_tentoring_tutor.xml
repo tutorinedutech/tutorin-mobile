@@ -1,14 +1,485 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detail_tentoring_tutor"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/base_yellowish"
     tools:context=".ui.tutor.detail_tentoring.DetailTentoringTutor">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <Toolbar
+        android:id="@+id/tb_detail_tentoring_tutor"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:title="Detail Learning"
+        android:titleTextAppearance="@style/AppTheme.AppBarOverlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="@color/base_black" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/tv_subtitle_detail_tentoring_tutor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="13dp"
+        android:fontFamily="@font/plus_jakarta_sans_light"
+        android:text="Cek progress tutoring kamu dengan learner pada bagian ini"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tb_detail_tentoring_tutor" />
+
+
+    <ScrollView
+        android:id="@+id/sv_detail_learning"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_subtitle_detail_tentoring_tutor">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cv_detail_learner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/tertiary_blue"
+                android:paddingHorizontal="13dp"
+                android:paddingVertical="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_user_name_learner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                    android:maxLines="2"
+                    android:textColor="@color/base_pure_white"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_chat"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Teguh Dwi Cahya Kusuma Wardani Wilujeng Rahayudiningrat" />
+
+                <TextView
+                    android:id="@+id/tv_username_learner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="@font/plus_jakarta_sans_medium"
+                    android:textColor="@color/base_gray"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_chat"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_user_name_learner"
+                    tools:text="\@diama" />
+
+                <TextView
+                    android:id="@+id/tv_location_learner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="@font/plus_jakarta_sans_medium"
+                    android:textColor="@color/base_gray"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_chat"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_username_learner"
+                    tools:text="Grojogan, Wirokerten, Bantul, DI Yogyakarta" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_chat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageButton
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@android:color/transparent"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/chat"
+                        app:tint="@color/primary_yellow" />
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_id_learning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="@color/partially_yellow"
+                app:cardElevation="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cv_detail_learner">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="2dp"
+                    android:fontFamily="@font/plus_jakarta_sans_medium"
+                    android:text="ID-AS23DK1ASH3DJJ9"
+                    android:textColor="@color/base_gray" />
+
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:id="@+id/dv_progress_learning"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/base_black"
+                android:backgroundTint="@color/base_black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cv_id_learning" />
+
+            <ImageView
+                android:id="@+id/iv_current_step"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="15dp"
+                android:alpha="1"
+                android:src="@drawable/circle_active"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_title_penerimaan"
+                app:layout_constraintEnd_toStartOf="@+id/tv_title_penerimaan"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_title_penerimaan" />
+
+            <TextView
+                android:id="@+id/tv_title_penerimaan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/plus_jakarta_sans_medium"
+                android:includeFontPadding="false"
+                android:text="Penerimaan"
+                android:textSize="26sp"
+                app:layout_constraintStart_toEndOf="@+id/dv_progress_learning"
+                app:layout_constraintTop_toBottomOf="@+id/cv_id_learning" />
+
+            <TextView
+                android:id="@+id/tv_desc_penerimaan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/plus_jakarta_sans_light"
+                android:text="Kamu telah terpilih untuk menjadi tutor oleh ka Hendrawan, silahkan lakukan validasi untuk memastikan bahwa kamu menyanggupi sesi tutoring tersebut, berikut detail kriteria yang diinginkan learner:"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_title_penerimaan"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title_penerimaan" />
+
+            <LinearLayout
+                android:id="@+id/lv_pilihan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/tv_desc_penerimaan">
+
+                <Button
+                    android:id="@+id/btn_tolak_tutoring"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    android:height="55dp"
+                    android:backgroundTint="@color/error"
+                    android:fontFamily="@font/plus_jakarta_sans_regular"
+                    android:includeFontPadding="false"
+                    android:text="Tolak"
+                    android:textSize="18sp"
+                    app:cornerRadius="18dp"
+                    app:icon="@drawable/close"
+                    app:iconGravity="textStart"
+                    app:iconSize="25dp" />
+
+                <Button
+                    android:id="@+id/btn_terima_tutoring"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:layout_weight="1"
+                    android:height="55dp"
+                    android:backgroundTint="@color/primary_yellow"
+                    android:fontFamily="@font/plus_jakarta_sans_regular"
+                    android:includeFontPadding="false"
+                    android:text="Terima"
+                    android:textSize="18sp"
+                    app:cornerRadius="18dp"
+                    app:icon="@drawable/check"
+                    app:iconGravity="textStart"
+                    app:iconSize="25dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_title_pembayaran"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/plus_jakarta_sans_medium"
+                android:includeFontPadding="false"
+                android:text="Pembayaran"
+                android:textSize="26sp"
+                app:layout_constraintStart_toEndOf="@+id/dv_progress_learning"
+                app:layout_constraintTop_toBottomOf="@+id/lv_pilihan" />
+
+            <TextView
+                android:id="@+id/tv_desc_pembayaran"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/plus_jakarta_sans_light"
+                android:text="Saldo Anda akan otomatis bertambah dengan nominal yang tercantum begitu sesi tutoring selesai"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_title_pembayaran"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title_pembayaran" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_nominal_harga"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/partially_yellow"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_desc_pembayaran">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:fontFamily="@font/plus_jakarta_sans_regular"
+                    android:paddingVertical="9dp"
+                    android:paddingStart="20dp"
+                    android:text="Nomimal harga"
+                    android:textSize="19sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                    android:paddingVertical="9sp"
+                    android:paddingEnd="20dp"
+                    android:text="Rp.20.000,00-"
+                    android:textSize="16sp" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tv_title_tutoring"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/plus_jakarta_sans_medium"
+                android:includeFontPadding="false"
+                android:text="Tutoring"
+                android:textSize="26sp"
+                app:layout_constraintStart_toEndOf="@id/dv_progress_learning"
+                app:layout_constraintTop_toBottomOf="@id/cv_nominal_harga" />
+
+            <TextView
+                android:id="@+id/tv_desc_tutoring"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/plus_jakarta_sans_light"
+                android:text="Jangan lupa untuk melakukan dokumentasi pada saat melakukan sesi belajar yaa, agar validasi bukti mentoring dapat berjalan dengan lancar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_title_tutoring"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_tutoring" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_tutoring"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_desc_tutoring"
+                tools:listitem="@layout/card_sesi_tutor" />
+
+            <TextView
+                android:id="@+id/tv_title_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/plus_jakarta_sans_medium"
+                android:includeFontPadding="false"
+                android:text="Review"
+                android:textSize="26sp"
+                app:layout_constraintStart_toEndOf="@id/dv_progress_learning"
+                app:layout_constraintTop_toBottomOf="@id/rv_tutoring" />
+
+            <TextView
+                android:id="@+id/tv_desc_rating"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/plus_jakarta_sans_light"
+                android:text="Yeayy, proses mentoring telah selesai, dan kamu dapat melihat review dari pengguna apabila pengguna telah memebrikan rating kepadamu"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_title_rating"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_rating" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_rating_learner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/partially_yellow"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp"
+                app:layout_constraintStart_toEndOf="@id/dv_progress_learning"
+                app:layout_constraintTop_toBottomOf="@id/tv_desc_rating">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="15dp"
+                    android:paddingVertical="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_rating_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/plus_jakarta_sans_bold"
+                        android:includeFontPadding="false"
+                        android:text="Rating"
+                        android:textColor="@color/tertiary_blue"
+                        android:textSize="26sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.utils.widget.ImageFilterView
+                        android:id="@+id/ifv_star_1"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star_active"
+                        app:altSrc="@drawable/star_inactive"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_rating_title"
+                        app:layout_constraintEnd_toStartOf="@id/ifv_star_2"
+                        app:layout_constraintTop_toTopOf="@id/tv_rating_title" />
+
+                    <androidx.constraintlayout.utils.widget.ImageFilterView
+                        android:id="@+id/ifv_star_2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star_active"
+                        app:altSrc="@drawable/star_inactive"
+                        app:layout_constraintBottom_toBottomOf="@id/ifv_star_1"
+                        app:layout_constraintEnd_toStartOf="@id/ifv_star_3"
+                        app:layout_constraintTop_toTopOf="@id/ifv_star_1" />
+
+                    <androidx.constraintlayout.utils.widget.ImageFilterView
+                        android:id="@+id/ifv_star_3"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star_active"
+                        app:altSrc="@drawable/star_inactive"
+                        app:layout_constraintBottom_toBottomOf="@id/ifv_star_2"
+                        app:layout_constraintEnd_toStartOf="@id/ifv_star_4"
+                        app:layout_constraintTop_toTopOf="@id/ifv_star_2" />
+
+                    <androidx.constraintlayout.utils.widget.ImageFilterView
+                        android:id="@+id/ifv_star_4"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star_active"
+                        app:altSrc="@drawable/star_inactive"
+                        app:layout_constraintBottom_toBottomOf="@id/ifv_star_3"
+                        app:layout_constraintEnd_toStartOf="@id/ifv_star_5"
+                        app:layout_constraintTop_toTopOf="@id/ifv_star_3" />
+
+                    <androidx.constraintlayout.utils.widget.ImageFilterView
+                        android:id="@+id/ifv_star_5"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star_active"
+                        app:altSrc="@drawable/star_inactive"
+                        app:layout_constraintBottom_toBottomOf="@id/ifv_star_4"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/ifv_star_4" />
+
+
+                    <TextView
+                        android:id="@+id/tv_learner_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/plus_jakarta_sans_semibold"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/tertiary_blue"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toTopOf="@id/tv_learner_comment"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_rating_title"
+                        tools:text="Teguh Dwi Cahya Kusuma" />
+
+                    <TextView
+                        android:id="@+id/tv_learner_comment"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/plus_jakarta_sans_light"
+                        android:text="Yeayy, proses mentoring telah selesai, dan kamu dapat melihat review dari pengguna apabila pengguna telah memebrikan rating kepadamu"
+                        android:textColor="@color/tertiary_blue"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_learner_name" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="@string/tv_tutoring_done"
+                android:textColor="@color/base_black"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/plus_jakarta_sans_medium"
+                android:textSize="30sp"
+                app:layout_constraintTop_toBottomOf="@id/cv_rating_learner" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

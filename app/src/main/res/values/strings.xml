@@ -40,8 +40,42 @@
     <string name="tab_incoming_tutor">Incoming</string>
     <string name="tab_ongoing_tutor">Ongoing</string>
     <string name="tv_tutoring_done"><u>Selesai</u></string>
+    <string name="search_tutor">Temukan Tutor</string>
+    <string name="rb_male">Laki laki</string>
+    <string name="rb_female">Perempuan</string>
+    <string name="et_hint_domicile">Domisili</string>
+    <string name="et_language">Bahasa</string>
+    <string name="et_topic">Mata Pelajaran</string>
+    <string name="tv_choose_day">Pilihan Hari</string>
+    <string name="cb_senin">Senin</string>
+    <string name="cb_selasa">Selasa</string>
+    <string name="cb_rabu">Rabu</string>
+    <string name="cb_kamis">Kamis</string>
+    <string name="cb_jumat">Jumat</string>
+    <string name="cb_sabtu">Sabtu</string>
+    <string name="cb_minggu">Minggu</string>
+    <string name="tv_choose_time">Pilihan Waktu</string>
+    <string name="cb_clock_1">09.00 - 11.00</string>
+    <string name="cb_clock_2">11.00 - 13.00</string>
+    <string name="cb_clock_3">13.00 - 15.00</string>
+    <string name="cb_clock_4">15.00 - 17.00</string>
+    <string name="cb_clock_5">17.00 - 19.00</string>
+    <string name="cb_clock_6">19.00 - 21.00</string>
+    <string name="et_criteria">Masukkan kriteria mengajar</string>
+    <string name="btn_search_tutor">Cari dengan AI</string>
+    <string name="actv_jumlah_sesi">Jumlah Sesi</string>
 
     <string-array name="tingkat_pendidikan">
+        <item>SD/MI</item>
+        <item>SMP/MTS</item>
+        <item>SMA/MA/SMK</item>
+        <item>D1/D2/D3</item>
+        <item>D4/S1</item>
+        <item>S2</item>
+        <item>S3</item>
+    </string-array>
+
+    <string-array name="jumlah_sesi">
         <item>SD/MI</item>
         <item>SMP/MTS</item>
         <item>SMA/MA/SMK</item>

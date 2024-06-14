@@ -14,7 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingHorizontal="14dp"
-        android:paddingVertical="14dp">
+        android:paddingTop="10dp"
+        android:paddingBottom="14dp">
 
         <TextView
             android:id="@+id/tv_session_title"
@@ -32,7 +33,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:layout_marginEnd="8dp"
             android:fontFamily="@font/plus_jakarta_sans_regular"
             android:text="@string/session_location"
@@ -45,7 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:fontFamily="@font/plus_jakarta_sans_regular"
             android:text="@string/tv_time_session"
             app:layout_constraintStart_toEndOf="@+id/iv_ic_clock"
@@ -79,9 +80,10 @@
             android:backgroundTint="@color/tertiary_blue"
             android:fontFamily="@font/plus_jakarta_sans_regular"
             android:minHeight="0dp"
-            android:paddingHorizontal="12dp"
+            android:paddingHorizontal="10dp"
             android:paddingVertical="6dp"
             android:text="@string/direct_loc"
+            android:textSize="12sp"
             app:cornerRadius="11dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

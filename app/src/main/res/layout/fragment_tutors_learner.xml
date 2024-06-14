@@ -33,7 +33,7 @@
             android:id="@+id/rv_list_tutors"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp" />
+            android:layout_marginTop="7dp" />
 
     </LinearLayout>
 

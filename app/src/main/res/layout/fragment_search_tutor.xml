@@ -10,7 +10,7 @@
     tools:context=".ui.learner.tutors.search.SearchTutor">
 
     <Toolbar
-        android:id="@+id/tb_register_learner"
+        android:id="@+id/tb_search_tutor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:title="@string/search_tutor"

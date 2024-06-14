@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/validate_photo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_yellowish"
+    android:orientation="vertical"
+    tools:context=".ui.learner.tutors.tutoring.detail.DetailTutoring">
+
+    <Toolbar
+        android:id="@+id/tb_validate_photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:title="Validasi Kehadiran"
+        android:titleTextAppearance="@style/AppTheme.AppBarOverlay"
+        android:titleTextColor="@color/base_black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/plus_jakarta_sans_regular"
+            android:paddingHorizontal="20dp"
+            android:paddingBottom="15dp"
+            android:text="Validasi kehadiran lewat foto dari tutor-mu untuk memastikan sesi tutoring berjalan lancar" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/tertiary_blue"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="14dp">
+
+            <TextView
+                android:id="@+id/tv_tutor_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:text="@string/tv_tutor_name"
+                android:textColor="@color/base_pure_white"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_tutor_username"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/plus_jakarta_sans_medium"
+                android:text="@string/tv_tutor_username"
+                android:textColor="@color/material_dynamic_neutral70"
+                app:layout_constraintStart_toStartOf="@+id/tv_tutor_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_tutor_name" />
+
+            <TextView
+                android:id="@+id/tv_tutor_topic"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_medium"
+                android:text="@string/tv_tutor_topic"
+                android:textColor="@color/material_dynamic_neutral70"
+                app:layout_constraintStart_toStartOf="@+id/tv_tutor_username"
+                app:layout_constraintTop_toBottomOf="@+id/tv_tutor_username" />
+
+            <ImageButton
+                android:id="@+id/btn_chat"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:background="@drawable/rectangle_border_11"
+                android:backgroundTint="@color/tertiary_yellow"
+                android:contentDescription="@string/chat_button"
+                android:padding="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_chat"
+                app:cornerRadius="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/primary_yellow" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="15dp"
+            android:background="@color/partially_yellow"
+            android:orientation="vertical"
+            android:padding="14dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/photo_validation"
+                android:scaleType="centerCrop"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/tv_session_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:text="@string/session_number"
+                android:textColor="@color/tertiary_blue"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tv_session_location"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="4dp"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="@string/session_location"
+                app:drawableLeftCompat="@drawable/ic_location" />
+
+            <TextView
+                android:id="@+id/tv_session_date_time"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2dp"
+                android:drawablePadding="4dp"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="@string/tv_time_session"
+                app:drawableLeftCompat="@drawable/ic_clock_2" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/error"
+                android:drawableLeft="@drawable/close"
+                android:drawableTint="@color/base_pure_white"
+                android:paddingHorizontal="60dp"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="@string/decline"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/primary_yellow"
+                android:drawableLeft="@drawable/check"
+                android:drawableTint="@color/base_pure_white"
+                android:paddingHorizontal="60dp"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="@string/accept"
+                app:backgroundTint="@null" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

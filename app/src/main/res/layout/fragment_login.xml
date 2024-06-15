@@ -1,98 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:paddingHorizontal="20dp"
     tools:context=".ui.auth.login.Login">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:contentDescription="@string/img_login"
-        android:scaleType="fitCenter"
-        android:src="@drawable/login" />
-
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/plus_jakarta_sans_bold"
-        android:text="@string/tv_masuk"
-        android:textSize="35sp" />
+        android:orientation="vertical">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColorHint="@color/darker_yellow"
-        app:boxBackgroundColor="@color/partially_yellow"
-        app:boxBackgroundMode="outline"
-        app:boxCornerRadiusBottomEnd="20dp"
-        app:boxCornerRadiusBottomStart="20dp"
-        app:boxCornerRadiusTopEnd="20dp"
-        app:boxCornerRadiusTopStart="20dp"
-        app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color"
-        app:cursorColor="@color/darker_yellow"
-        app:hintTextColor="@color/darker_yellow">
 
-        <EditText
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:contentDescription="@string/img_login"
+            android:scaleType="fitCenter"
+            android:src="@drawable/login" />
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autofillHints="username"
-            android:fontFamily="@font/plus_jakarta_sans_regular"
-            android:hint="@string/et_hint_username"
-            android:inputType="text"
-            android:paddingVertical="10dp"
-            android:textSize="18sp" />
+            android:fontFamily="@font/plus_jakarta_sans_bold"
+            android:text="@string/tv_masuk"
+            android:textSize="35sp" />
 
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColorHint="@color/darker_yellow"
-        app:boxBackgroundColor="@color/partially_yellow"
-        app:boxBackgroundMode="outline"
-        app:boxCornerRadiusBottomEnd="20dp"
-        app:boxCornerRadiusBottomStart="20dp"
-        app:boxCornerRadiusTopEnd="20dp"
-        app:boxCornerRadiusTopStart="20dp"
-        app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color"
-        app:cursorColor="@color/darker_yellow"
-        app:hintTextColor="@color/darker_yellow">
-
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autofillHints="password"
+            android:textColorHint="@color/darker_yellow"
+            app:boxBackgroundColor="@color/partially_yellow"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color"
+            app:cursorColor="@color/darker_yellow"
+            app:hintTextColor="@color/darker_yellow">
+
+            <EditText
+                android:id="@+id/et_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="username"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:hint="@string/et_hint_username"
+                android:inputType="text"
+                android:paddingVertical="10dp"
+                android:textSize="18sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/darker_yellow"
+            app:boxBackgroundColor="@color/partially_yellow"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color"
+            app:cursorColor="@color/darker_yellow"
+            app:hintTextColor="@color/darker_yellow">
+
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="password"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:hint="@string/et_hint_password"
+                android:inputType="textVisiblePassword"
+                android:paddingVertical="10dp"
+                android:textSize="18sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:height="55dp"
+                android:backgroundTint="@color/primary_yellow"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:text="@string/btn_login"
+                android:textSize="18sp"
+                app:cornerRadius="18dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ProgressBar
+                android:id="@+id/pb_login"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:elevation="8dp"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/base_pure_white"
+                android:indeterminateTintMode="src_in"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_login"
+                app:layout_constraintEnd_toEndOf="@+id/btn_login"
+                app:layout_constraintStart_toStartOf="@+id/btn_login"
+                app:layout_constraintTop_toTopOf="@+id/btn_login" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_ask_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/plus_jakarta_sans_regular"
-            android:hint="@string/et_hint_password"
-            android:inputType="textVisiblePassword"
-            android:paddingVertical="10dp"
-            android:textSize="18sp" />
+            android:text="@string/tv_ask_login" />
+    </LinearLayout>
 
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <Button
-        android:id="@+id/btn_login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:height="55dp"
-        android:backgroundTint="@color/primary_yellow"
-        android:fontFamily="@font/plus_jakarta_sans_bold"
-        android:text="@string/btn_login"
-        android:textSize="18sp"
-        app:cornerRadius="18dp" />
-
-    <TextView
-        android:id="@+id/tv_ask_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/plus_jakarta_sans_regular"
-        android:text="@string/tv_ask_login" />
-
-</LinearLayout>
+</ScrollView>

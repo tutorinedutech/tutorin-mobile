@@ -82,6 +82,29 @@
     <string name="cb_clock_6">19.00 - 21.00</string>
     <string name="btn_search_tutor">Cari dengan AI</string>
     <string name="actv_jumlah_sesi">Jumlah Sesi</string>
+    <string name="iv_logotype">Logotype untuk tutorin apps</string>
+    <string name="tv_title_register_learner">Register Learner</string>
+    <string name="et_hint_re_password">Re Password</string>
+    <string name="tv_register_tutor">Register Tutor</string>
+    <string name="et_hint_notelp">Nomor Telepon</string>
+    <string name="actv_hint_pendidikan">Tingkat Pendidikan</string>
+    <string name="tv_jenis_kelamin">Jenis Kelamin</string>
+    <string name="tv_perempuan">Perempuan</string>
+    <string name="tv_laki_laki">Laki laki</string>
+    <string name="et_domisili">Domisili</string>
+    <string name="et_hint_bahasa">Bahasa</string>
+    <string name="et_hint_kriteria">Kriteria Mengajar</string>
+    <string name="et_hint_metode">Metode mengajar (online, offline, dst)</string>
+    <string name="tv_error_jenis_kelamin">Pilih jenis kelamin anda</string>
+    <string name="et_hint_name">Nama Lengkap</string>
+    <string name="et_nomor_akun">Nomor Akun</string>
+    <string name="tb_title_upload_ktp">Upload KTP</string>
+    <string name="btn_select_image">Galeri</string>
+    <string name="btn_camera">Kamera</string>
+    <string name="btn_finish">Selesaikan pendaftaran</string>
+    <string name="btn_end_test">Selesaikan test</string>
+    <string name="tb_title_detail_register">Detail Register</string>
+    <string name="btn_daftar">Daftar</string>
 
     <string-array name="tingkat_pendidikan">
         <item>SD/MI</item>

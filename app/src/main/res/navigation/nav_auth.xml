@@ -44,7 +44,13 @@
         android:id="@+id/registerLearner"
         android:name="com.dicoding.tutorinedutech.ui.auth.register.learner.RegisterLearner"
         android:label="fragment_register_learner"
-        tools:layout="@layout/fragment_register_learner" />
+        tools:layout="@layout/fragment_register_learner" >
+        <action
+            android:id="@+id/action_registerLearner_to_login2"
+            app:destination="@id/login2"
+            app:popUpTo="@id/auth_navigation"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/registerTutor"
         android:name="com.dicoding.tutorinedutech.ui.auth.register.tutor.RegisterTutor"
@@ -89,5 +95,20 @@
         android:id="@+id/registerTutorResult"
         android:name="com.dicoding.tutorinedutech.ui.auth.register.tutor.RegisterTutorResult"
         android:label="fragment_register_tutor_result"
-        tools:layout="@layout/fragment_register_tutor_result" />
+        tools:layout="@layout/fragment_register_tutor_result" >
+        <action
+            android:id="@+id/action_registerTutorResult_to_uploadKtp"
+            app:destination="@id/uploadKtp" />
+    </fragment>
+    <fragment
+        android:id="@+id/uploadKtp"
+        android:name="com.dicoding.tutorinedutech.ui.auth.register.tutor.UploadKtp"
+        android:label="fragment_upload_ktp"
+        tools:layout="@layout/fragment_upload_ktp" >
+        <action
+            android:id="@+id/action_uploadKtp_to_login2"
+            app:destination="@id/login2"
+            app:popUpTo="@id/auth_navigation"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>

@@ -125,10 +125,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/plus_jakarta_sans_bold"
-            android:text="Register Learner"
+            android:text="@string/tv_title_register_learner"
             android:textSize="35sp" />
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_username_learner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/darker_yellow"
@@ -143,6 +144,7 @@
             app:hintTextColor="@color/darker_yellow">
 
             <EditText
+                android:id="@+id/et_username_learner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="username"
@@ -155,6 +157,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_email_learner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/darker_yellow"
@@ -169,18 +172,20 @@
             app:hintTextColor="@color/darker_yellow">
 
             <EditText
+                android:id="@+id/et_email_learner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="emailAddress"
                 android:fontFamily="@font/plus_jakarta_sans_regular"
-                android:hint="Email"
-                android:inputType="text"
+                android:hint="@string/et_hint_email"
+                android:inputType="textEmailAddress"
                 android:paddingVertical="10dp"
                 android:textSize="18sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_password_learner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/darker_yellow"
@@ -195,6 +200,7 @@
             app:hintTextColor="@color/darker_yellow">
 
             <EditText
+                android:id="@+id/et_password_learner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="password"
@@ -207,6 +213,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_re_password_learner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/darker_yellow"
@@ -221,11 +228,12 @@
             app:hintTextColor="@color/darker_yellow">
 
             <EditText
+                android:id="@+id/et_re_password_learner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="password"
                 android:fontFamily="@font/plus_jakarta_sans_regular"
-                android:hint="Re Password"
+                android:hint="@string/et_hint_re_password"
                 android:inputType="textVisiblePassword"
                 android:paddingVertical="10dp"
                 android:textSize="18sp" />
@@ -278,10 +286,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/plus_jakarta_sans_bold"
-            android:text="Register Tutor"
+            android:text="@string/tv_register_tutor"
             android:textSize="35sp" />
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_username_tutor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/darker_yellow"
@@ -296,6 +305,7 @@
             app:hintTextColor="@color/darker_yellow">
 
             <EditText
+                android:id="@+id/et_username_tutor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="username"
@@ -308,6 +318,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_email_tutor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/darker_yellow"
@@ -322,18 +333,20 @@
             app:hintTextColor="@color/darker_yellow">
 
             <EditText
+                android:id="@+id/et_email_tutor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="emailAddress"
                 android:fontFamily="@font/plus_jakarta_sans_regular"
                 android:hint="@string/et_hint_email"
-                android:inputType="text"
+                android:inputType="textEmailAddress"
                 android:paddingVertical="10dp"
                 android:textSize="18sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_password_tutor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/darker_yellow"
@@ -348,6 +361,7 @@
             app:hintTextColor="@color/darker_yellow">
 
             <EditText
+                android:id="@+id/et_password_tutor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="password"
@@ -360,6 +374,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_re_password_tutor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/darker_yellow"
@@ -374,6 +389,7 @@
             app:hintTextColor="@color/darker_yellow">
 
             <EditText
+                android:id="@+id/et_re_password_tutor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="password"

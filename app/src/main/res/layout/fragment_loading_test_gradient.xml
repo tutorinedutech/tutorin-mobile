@@ -34,6 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="500dp"
         android:paddingTop="90dp"
+        android:paddingHorizontal="60dp"
         android:src="@drawable/gradient_loading_test_3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

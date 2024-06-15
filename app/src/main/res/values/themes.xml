@@ -1,8 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.TutorinEdutech" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/primary_yellow</item>
+        <item name="colorSecondary">@color/secondary_yellow</item>
+        <item name="colorTertiary">@color/tertiary_blue</item>
+        <item name="android:textColorHighlight">@color/secondary_yellow</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.DayNight.ActionBar" >
@@ -18,6 +20,19 @@
     <style name="circleImageViewProfile">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50dp</item>
+    </style>
+
+    <style name="Theme.App" parent="@android:style/Theme.DeviceDefault" />
+
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen.IconBackground">
+        <!-- Set the splash screen background to black -->
+        <item name="windowSplashScreenBackground">@color/tertiary_yellow</item>
+        <!-- Use windowSplashScreenAnimatedIcon to add a drawable or an animated
+             drawable. -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_screen</item>
+        <item name="windowSplashScreenIconBackgroundColor">@android:color/white</item>
+        <!-- Set the theme of the Activity that follows your splash screen. -->
+        <item name="postSplashScreenTheme">@style/Base.Theme.TutorinEdutech</item>
     </style>
 
     <style name="Theme.TutorinEdutech" parent="Base.Theme.TutorinEdutech" />

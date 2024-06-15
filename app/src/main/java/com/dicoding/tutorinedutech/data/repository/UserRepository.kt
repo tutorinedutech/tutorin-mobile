@@ -15,6 +15,7 @@ import com.dicoding.tutorinedutech.helper.ResultState
 import com.dicoding.tutorinedutech.utils.AppExecutor
 import com.dicoding.tutorinedutech.utils.PrefLearner
 import com.dicoding.tutorinedutech.utils.PrefTutor
+import com.google.gson.Gson
 import kotlinx.coroutines.runBlocking
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -46,6 +47,18 @@ class UserRepository private constructor(
 
     fun getTutor() =  tutorDatabase.tutorDao().getUser()
 
+    fun saveCreatedLearnerData(learner: Learner) = learnerDatabase.learnerDao().setCreateUser(learner)
+
+    fun getCreatedLeaernerData() = learnerDatabase.learnerDao().getCreateUser()
+
+    fun updateCreatedLearnerData(learner: Learner) = learnerDatabase.learnerDao().updateCreateUser(learner)
+
+    fun saveCreatedTutorData(tutor: Tutor) = tutorDatabase.tutorDao().setCreateUser(tutor)
+
+    fun getCreatedTutorData() = tutorDatabase.tutorDao().getCreateUser()
+
+    fun updateCreatedTutorData(tutor: Tutor) = tutorDatabase.tutorDao().updateCreateUser(tutor)
+
 
     fun login(username: String, password: String): LiveData<ResultState<ResponseSignIn>> {
         val result = MediatorLiveData<ResultState<ResponseSignIn>>()
@@ -55,7 +68,10 @@ class UserRepository private constructor(
         client.enqueue(object : Callback<ResponseSignIn> {
             override fun onResponse(call: Call<ResponseSignIn>, res: Response<ResponseSignIn>) {
                 if (res.body()?.status !== "success") {
-                    result.value = ResultState.Error(res.body()?.message.toString())
+                    val jsonInString = res.errorBody()?.string()
+                    val errorBody = Gson().fromJson(jsonInString, ResponseSignIn::class.java)
+                    val errorMessage = errorBody.message
+                    result.value = ResultState.Error(errorMessage)
                 } else {
                     result.value = ResultState.Success(res.body()!!)
                     val userData = res.body()?.data

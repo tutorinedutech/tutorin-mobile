@@ -15,8 +15,11 @@ data class Tutor(
     @field:SerializedName("email")
     val email: String? = null,
 
+    @field:SerializedName("password")
+    val password: String? = null,
+
     @field:SerializedName("username")
-    val username: String,
+    val username: String? = null,
 
     @field:SerializedName("name")
     val name: String? = null,
@@ -53,4 +56,38 @@ data class Tutor(
 
     @field:SerializedName("cv")
     val cv: String? = null,
+)
+
+data class TutorDetail(
+    @PrimaryKey val id: Int,
+
+    @field:SerializedName("userId")
+    val userId: Int,
+
+    @field:SerializedName("name")
+    val name: String? = null,
+
+    @field:SerializedName("phoneNumber")
+    val phoneNumber: String? = null,
+
+    @field:SerializedName("educationLevel")
+    val educationLevel: String? = null,
+
+    @field:SerializedName("gender")
+    val gender: String? = null,
+
+    @field:SerializedName("domicile")
+    val domicile: String? = null,
+
+    @field:SerializedName("languages")
+    val languages: String? = null,
+
+    @field:SerializedName("teachingCriteria")
+    val teachingApproach: String? = null,
+
+    @field:SerializedName("accountNumber")
+    val accountNumber: String? = null,
+
+    @field:SerializedName("learningMethod")
+    val learningMethod: String? = null,
 )

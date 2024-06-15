@@ -3,11 +3,10 @@ package com.dicoding.tutorinedutech.data.repository
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import com.dicoding.tutorinedutech.data.db.learner.Learner
-import com.dicoding.tutorinedutech.data.db.learner.LearnerDao
 import com.dicoding.tutorinedutech.data.db.learner.LearnerDatabase
 import com.dicoding.tutorinedutech.data.db.tutor.Tutor
-import com.dicoding.tutorinedutech.data.db.tutor.TutorDao
 import com.dicoding.tutorinedutech.data.db.tutor.TutorDatabase
+import com.dicoding.tutorinedutech.data.db.tutor.TutorDetail
 import com.dicoding.tutorinedutech.data.response.ResponseSignIn
 import com.dicoding.tutorinedutech.data.response.ResponseSignUp
 import com.dicoding.tutorinedutech.data.retrofit.ApiService
@@ -45,19 +44,24 @@ class UserRepository private constructor(
 
     fun getLearner() = learnerDatabase.learnerDao().getUser()
 
-    fun getTutor() =  tutorDatabase.tutorDao().getUser()
+    fun getTutor() = tutorDatabase.tutorDao().getUser()
 
-    fun saveCreatedLearnerData(learner: Learner) = learnerDatabase.learnerDao().setCreateUser(learner)
+    fun saveCreatedLearnerData(learner: Learner) =
+        appExecutor.diskIO.execute { learnerDatabase.learnerDao().setCreateUser(learner) }
 
     fun getCreatedLeaernerData() = learnerDatabase.learnerDao().getCreateUser()
 
-    fun updateCreatedLearnerData(learner: Learner) = learnerDatabase.learnerDao().updateCreateUser(learner)
+    fun updateCreatedLearnerData(learner: Learner) = appExecutor.diskIO.execute {
+        learnerDatabase.learnerDao().updateCreateUser(learner)
+    }
 
-    fun saveCreatedTutorData(tutor: Tutor) = tutorDatabase.tutorDao().setCreateUser(tutor)
+    fun saveCreatedTutorData(tutor: Tutor) =
+        appExecutor.diskIO.execute { tutorDatabase.tutorDao().setCreateUser(tutor) }
 
     fun getCreatedTutorData() = tutorDatabase.tutorDao().getCreateUser()
 
-    fun updateCreatedTutorData(tutor: Tutor) = tutorDatabase.tutorDao().updateCreateUser(tutor)
+    fun updateCreatedTutorData(tutor: TutorDetail) =
+        appExecutor.diskIO.execute { tutorDatabase.tutorDao().updateCreateUser(tutor) }
 
 
     fun login(username: String, password: String): LiveData<ResultState<ResponseSignIn>> {
@@ -67,7 +71,7 @@ class UserRepository private constructor(
 
         client.enqueue(object : Callback<ResponseSignIn> {
             override fun onResponse(call: Call<ResponseSignIn>, res: Response<ResponseSignIn>) {
-                if (res.body()?.status !== "success") {
+                if (res.body()?.status != "success") {
                     val jsonInString = res.errorBody()?.string()
                     val errorBody = Gson().fromJson(jsonInString, ResponseSignIn::class.java)
                     val errorMessage = errorBody.message
@@ -135,17 +139,18 @@ class UserRepository private constructor(
 
         client.enqueue(object : Callback<ResponseSignUp> {
             override fun onResponse(call: Call<ResponseSignUp>, res: Response<ResponseSignUp>) {
-                if (res.body()?.status !== "success") {
-                    result.value = ResultState.Error(res.body()?.message.toString())
+                if (res.body()?.status != "success" && res.code() != 201) {
+                    val jsonInString = res.errorBody()?.string()
+                    val errorBody = Gson().fromJson(jsonInString, ResponseSignUp::class.java)
+                    val errorMessage = errorBody.message
+                    result.value = ResultState.Error(errorMessage)
                 } else {
                     result.value = ResultState.Success(res.body()!!)
                 }
             }
-
             override fun onFailure(call: Call<ResponseSignUp>, t: Throwable) {
                 result.value = ResultState.Error(t.message.toString())
             }
-
         })
         return result
 
@@ -188,17 +193,18 @@ class UserRepository private constructor(
 
         client.enqueue(object : Callback<ResponseSignUp> {
             override fun onResponse(call: Call<ResponseSignUp>, res: Response<ResponseSignUp>) {
-                if (res.body()?.status !== "success") {
-                    result.value = ResultState.Error(res.body()?.message.toString())
+                if (res.body()?.status != "success" && res.code() != 201) {
+                    val jsonInString = res.errorBody()?.string()
+                    val errorBody = Gson().fromJson(jsonInString, ResponseSignUp::class.java)
+                    val errorMessage = errorBody.message
+                    result.value = ResultState.Error(errorMessage)
                 } else {
                     result.value = ResultState.Success(res.body()!!)
                 }
             }
-
             override fun onFailure(call: Call<ResponseSignUp>, t: Throwable) {
                 result.value = ResultState.Error(t.message.toString())
             }
-
         })
         return result
 

@@ -5,6 +5,7 @@ import com.dicoding.tutorinedutech.data.response.ResponseSignUp
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
+import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.Multipart
 import retrofit2.http.POST
@@ -35,24 +36,23 @@ interface ApiService {
     @FormUrlEncoded
     @POST("signuplearners")
     fun registerLearner(
-        @Part("email") email: String,
-        @Part("username") username: String,
-        @Part("password") password: String,
-        @Part("name") name: String,
-        @Part("phoneNumber") phoneNumber: String,
-        @Part("educationLevel") educationLevel: String,
-        @Part("gender") gender: String,
-        @Part("domicile") domicile: String,
+        @Field("email") email: String,
+        @Field("username") username: String,
+        @Field("password") password: String,
+        @Field("name") name: String,
+        @Field("phoneNumber") phoneNumber: String,
+        @Field("educationLevel") educationLevel: String,
+        @Field("gender") gender: String,
+        @Field("domicile") domicile: String,
     ): Call<ResponseSignUp>
 
     @FormUrlEncoded
     @POST("signin")
     fun login(
-        @Part("username") username: String,
-        @Part("password") password: String
+        @Field("username") username: String,
+        @Field("password") password: String
     ): Call<ResponseSignIn>
 
-    @FormUrlEncoded
     @POST("signout")
     fun logout()
 }

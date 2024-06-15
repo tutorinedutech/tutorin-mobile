@@ -24,11 +24,11 @@ interface TutorDao {
     fun updateUser(userObject: Tutor)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun setCreateUser(user: Tutor)
+    fun setCreateUser(userObject: Tutor)
 
     @Query("SELECT * FROM user_tutor WHERE id = 0 AND userId = 0")
     fun getCreateUser(): LiveData<Tutor?>
 
     @Update(entity = Tutor::class)
-    fun updateCreateUser(userObject: Tutor)
+    fun updateCreateUser(userObject: TutorDetail)
 }

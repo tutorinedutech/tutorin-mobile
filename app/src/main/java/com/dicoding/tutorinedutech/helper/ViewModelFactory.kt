@@ -11,6 +11,8 @@ import com.dicoding.tutorinedutech.ui.auth.register.learner.RegisterLearnerVM
 import com.dicoding.tutorinedutech.ui.auth.register.main.RegisterMainVM
 import com.dicoding.tutorinedutech.ui.auth.register.tutor.RegisterTestVM
 import com.dicoding.tutorinedutech.ui.auth.register.tutor.RegisterTutorVM
+import com.dicoding.tutorinedutech.ui.auth.register.tutor.UploadKtp
+import com.dicoding.tutorinedutech.ui.auth.register.tutor.UploadKtpVM
 
 class ViewModelFactory private constructor(
     private val userRepository: UserRepository
@@ -24,6 +26,7 @@ class ViewModelFactory private constructor(
                 isAssignableFrom(RegisterTestVM::class.java) -> RegisterTestVM(userRepository)
                 isAssignableFrom(RegisterLearnerVM::class.java) -> RegisterLearnerVM(userRepository)
                 isAssignableFrom(RegisterTutorVM::class.java) -> RegisterTutorVM(userRepository)
+                isAssignableFrom(UploadKtpVM::class.java) -> UploadKtpVM(userRepository)
 
                 else -> throw IllegalArgumentException("The viewmodel class: ${modelClass.name} has not been registered in ViewModelFactory")
             }

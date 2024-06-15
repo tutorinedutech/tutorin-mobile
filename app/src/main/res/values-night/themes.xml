@@ -1,11 +1,13 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Base.Theme.TutorinEdutech" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/primary_yellow</item>
+        <item name="colorSecondary">@color/secondary_yellow</item>
+        <item name="colorTertiary">@color/tertiary_blue</item>
+        <item name="android:textColorHighlight">@color/secondary_yellow</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.DayNight.ActionBar" >
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.DayNight.ActionBar">
         <item name="android:fontFamily">@font/plus_jakarta_sans_semibold</item>
         <item name="android:textSize">30sp</item>
     </style>

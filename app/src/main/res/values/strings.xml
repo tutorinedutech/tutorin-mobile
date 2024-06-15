@@ -65,6 +65,9 @@
     <string name="btn_search_tutor">Cari dengan AI</string>
     <string name="actv_jumlah_sesi">Jumlah Sesi</string>
     <string name="iv_logotype">Logotype untuk tutorin apps</string>
+    <string name="tv_title_register_learner">Register Learner</string>
+    <string name="et_hint_re_password">Re Password</string>
+    <string name="tv_register_tutor">Register Tutor</string>
 
     <string-array name="tingkat_pendidikan">
         <item>SD/MI</item>

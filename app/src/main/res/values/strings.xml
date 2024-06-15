@@ -64,6 +64,7 @@
     <string name="et_criteria">Masukkan kriteria mengajar</string>
     <string name="btn_search_tutor">Cari dengan AI</string>
     <string name="actv_jumlah_sesi">Jumlah Sesi</string>
+    <string name="iv_logotype">Logotype untuk tutorin apps</string>
 
     <string-array name="tingkat_pendidikan">
         <item>SD/MI</item>

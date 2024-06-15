@@ -20,5 +20,18 @@
         <item name="cornerSize">50dp</item>
     </style>
 
+    <style name="Theme.App" parent="@android:style/Theme.DeviceDefault" />
+
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen.IconBackground">
+        <!-- Set the splash screen background to black -->
+        <item name="windowSplashScreenBackground">@color/tertiary_yellow</item>
+        <!-- Use windowSplashScreenAnimatedIcon to add a drawable or an animated
+             drawable. -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_screen</item>
+        <item name="windowSplashScreenIconBackgroundColor">@android:color/white</item>
+        <!-- Set the theme of the Activity that follows your splash screen. -->
+        <item name="postSplashScreenTheme">@style/Base.Theme.TutorinEdutech</item>
+    </style>
+
     <style name="Theme.TutorinEdutech" parent="Base.Theme.TutorinEdutech" />
 </resources>

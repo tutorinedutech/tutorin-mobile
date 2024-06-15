@@ -2,11 +2,14 @@ package com.dicoding.tutorinedutech.ui.auth.register.tutor
 
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.dicoding.tutorinedutech.databinding.FragmentLoadingTestGradientBinding
 import jp.wasabeef.blurry.Blurry
 
@@ -47,5 +50,12 @@ class LoadingTestGradient : Fragment() {
                 }
             }
         }
+        Handler(Looper.getMainLooper()).postDelayed(
+            {
+                findNavController().navigate(LoadingTestGradientDirections.actionLoadingTestGradientToRegisterTutorResult())
+            },
+            2000
+        )
+
     }
 }

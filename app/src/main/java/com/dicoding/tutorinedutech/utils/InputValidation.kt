@@ -40,6 +40,26 @@ fun CharSequence.validateUsername(): String? {
                 else -> "Format username tidak valid."
             }
         }
+
         else -> null
+    }
+}
+
+fun CharSequence.validatePhoneNumber(): String? {
+    val phoneRegex = Regex("^\\+?[1-9]\\d{1,14}$")
+    return if (!phoneRegex.matches(this)) {
+        "Nomor telepon tidak valid."
+    } else {
+        null
+    }
+}
+
+fun CharSequence.validateMaxLength(maxLength: Int): String? {
+    return if (this.length > maxLength) {
+        "Maksimal karakter $maxLength"
+    } else if (this.isBlank()) {
+        "Karakter tidak boleh kosong"
+    } else {
+        null
     }
 }

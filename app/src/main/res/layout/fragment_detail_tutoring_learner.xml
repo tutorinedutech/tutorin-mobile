@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:background="@color/primary_yellow"
             android:paddingHorizontal="20dp"
-            android:paddingVertical="14dp">
+            android:paddingVertical="10dp">
 
             <ImageView
                 android:id="@+id/iv_icon_error"
@@ -64,6 +64,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
                 android:fontFamily="@font/plus_jakarta_sans_regular"
                 android:text="@string/tv_validation_desc"
                 android:textSize="12sp"
@@ -91,7 +92,8 @@
             android:layout_height="wrap_content"
             android:background="@color/tertiary_blue"
             android:paddingHorizontal="20dp"
-            android:paddingVertical="14dp">
+            android:paddingTop="8dp"
+            android:paddingBottom="10dp">
 
             <TextView
                 android:id="@+id/tv_tutor_name"
@@ -127,8 +129,8 @@
 
             <ImageButton
                 android:id="@+id/btn_chat"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:background="@drawable/rectangle_border_11"
                 android:backgroundTint="@color/tertiary_yellow"
@@ -148,8 +150,9 @@
             android:id="@+id/rv_list_tutoring"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:paddingHorizontal="20dp" />
+            android:layout_marginTop="7dp"
+            android:paddingHorizontal="20dp"
+            tools:listitem="@layout/item_detail_tutoring" />
 
     </LinearLayout>
 

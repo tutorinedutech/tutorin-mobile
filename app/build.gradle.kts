@@ -18,7 +18,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField("String", "BASE_API_URL", "\"\"")
+        buildConfigField("String", "BASE_API_URL", "\"https://tutorin-backend-dm6brrlaoq-et.a.run.app/\"")
     }
 
     buildTypes {
@@ -84,4 +84,9 @@ dependencies {
     //    For Database
     implementation(libs.androidx.room.ktx)
     ksp(libs.room.compiler)
+
+    //    For Camera
+    implementation(libs.androidx.camera.camera2)
+    implementation(libs.camera.lifecycle)
+    implementation(libs.camera.view)
 }

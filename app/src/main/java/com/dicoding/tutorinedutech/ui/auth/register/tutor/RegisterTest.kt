@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.dicoding.tutorinedutech.databinding.FragmentRegisterTestBinding
 import com.dicoding.tutorinedutech.helper.ViewModelFactory
 import com.dicoding.tutorinedutech.ui.auth.register.main.RegisterMainVM
@@ -27,5 +28,15 @@ class RegisterTest : Fragment() {
     ): View {
         _binding = FragmentRegisterTestBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.apply {
+            btnSelesaikanTest.setOnClickListener {
+                findNavController().navigate(RegisterTestDirections.actionRegisterTestToLoadingTestGradient())
+            }
+        }
     }
 }

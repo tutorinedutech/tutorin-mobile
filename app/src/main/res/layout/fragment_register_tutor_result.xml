@@ -28,13 +28,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/plus_jakarta_sans_regular"
-        android:text="Sekarang, lengkapi profilmu, jelajahi aplikasi Tutorin, dan temukan learner yang siap belajar bersamamu"
+        android:text="Tinggal 1 langkah lagi, siapkan KTP mu sebagai bukti bahwa kamu merupakan warga negara Indonesia"
         android:textAlignment="center"
         android:textColor="@color/base_black"
         android:textSize="16sp" />
 
     <Button
-        android:id="@+id/btn_mulai_test"
+        android:id="@+id/btn_upload_ktp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -42,7 +42,7 @@
         android:height="55dp"
         android:backgroundTint="@color/primary_yellow"
         android:fontFamily="@font/plus_jakarta_sans_bold"
-        android:text="Masuk akun"
+        android:text="Upload KTP"
         android:textSize="18sp"
         app:cornerRadius="15dp" />
 

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/result_tutors"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_yellowish"
+    android:orientation="vertical"
+    tools:context=".ui.learner.tutors.tutoring.detail.DetailTutoring">
+
+    <Toolbar
+        android:id="@+id/tb_result_tutors"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:title="@string/tb_result_tutors"
+        android:titleTextAppearance="@style/AppTheme.AppBarOverlay"
+        android:titleTextColor="@color/base_black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/plus_jakarta_sans_regular"
+            android:text="@string/result_desc_1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/plus_jakarta_sans_regular"
+            android:text="@string/result_desc_2" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/rectangle_border_14"
+            android:orientation="horizontal"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_medium"
+                android:text="@string/result_desc_3"
+                android:textAlignment="gravity"
+                android:textColor="@color/base_pure_white" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="7dp"
+                android:contentDescription="@string/ic_stars"
+                android:src="@drawable/ic_stars" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_suitable_result_list_tutors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_suitable_result_tutor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/rectangle_border_14"
+            android:backgroundTint="@color/secondary_yellow"
+            android:fontFamily="@font/plus_jakarta_sans_medium"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="5dp"
+            android:text="@string/result_desc_4"
+            android:textColor="@color/base_pure_white" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_unsuitable_result_list_tutors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_unsuitable_result_tutor" />
+
+    </LinearLayout>
+
+</LinearLayout>

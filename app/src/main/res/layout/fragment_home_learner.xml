@@ -1,14 +1,153 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_learner"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/base_yellowish"
+    android:orientation="vertical"
     tools:context=".ui.learner.home.HomeLearner">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <!--  TODO  -->
+        <!--  Background and textAppearance not working, adding item_menu for ai icon  -->
+        <!--  While search tutor, set searchBar visibility to gone  -->
+
+        <com.google.android.material.search.SearchBar
+            android:id="@+id/searchBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="0dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rectangle_border_21"
+            android:backgroundTint="@null"
+            android:hint="@string/searchbar_hint"
+            android:textAppearance="@font/plus_jakarta_sans_regular"
+            app:hideNavigationIcon="true"
+            app:strokeColor="@color/base_black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp">
+
+            <TextView
+                android:id="@+id/tv_home_learner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:text="@string/greeting_learner"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="@string/welcome_learner_1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="@string/welcome_learner_2" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                    android:text="@string/welcome_learner_3"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/number_session"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                    android:gravity="bottom"
+                    android:text="@string/total_session"
+                    android:textColor="@color/material_dynamic_neutral60"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:id="@+id/dv_progress_learning"
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_marginVertical="50dp"
+                    android:layout_marginStart="15dp"
+                    android:background="@color/base_black"
+                    android:backgroundTint="@color/base_black"
+                    app:layout_constraintBottom_toBottomOf="@+id/rv_activities"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/rv_activities" />
+
+                <ImageView
+                    android:id="@+id/iv_current_session"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:alpha="1"
+                    android:src="@drawable/circle_active"
+                    app:layout_constraintEnd_toStartOf="@+id/rv_activities"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="45dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_activities"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/dv_progress_learning"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:listitem="@layout/item_today_activity" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="@string/see_more_activities"
+                android:textAlignment="textEnd"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:text="@string/welcome_learner_4"
+                android:textSize="25sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_popular_tutors"
+                android:layout_marginBottom="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                tools:listitem="@layout/item_popular_tutor" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

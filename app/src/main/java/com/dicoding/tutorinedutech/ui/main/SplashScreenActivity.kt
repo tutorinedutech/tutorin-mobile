@@ -25,7 +25,6 @@ class SplashScreenActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
-
         Handler(Looper.getMainLooper()).postDelayed(
             {
                 val mainActivityIntent = Intent(this, MainActivity::class.java)
@@ -34,13 +33,13 @@ class SplashScreenActivity : AppCompatActivity() {
                         this,
                         Pair(binding.ivLogotype, "profile"),
                     )
-                startActivity(mainActivityIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION))
+                startActivity(mainActivityIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION), optionsCompat.toBundle())
             },
             SPLASH_LOGOTYPE_TIMEOUT
         )
     }
 
     companion object {
-        const val SPLASH_LOGOTYPE_TIMEOUT = 500L
+        const val SPLASH_LOGOTYPE_TIMEOUT = 800L
     }
 }

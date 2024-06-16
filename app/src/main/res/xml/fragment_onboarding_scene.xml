@@ -55,7 +55,7 @@
             android:layout_height="20dp"
             android:layout_marginBottom="35dp"
             motion:layout_constraintBottom_toTopOf="parent"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="10dp"
             motion:layout_constraintHorizontal_bias="0.5"
             motion:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="35dp" />
@@ -73,14 +73,16 @@
             motion:layout_constraintBottom_toBottomOf="@+id/btn_next"
             motion:layout_constraintTop_toTopOf="@+id/btn_next"
             motion:layout_constraintStart_toStartOf="parent"
-            android:id="@+id/btn_lewati" />
+            android:id="@+id/btn_lewati"
+            android:layout_marginStart="10dp" />
         <Constraint
             motion:layout_constraintEnd_toEndOf="parent"
             android:layout_width="60dp"
             android:layout_height="60dp"
             motion:layout_constraintTop_toBottomOf="parent"
             android:id="@+id/btn_next"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp" />
         <Constraint
             android:layout_width="0dp"
             android:layout_height="400dp"
@@ -104,10 +106,10 @@
             android:id="@+id/pos_1"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="10dp"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="35dp" >
+            android:layout_marginTop="15dp" >
             <CustomAttribute
                 motion:attributeName="crossfade"
                 motion:customFloatValue="1" />
@@ -115,22 +117,27 @@
         <Constraint
             android:id="@+id/img_tutorin"
             motion:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="80dp"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
-            motion:layout_constraintTop_toTopOf="parent" />
+            motion:layout_constraintTop_toTopOf="@id/pos_4"
+            android:layout_marginEnd="10dp"
+            motion:layout_constraintBottom_toBottomOf="@id/pos_4" />
         <Constraint
             android:layout_height="60dp"
             motion:layout_constraintEnd_toEndOf="parent"
             android:layout_width="60dp"
             android:id="@+id/btn_next"
-            motion:layout_constraintBottom_toBottomOf="parent" />
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="20dp" />
         <Constraint
             android:id="@+id/btn_lewati"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             motion:layout_constraintBottom_toBottomOf="@+id/btn_next"
             motion:layout_constraintTop_toTopOf="@+id/btn_next"
-            motion:layout_constraintStart_toStartOf="parent" />
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="10dp" />
         <Constraint
             android:layout_height="400dp"
             android:layout_width="0dp"
@@ -201,15 +208,16 @@
             android:layout_width="0dp"
             android:layout_height="400dp"
             motion:layout_constraintTop_toTopOf="parent"
-            motion:layout_constraintEnd_toStartOf="parent" />
+            motion:layout_constraintEnd_toStartOf="parent"
+            android:layout_marginTop="45dp" />
         <Constraint
             android:id="@+id/pos_1"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="10dp"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="35dp">
+            android:layout_marginTop="15dp">
             <CustomAttribute
                 motion:attributeName="crossfade"
                 motion:customFloatValue="0" />
@@ -243,7 +251,8 @@
             android:layout_width="0dp"
             android:layout_height="400dp"
             motion:layout_constraintTop_toTopOf="parent"
-            motion:layout_constraintEnd_toStartOf="parent" />
+            motion:layout_constraintEnd_toStartOf="parent"
+            android:layout_marginTop="45dp" />
         <Constraint
             android:id="@+id/img_onboarding_3"
             android:layout_width="0dp"
@@ -283,14 +292,18 @@
             motion:layout_constraintEnd_toEndOf="parent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            motion:layout_constraintTop_toBottomOf="parent" />
+            motion:layout_constraintTop_toBottomOf="parent"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="20dp" />
         <Constraint
             android:id="@+id/btn_next"
             motion:layout_constraintEnd_toEndOf="parent"
             android:layout_width="60dp"
             android:layout_height="60dp"
             motion:layout_constraintBottom_toBottomOf="parent"
-            android:alpha="1" />
+            android:alpha="1"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="10dp" />
         <Constraint
             android:id="@+id/btn_lewati"
             android:layout_width="wrap_content"
@@ -300,7 +313,8 @@
             motion:layout_constraintStart_toStartOf="parent"
             android:alpha="1"
             android:scaleX="1"
-            android:scaleY="1" />
+            android:scaleY="1"
+            android:layout_marginStart="10dp" />
     </ConstraintSet>
     <ConstraintSet
         android:id="@+id/onboarding_4"
@@ -310,7 +324,8 @@
             android:layout_width="0dp"
             android:layout_height="400dp"
             motion:layout_constraintTop_toTopOf="parent"
-            motion:layout_constraintEnd_toStartOf="parent" />
+            motion:layout_constraintEnd_toStartOf="parent"
+            android:layout_marginTop="45dp" />
         <Constraint
             android:id="@+id/img_onboarding_4"
             android:layout_width="0dp"
@@ -351,14 +366,17 @@
             motion:layout_constraintEnd_toEndOf="parent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            motion:layout_constraintBottom_toBottomOf="parent" />
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="20dp" />
         <Constraint
             android:id="@+id/btn_next"
             motion:layout_constraintEnd_toEndOf="parent"
             android:layout_width="60dp"
             android:layout_height="60dp"
             motion:layout_constraintBottom_toBottomOf="parent"
-            android:alpha="0" />
+            android:alpha="0"
+            android:layout_marginEnd="10dp" />
         <Constraint
             android:id="@+id/btn_lewati"
             android:layout_width="wrap_content"
@@ -368,7 +386,8 @@
             motion:layout_constraintStart_toStartOf="parent"
             android:alpha="0"
             android:scaleX="0.9"
-            android:scaleY="0.9" />
+            android:scaleY="0.9"
+            android:layout_marginStart="10dp" />
     </ConstraintSet>
     <Transition
         motion:constraintSetStart="@+id/onboarding_2"

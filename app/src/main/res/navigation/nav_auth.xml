@@ -12,7 +12,11 @@
         tools:layout="@layout/fragment_onboarding" >
         <action
             android:id="@+id/action_onboarding_to_login2"
-            app:destination="@id/login2" />
+            app:destination="@id/login2"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left_shrink"
+            app:popEnterAnim="@anim/pop_enter_grow"
+            app:popExitAnim="@anim/pop_exit_to_right" />
     </fragment>
     <fragment
         android:id="@+id/login2"
@@ -21,7 +25,11 @@
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_login2_to_registerMain"
-            app:destination="@id/registerMain" />
+            app:destination="@id/registerMain"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left_shrink"
+            app:popEnterAnim="@anim/pop_enter_grow"
+            app:popExitAnim="@anim/pop_exit_to_right" />
     </fragment>
     <fragment
         android:id="@+id/registerMain"
@@ -30,13 +38,23 @@
         tools:layout="@layout/fragment_register_main" >
         <action
             android:id="@+id/action_registerMain_to_registerTutor"
-            app:destination="@id/registerTutor" />
+            app:destination="@id/registerTutor"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left_shrink"
+            app:popEnterAnim="@anim/pop_enter_grow"
+            app:popExitAnim="@anim/pop_exit_to_right" />
         <action
             android:id="@+id/action_registerMain_to_registerLearner"
-            app:destination="@id/registerLearner" />
+            app:destination="@id/registerLearner"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left_shrink"
+            app:popEnterAnim="@anim/pop_enter_grow"
+            app:popExitAnim="@anim/pop_exit_to_right" />
         <action
             android:id="@+id/action_registerMain_to_login2"
             app:destination="@id/login2"
+            app:enterAnim="@anim/pop_enter_grow"
+            app:exitAnim="@anim/pop_exit_to_right"
             app:popUpTo="@id/auth_navigation"
             app:popUpToInclusive="true" />
     </fragment>
@@ -48,6 +66,8 @@
         <action
             android:id="@+id/action_registerLearner_to_login2"
             app:destination="@id/login2"
+            app:enterAnim="@anim/pop_enter_grow"
+            app:exitAnim="@anim/pop_exit_to_right"
             app:popUpTo="@id/auth_navigation"
             app:popUpToInclusive="true" />
     </fragment>
@@ -58,7 +78,11 @@
         tools:layout="@layout/fragment_register_tutor" >
         <action
             android:id="@+id/action_registerTutor_to_registerPreTest"
-            app:destination="@id/registerPreTest" />
+            app:destination="@id/registerPreTest"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left_shrink"
+            app:popEnterAnim="@anim/pop_enter_grow"
+            app:popExitAnim="@anim/pop_exit_to_right" />
     </fragment>
     <fragment
         android:id="@+id/loadingTestGradient"
@@ -68,7 +92,12 @@
         <action
             android:id="@+id/action_loadingTestGradient_to_registerTutorResult"
             app:destination="@id/registerTutorResult"
-            app:popUpTo="@id/auth_navigation"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left_shrink"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/pop_enter_grow"
+            app:popExitAnim="@anim/pop_exit_to_right"
+            app:popUpTo="@id/registerTest"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
@@ -78,7 +107,11 @@
         tools:layout="@layout/fragment_register_test" >
         <action
             android:id="@+id/action_registerTest_to_loadingTestGradient"
-            app:destination="@id/loadingTestGradient" />
+            app:destination="@id/loadingTestGradient"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left_shrink"
+            app:popEnterAnim="@anim/pop_enter_grow"
+            app:popExitAnim="@anim/pop_exit_to_right" />
     </fragment>
     <fragment
         android:id="@+id/registerPreTest"
@@ -88,6 +121,11 @@
         <action
             android:id="@+id/action_registerPreTest_to_registerTest"
             app:destination="@id/registerTest"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left_shrink"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/pop_enter_grow"
+            app:popExitAnim="@anim/pop_exit_to_right"
             app:popUpTo="@id/auth_navigation"
             app:popUpToInclusive="true" />
     </fragment>
@@ -98,7 +136,11 @@
         tools:layout="@layout/fragment_register_tutor_result" >
         <action
             android:id="@+id/action_registerTutorResult_to_uploadKtp"
-            app:destination="@id/uploadKtp" />
+            app:destination="@id/uploadKtp"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left_shrink"
+            app:popEnterAnim="@anim/pop_enter_grow"
+            app:popExitAnim="@anim/pop_exit_to_right" />
     </fragment>
     <fragment
         android:id="@+id/uploadKtp"
@@ -108,6 +150,8 @@
         <action
             android:id="@+id/action_uploadKtp_to_login2"
             app:destination="@id/login2"
+            app:enterAnim="@anim/pop_enter_grow"
+            app:exitAnim="@anim/pop_exit_to_right"
             app:popUpTo="@id/auth_navigation"
             app:popUpToInclusive="true" />
     </fragment>

@@ -97,11 +97,15 @@ class Login : Fragment() {
                                 is ResultState.Success -> {
                                     pbLogin.visibility = View.GONE
                                     btnLogin.text = resources.getString(R.string.btn_login)
-//                                    findNavController()
-//                                        .navigate(
-//                                            LoginDirections.(
-//                                            )
-//                                        )
+                                    if (result.data.data?.tutorId != null) {
+                                        findNavController().setGraph(R.navigation.nav_tutor)
+                                        findNavController().navigate(R.id.action_global_homeTutor)
+                                    }
+                                    else if (result.data.data?.learnerId !== null) {
+                                        findNavController().navigate(LoginDirections.actionLogin2ToRegisterMain())
+                                    } else {
+                                        setSnackBar(Event("Ada yang salah, silahkan login ulang!"))
+                                    }
                                 }
                             }
                         }

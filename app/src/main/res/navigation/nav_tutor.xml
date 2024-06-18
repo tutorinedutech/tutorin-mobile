@@ -12,10 +12,18 @@
         tools:layout="@layout/fragment_home_tutor" >
         <action
             android:id="@+id/action_homeTutor_to_detailTentoringTutor"
-            app:destination="@id/detailTentoringTutor" />
+            app:destination="@id/detailTentoringTutor"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left_shrink"
+            app:popEnterAnim="@anim/pop_enter_grow"
+            app:popExitAnim="@anim/pop_exit_to_right" />
         <action
             android:id="@+id/action_homeTutor_to_profileTutor"
-            app:destination="@id/profileTutor" />
+            app:destination="@id/profileTutor"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left_shrink"
+            app:popEnterAnim="@anim/pop_enter_grow"
+            app:popExitAnim="@anim/pop_exit_to_right" />
     </fragment>
     <fragment
         android:id="@+id/detailTentoringTutor"
@@ -27,4 +35,11 @@
         android:name="com.dicoding.tutorinedutech.ui.tutor.profile.ProfileTutor"
         android:label="fragment_profile_tutor"
         tools:layout="@layout/fragment_profile_tutor" />
+    <action
+        android:id="@+id/action_global_homeTutor"
+        app:destination="@id/homeTutor"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left_shrink"
+        app:popEnterAnim="@anim/pop_enter_grow"
+        app:popExitAnim="@anim/pop_exit_to_right" />
 </navigation>

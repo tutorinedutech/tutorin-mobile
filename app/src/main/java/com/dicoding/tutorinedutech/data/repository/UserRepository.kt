@@ -13,6 +13,7 @@ import com.dicoding.tutorinedutech.data.retrofit.ApiService
 import com.dicoding.tutorinedutech.helper.ResultState
 import com.dicoding.tutorinedutech.utils.AppExecutor
 import com.dicoding.tutorinedutech.utils.PrefLearner
+import com.dicoding.tutorinedutech.utils.PrefMain
 import com.dicoding.tutorinedutech.utils.PrefTutor
 import com.google.gson.Gson
 import kotlinx.coroutines.runBlocking
@@ -26,10 +27,15 @@ class UserRepository private constructor(
     private val apiService: ApiService,
     private val prefLearner: PrefLearner,
     private val prefTutor: PrefTutor,
+    private val prefMain: PrefMain,
     private val appExecutor: AppExecutor,
     private val learnerDatabase: LearnerDatabase,
     private val tutorDatabase: TutorDatabase
 ) {
+
+    fun getOnboardingStatus() = prefMain.getOnboardingStatus()
+
+    suspend fun setOnboardingStatus(status: Boolean = false) = prefMain.setOnboardingStatus(status)
 
     fun getLearnerToken() = prefLearner.getUserToken()
     fun getTutorToken() = prefTutor.getUserToken()
@@ -88,7 +94,7 @@ class UserRepository private constructor(
                             userId = userData.id,
                             username = userData.username
                         )
-                        tutorDatabase.tutorDao().setUser(userModel)
+                        appExecutor.diskIO.execute { tutorDatabase.tutorDao().setUser(userModel) }
                     } else if (userData?.learnerId != null) {
                         runBlocking {
                             saveLearnerToken(userData.token)
@@ -148,6 +154,7 @@ class UserRepository private constructor(
                     result.value = ResultState.Success(res.body()!!)
                 }
             }
+
             override fun onFailure(call: Call<ResponseSignUp>, t: Throwable) {
                 result.value = ResultState.Error(t.message.toString())
             }
@@ -202,6 +209,7 @@ class UserRepository private constructor(
                     result.value = ResultState.Success(res.body()!!)
                 }
             }
+
             override fun onFailure(call: Call<ResponseSignUp>, t: Throwable) {
                 result.value = ResultState.Error(t.message.toString())
             }
@@ -217,6 +225,7 @@ class UserRepository private constructor(
             apiService: ApiService,
             prefLearner: PrefLearner,
             prefTutor: PrefTutor,
+            prefMain: PrefMain,
             appExecutor: AppExecutor,
             learnerDatabase: LearnerDatabase,
             tutorDatabase: TutorDatabase
@@ -225,6 +234,7 @@ class UserRepository private constructor(
                 apiService,
                 prefLearner,
                 prefTutor,
+                prefMain,
                 appExecutor,
                 learnerDatabase,
                 tutorDatabase

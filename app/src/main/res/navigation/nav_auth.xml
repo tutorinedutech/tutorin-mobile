@@ -12,14 +12,14 @@
         tools:layout="@layout/fragment_onboarding" >
         <action
             android:id="@+id/action_onboarding_to_login2"
-            app:destination="@id/login2"
+            app:destination="@id/mainLogin"
             app:enterAnim="@anim/enter_from_right"
             app:exitAnim="@anim/exit_to_left_shrink"
             app:popEnterAnim="@anim/pop_enter_grow"
             app:popExitAnim="@anim/pop_exit_to_right" />
     </fragment>
     <fragment
-        android:id="@+id/login2"
+        android:id="@+id/mainLogin"
         android:name="com.dicoding.tutorinedutech.ui.auth.login.Login"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
@@ -52,7 +52,7 @@
             app:popExitAnim="@anim/pop_exit_to_right" />
         <action
             android:id="@+id/action_registerMain_to_login2"
-            app:destination="@id/login2"
+            app:destination="@id/mainLogin"
             app:enterAnim="@anim/pop_enter_grow"
             app:exitAnim="@anim/pop_exit_to_right"
             app:popUpTo="@id/auth_navigation"
@@ -65,7 +65,7 @@
         tools:layout="@layout/fragment_register_learner" >
         <action
             android:id="@+id/action_registerLearner_to_login2"
-            app:destination="@id/login2"
+            app:destination="@id/mainLogin"
             app:enterAnim="@anim/pop_enter_grow"
             app:exitAnim="@anim/pop_exit_to_right"
             app:popUpTo="@id/auth_navigation"
@@ -149,10 +149,17 @@
         tools:layout="@layout/fragment_upload_ktp" >
         <action
             android:id="@+id/action_uploadKtp_to_login2"
-            app:destination="@id/login2"
+            app:destination="@id/mainLogin"
             app:enterAnim="@anim/pop_enter_grow"
             app:exitAnim="@anim/pop_exit_to_right"
             app:popUpTo="@id/auth_navigation"
             app:popUpToInclusive="true" />
     </fragment>
+    <action
+        android:id="@+id/action_global_login"
+        app:destination="@id/mainLogin"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left_shrink"
+        app:popEnterAnim="@anim/pop_enter_grow"
+        app:popExitAnim="@anim/pop_exit_to_right" />
 </navigation>

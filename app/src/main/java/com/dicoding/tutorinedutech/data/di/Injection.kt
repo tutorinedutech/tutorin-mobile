@@ -7,8 +7,10 @@ import com.dicoding.tutorinedutech.data.repository.UserRepository
 import com.dicoding.tutorinedutech.data.retrofit.ApiConfig
 import com.dicoding.tutorinedutech.utils.AppExecutor
 import com.dicoding.tutorinedutech.utils.PrefLearner
+import com.dicoding.tutorinedutech.utils.PrefMain
 import com.dicoding.tutorinedutech.utils.PrefTutor
 import com.dicoding.tutorinedutech.utils.learnerDataStore
+import com.dicoding.tutorinedutech.utils.mainDataStore
 import com.dicoding.tutorinedutech.utils.tutorDataStore
 
 object Injection {
@@ -17,9 +19,10 @@ object Injection {
         val tutorDatabase = TutorDatabase.getDatabase(context)
         val prefTutor = PrefTutor.getInstance(context.tutorDataStore)
         val prefLearner = PrefLearner.getInstance(context.learnerDataStore)
+        val prefMain = PrefMain.getInstance(context.mainDataStore)
         val apiService = ApiConfig.getApiService(prefTutor, prefLearner)
         val appExecutor = AppExecutor()
 
-        return UserRepository.getInstance(apiService, prefLearner, prefTutor, appExecutor, learnerDatabase, tutorDatabase)
+        return UserRepository.getInstance(apiService, prefLearner, prefTutor, prefMain, appExecutor, learnerDatabase, tutorDatabase)
     }
 }

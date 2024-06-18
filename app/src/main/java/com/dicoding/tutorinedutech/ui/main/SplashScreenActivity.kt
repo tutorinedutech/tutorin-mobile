@@ -14,7 +14,6 @@ import androidx.navigation.findNavController
 import com.dicoding.tutorinedutech.R
 import com.dicoding.tutorinedutech.databinding.ActivitySplashScreenBinding
 import com.dicoding.tutorinedutech.helper.ViewModelFactory
-import com.dicoding.tutorinedutech.ui.auth.login.LoginVM
 
 class SplashScreenActivity : AppCompatActivity() {
     private var _binding: ActivitySplashScreenBinding? = null
@@ -43,21 +42,10 @@ class SplashScreenActivity : AppCompatActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed(
             {
-                splashScreenVM.getOnbaordingStatus().observe(this) { status ->
-                    if (status != null) {
-                        if (status == true) {
-                            val navController = findNavController(R.id.main_activity_container)
-                            navController.setGraph(R.navigation.nav_auth)
-                            navController.navigate(R.id.action_global_login)
-                        } else {
-                            startActivity(
-                                mainActivityIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION),
-                                optionsCompat.toBundle()
-                            )
-                        }
-                    }
-                }
-
+                startActivity(
+                    mainActivityIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION),
+                    optionsCompat.toBundle()
+                )
             },
             SPLASH_LOGOTYPE_TIMEOUT
         )

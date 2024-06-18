@@ -7,12 +7,13 @@ import androidx.lifecycle.viewmodel.CreationExtras
 import com.dicoding.tutorinedutech.data.di.Injection
 import com.dicoding.tutorinedutech.data.repository.UserRepository
 import com.dicoding.tutorinedutech.ui.auth.login.LoginVM
+import com.dicoding.tutorinedutech.ui.auth.onboarding.OnboardingVM
 import com.dicoding.tutorinedutech.ui.auth.register.learner.RegisterLearnerVM
 import com.dicoding.tutorinedutech.ui.auth.register.main.RegisterMainVM
 import com.dicoding.tutorinedutech.ui.auth.register.tutor.RegisterTestVM
 import com.dicoding.tutorinedutech.ui.auth.register.tutor.RegisterTutorVM
-import com.dicoding.tutorinedutech.ui.auth.register.tutor.UploadKtp
 import com.dicoding.tutorinedutech.ui.auth.register.tutor.UploadKtpVM
+import com.dicoding.tutorinedutech.ui.main.SplashScreenVM
 
 class ViewModelFactory private constructor(
     private val userRepository: UserRepository
@@ -22,6 +23,8 @@ class ViewModelFactory private constructor(
         with(modelClass) {
             when {
                 isAssignableFrom(LoginVM::class.java) -> LoginVM(userRepository)
+                isAssignableFrom(OnboardingVM::class.java) -> OnboardingVM(userRepository)
+                isAssignableFrom(SplashScreenVM::class.java) -> SplashScreenVM(userRepository)
                 isAssignableFrom(RegisterMainVM::class.java) -> RegisterMainVM(userRepository)
                 isAssignableFrom(RegisterTestVM::class.java) -> RegisterTestVM(userRepository)
                 isAssignableFrom(RegisterLearnerVM::class.java) -> RegisterLearnerVM(userRepository)

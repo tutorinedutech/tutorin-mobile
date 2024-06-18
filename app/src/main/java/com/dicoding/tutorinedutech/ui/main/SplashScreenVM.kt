@@ -6,5 +6,4 @@ import com.dicoding.tutorinedutech.data.repository.UserRepository
 
 class SplashScreenVM(private val userRepository: UserRepository) : ViewModel() {
 
-    fun getOnbaordingStatus() = userRepository.getOnboardingStatus().asLiveData()
 }

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_learner"
+    app:startDestination="@id/homeLearner">
+
+    <fragment
+        android:id="@+id/homeLearner"
+        android:name="com.dicoding.tutorinedutech.ui.learner.home.HomeLearner"
+        android:label="fragment_home_learner"
+        tools:layout="@layout/fragment_home_learner">
+        <action
+            android:id="@+id/action_homeLearner_to_searchTutor"
+            app:destination="@id/searchTutor"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left_shrink"
+            app:popEnterAnim="@anim/pop_enter_grow"
+            app:popExitAnim="@anim/pop_exit_to_right" />
+        <action
+            android:id="@+id/action_homeLearner_to_tutorsLearner"
+            app:destination="@id/tutorsLearner"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left_shrink"
+            app:popEnterAnim="@anim/pop_enter_grow"
+            app:popExitAnim="@anim/pop_exit_to_right" />
+        <action
+            android:id="@+id/action_homeLearner_to_detailTutor"
+            app:destination="@id/detailTutor"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left_shrink"
+            app:popEnterAnim="@anim/pop_enter_grow"
+            app:popExitAnim="@anim/pop_exit_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchTutor"
+        android:name="com.dicoding.tutorinedutech.ui.learner.tutors.search.SearchTutor"
+        android:label="fragment_search_tutor"
+        tools:layout="@layout/fragment_search_tutor">
+        <action
+            android:id="@+id/action_searchTutor_to_loadingSearch"
+            app:destination="@id/loadingSearch"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left_shrink"
+            app:popEnterAnim="@anim/pop_enter_grow"
+            app:popExitAnim="@anim/pop_exit_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/loadingSearch"
+        android:name="com.dicoding.tutorinedutech.ui.learner.tutors.search.LoadingSearch"
+        android:label="LoadingSearch"
+        tools:layout="@layout/fragment_loading_search">
+        <action
+            android:id="@+id/action_loadingSearch_to_listTutors"
+            app:destination="@id/listTutors"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left_shrink"
+            app:popEnterAnim="@anim/pop_enter_grow"
+            app:popExitAnim="@anim/pop_exit_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailTutoring"
+        android:name="com.dicoding.tutorinedutech.ui.learner.tutors.tutoring.detail.DetailTutoring"
+        android:label="fragment_list_tutors"
+        tools:layout="@layout/fragment_detail_tutoring_learner">
+        <argument
+            android:name="session_id"
+            android:defaultValue='default'
+            app:argType="string" />
+        <action
+            android:id="@+id/action_detailTutoring_to_validatePhoto"
+            app:destination="@id/validatePhoto"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left_shrink"
+            app:popEnterAnim="@anim/pop_enter_grow"
+            app:popExitAnim="@anim/pop_exit_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/listTutors"
+        android:name="com.dicoding.tutorinedutech.ui.learner.tutors.result.ListTutors"
+        android:label="ListTutors"
+        tools:layout="@layout/fragment_list_tutors">
+        <action
+            android:id="@+id/action_listTutors_to_detailTutor"
+            app:destination="@id/detailTutor"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left_shrink"
+            app:popEnterAnim="@anim/pop_enter_grow"
+            app:popExitAnim="@anim/pop_exit_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailTutor"
+        android:name="com.dicoding.tutorinedutech.ui.learner.tutors.result.detail.DetailTutor"
+        android:label="DetailTutor"
+        tools:layout="@layout/fragment_detail_tutor">
+        <action
+            android:id="@+id/action_detailTutor_to_ratingTutoring"
+            app:destination="@id/ratingTutoring"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left_shrink"
+            app:popEnterAnim="@anim/pop_enter_grow"
+            app:popExitAnim="@anim/pop_exit_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/ratingTutoring"
+        android:name="com.dicoding.tutorinedutech.ui.learner.tutors.tutoring.rating.RatingTutoring"
+        android:label="RatingTutoring"
+        tools:layout="@layout/fragment_rating_tutoring">
+        <action
+            android:id="@+id/action_ratingTutoring_to_homeLearner"
+            app:destination="@id/homeLearner"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left_shrink"
+            app:popEnterAnim="@anim/pop_enter_grow"
+            app:popExitAnim="@anim/pop_exit_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/tutorsLearner"
+        android:name="com.dicoding.tutorinedutech.ui.learner.tutors.TutorsLearner"
+        android:label="fragment_tutors_learner"
+        tools:layout="@layout/fragment_tutors_learner">
+        <action
+            android:id="@+id/action_tutorsLearner_to_validatePhoto"
+            app:destination="@id/validatePhoto"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left_shrink"
+            app:popEnterAnim="@anim/pop_enter_grow"
+            app:popExitAnim="@anim/pop_exit_to_right" />
+        <action
+            android:id="@+id/action_tutorsLearner_to_detailTutoring"
+            app:destination="@id/detailTutoring"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left_shrink"
+            app:popEnterAnim="@anim/pop_enter_grow"
+            app:popExitAnim="@anim/pop_exit_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/validatePhoto"
+        android:name="com.dicoding.tutorinedutech.ui.learner.tutors.tutoring.validate.ValidatePhoto"
+        android:label="ValidatePhoto"
+        tools:layout="@layout/fragment_validate_photo">
+
+        <argument
+            android:name="validationData"
+            app:argType="com.dicoding.tutorinedutech.utils.ValidationPhotoData" />
+        <action
+            android:id="@+id/action_validatePhoto_to_tutorsLearner"
+            app:destination="@id/tutorsLearner"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left_shrink"
+            app:popEnterAnim="@anim/pop_enter_grow"
+            app:popExitAnim="@anim/pop_exit_to_right" />
+
+    </fragment>
+
+    <action
+        android:id="@+id/action_global_homeLearner"
+        app:destination="@id/homeLearner"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left_shrink"
+        app:popEnterAnim="@anim/pop_enter_grow"
+        app:popExitAnim="@anim/pop_exit_to_right" />
+
+</navigation>

@@ -7,12 +7,14 @@ import androidx.room.RoomDatabase
 import com.dicoding.tutorinedutech.data.db.learner.LearnerDatabase
 
 @Database(
-    entities = [Tutor::class],
+    entities = [Tutor::class, Classes::class, ClassDetail::class],
     version = 1,
     exportSchema = false
 )
 abstract class TutorDatabase : RoomDatabase() {
     abstract fun tutorDao(): TutorDao
+    abstract fun classesDao(): ClassDao
+    abstract fun ClassDetailDao(): ClassDetailDao
 
     companion object {
         @Volatile

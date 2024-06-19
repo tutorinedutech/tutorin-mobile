@@ -48,7 +48,7 @@
                 android:layout_marginVertical="3dp"
                 android:fontFamily="@font/plus_jakarta_sans_semibold"
                 android:textColor="@color/base_pure_white"
-                tools:text="Akan Berlangsung" />
+                android:text="Akan Berlangsung" />
         </androidx.cardview.widget.CardView>
 
         <ImageView

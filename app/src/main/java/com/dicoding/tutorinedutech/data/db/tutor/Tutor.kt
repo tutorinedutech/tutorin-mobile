@@ -58,7 +58,7 @@ data class Tutor(
     val cv: String? = null,
 )
 
-data class TutorDetail(
+data class TutorUpdateonCreate(
     @PrimaryKey val id: Int,
 
     @field:SerializedName("userId")
@@ -90,4 +90,20 @@ data class TutorDetail(
 
     @field:SerializedName("learningMethod")
     val learningMethod: String? = null,
+)
+
+data class TutorUpdateHome(
+    @PrimaryKey val id: Int? = null,
+
+    @field:SerializedName("userId")
+    val userId: Int? = null,
+
+    @field:SerializedName("username")
+    val username: String? = null,
+
+    @field:SerializedName("name")
+    val name: String? = null,
+
+    @field:SerializedName("profilePicture")
+    val profilePicture: String? = null,
 )

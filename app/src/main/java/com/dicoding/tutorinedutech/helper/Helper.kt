@@ -15,19 +15,23 @@ import java.util.Locale
 
 object Helper {
 
-    fun formatDate(date: Date, format: String = "dd-MM-yyyy"): String {
+    // TODO: update safeDate, try not to use safeDate (use the real time from BE)
+    fun formatDate(date: Date?, format: String = "dd-MM-yyyy"): String {
+        val safeDate = date ?: Date()
         val dateFormat = SimpleDateFormat(format, Locale.getDefault())
-        return dateFormat.format(date)
+        return dateFormat.format(safeDate)
     }
 
-    fun formatTime(date: Date, format: String = "HH.MM"): String {
+    fun formatTime(date: Date?, format: String = "HH.MM"): String {
+        val safeDate = date ?: Date()
         val timeFormat = SimpleDateFormat(format, Locale.getDefault())
-        return timeFormat.format(date)
+        return timeFormat.format(safeDate)
     }
 
-    fun formatDateTime(date: Date, format: String = "dd MMMM yyyy  HH.MM"): String {
+    fun formatDateTime(date: Date?, format: String = "dd MMMM yyyy  HH.MM"): String {
+        val safeDate = date ?: Date()
         val dateTimeFormat = SimpleDateFormat(format, Locale.getDefault())
-        return dateTimeFormat.format(date)
+        return dateTimeFormat.format(safeDate)
     }
 
     suspend fun downloadAndRenderPdf(context: Context, pdfUrl: String): Bitmap? {

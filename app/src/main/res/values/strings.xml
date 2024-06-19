@@ -49,7 +49,7 @@
     <string name="greeting_learner">Selamat Datang, %1$s</string>
     <string name="welcome_learner_1">Mau belajar apa hari ini?</string>
     <string name="welcome_learner_2">AI kami akan mencocokkan kamu dengan mentor yang paling sesuai dengan kebutuhanmu, cari mentor dengan kriteria favoritmu dengan sangat mudah sekarang.</string>
-    <string name="welcome_learner_3">Jadwal Hari Ini</string>
+    <string name="welcome_learner_3">Jadwal Kamu</string>
     <string name="welcome_learner_4">Tutor Terpopuler</string>
     <string name="total_session">%d Sesi</string>
     <string name="see_more_activities"><u>Lihat Semua Jadwal</u></string>
@@ -153,6 +153,8 @@
     <string name="result_desc_4">Mentor Lainnya</string>
     <string name="tutor_education">S1 - Sistem Informasi</string>
     <string name="tv_tutor_rating">4.8/5</string>
+    <string name="tv_no_session">Belum ada sesi tutoring</string>
+    <string name="btn_submit_rating">Berikan Rating</string>
     <string name="tb_title_update_password">Update Password</string>
     <string name="tv_tips_lupa_password">Jangan lupa untuk menyimpan kata sandi anda yang baru, apabila terlupa, kalian juga bisa meresetnya pada bagian Lupa Password</string>
     <string name="btn_simpan">Simpan</string>

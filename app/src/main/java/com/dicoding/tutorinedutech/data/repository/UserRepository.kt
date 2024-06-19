@@ -6,7 +6,7 @@ import com.dicoding.tutorinedutech.data.db.learner.Learner
 import com.dicoding.tutorinedutech.data.db.learner.LearnerDatabase
 import com.dicoding.tutorinedutech.data.db.tutor.Tutor
 import com.dicoding.tutorinedutech.data.db.tutor.TutorDatabase
-import com.dicoding.tutorinedutech.data.db.tutor.TutorDetail
+import com.dicoding.tutorinedutech.data.db.tutor.TutorUpdateonCreate
 import com.dicoding.tutorinedutech.data.response.ResponseSignIn
 import com.dicoding.tutorinedutech.data.response.ResponseSignUp
 import com.dicoding.tutorinedutech.data.retrofit.ApiService
@@ -50,7 +50,9 @@ class UserRepository private constructor(
 
     fun getLearner() = learnerDatabase.learnerDao().getUser()
 
-    fun getTutor() = tutorDatabase.tutorDao().getUser()
+    fun getTutor(): LiveData<Tutor?> {
+        return tutorDatabase.tutorDao().getUser()
+    }
 
     fun saveCreatedLearnerData(learner: Learner) =
         appExecutor.diskIO.execute { learnerDatabase.learnerDao().setCreateUser(learner) }
@@ -66,7 +68,7 @@ class UserRepository private constructor(
 
     fun getCreatedTutorData() = tutorDatabase.tutorDao().getCreateUser()
 
-    fun updateCreatedTutorData(tutor: TutorDetail) =
+    fun updateCreatedTutorData(tutor: TutorUpdateonCreate) =
         appExecutor.diskIO.execute { tutorDatabase.tutorDao().updateCreateUser(tutor) }
 
 
@@ -104,7 +106,7 @@ class UserRepository private constructor(
                             userId = userData.id,
                             username = userData.username
                         )
-                        learnerDatabase.learnerDao().setUser(userModel)
+                        appExecutor.diskIO.execute { learnerDatabase.learnerDao().setUser(userModel) }
                     } else {
                         result.value = ResultState.Error("Invalid token data")
                     }

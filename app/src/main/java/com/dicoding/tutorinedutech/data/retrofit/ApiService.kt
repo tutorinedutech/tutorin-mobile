@@ -13,6 +13,7 @@ import com.dicoding.tutorinedutech.data.response.ResponseProfileTutor
 import com.dicoding.tutorinedutech.data.response.ResponseProfileTutorFile
 import com.dicoding.tutorinedutech.data.response.ResponseSignIn
 import com.dicoding.tutorinedutech.data.response.ResponseSignUp
+import com.dicoding.tutorinedutech.data.response.ResponseUpdateDateTimeTutoring
 import com.dicoding.tutorinedutech.data.response.ResponseUpdateDetailClass
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -29,6 +30,7 @@ import retrofit2.http.POST
 import retrofit2.http.PUT
 import retrofit2.http.Part
 import retrofit2.http.Path
+import java.util.Date
 import retrofit2.http.Query
 
 interface ApiService {
@@ -119,6 +121,14 @@ interface ApiService {
         @Field("comment") comment: String,
         @Path("tutorId") tutorId: Int
     ): Call<ResponseRatingTutoring>
+
+    @FormUrlEncoded
+    @PUT("class-details/detail-tutoring/{classDetailId}/schedule")
+    fun updateDateTimeTutoring(
+        @Field("timestamp") timestamp: Date,
+        @Field("location") location: String,
+        @Path("classDetailId") classDetailId: Int
+    ): Call<ResponseUpdateDateTimeTutoring>
 
     @GET("tutors/home")
     fun getHomeTutor(): Call<ResponseHomeTutor>

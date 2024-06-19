@@ -15,6 +15,8 @@ import com.dicoding.tutorinedutech.helper.Helper
 
 class TutoringAdapter :
     ListAdapter<ClassDetailsItem, TutoringAdapter.MyViewHolder>(DIFF_CALLBACK) {
+    private lateinit var onItemClickCallback: OnItemClickCallback
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val binding =
             ItemDetailTutoringBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -24,6 +26,10 @@ class TutoringAdapter :
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val detailLearning = getItem(position)
         holder.bind(detailLearning, holder.itemView.context)
+
+        holder.binding.btnComplete.setOnClickListener {
+            onItemClickCallback.onItemClicked(detailLearning.id)
+        }
     }
 
     class MyViewHolder(val binding: ItemDetailTutoringBinding) :
@@ -54,6 +60,14 @@ class TutoringAdapter :
                 )
             }
         }
+    }
+
+    fun setOnClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
+
+    interface OnItemClickCallback {
+        fun onItemClicked(classDetailId: Int)
     }
 
     companion object {

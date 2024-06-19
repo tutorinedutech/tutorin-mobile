@@ -54,7 +54,7 @@
             android:layout_gravity="center"
             android:isIndicator="false"
             android:numStars="5"
-            android:progressBackgroundTint="@color/material_dynamic_neutral60"
+            android:progressBackgroundTint="@color/base_gray"
             android:progressTint="@color/secondary_yellow"
             android:stepSize="1" />
 
@@ -81,7 +81,7 @@
                     android:text="Seberapa puas pengalaman anda belajar bersama dengan Tutor?" />
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/et_review"
+                    android:id="@+id/til_review"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -94,6 +94,7 @@
                     app:boxStrokeColor="@null">
 
                     <EditText
+                        android:id="@+id/et_review"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/plus_jakarta_sans_regular"
@@ -119,18 +120,43 @@
 
         </androidx.cardview.widget.CardView>
 
-        <Button
-            android:id="@+id/btn_submit_rating"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            android:height="55dp"
-            android:backgroundTint="@color/primary_yellow"
-            android:fontFamily="@font/plus_jakarta_sans_bold"
-            android:text="Berikan Rating"
-            android:textSize="18sp"
-            app:cornerRadius="18dp" />
+            android:layout_marginBottom="15dp">
+
+            <ProgressBar
+                android:id="@+id/pb_rating_tutoring"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:elevation="8dp"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/base_pure_white"
+                android:indeterminateTintMode="src_in"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/btn_submit_rating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="55dp"
+                android:backgroundTint="@color/primary_yellow"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:text="@string/btn_submit_rating"
+                android:textSize="18sp"
+                app:cornerRadius="18dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 

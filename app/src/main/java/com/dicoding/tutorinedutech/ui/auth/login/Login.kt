@@ -14,6 +14,8 @@ import com.dicoding.tutorinedutech.databinding.FragmentLoginBinding
 import com.dicoding.tutorinedutech.helper.ResultState
 import com.dicoding.tutorinedutech.helper.ViewModelFactory
 import com.dicoding.tutorinedutech.utils.Event
+import com.dicoding.tutorinedutech.utils.UserType
+import com.dicoding.tutorinedutech.utils.UserTypeManager
 import com.dicoding.tutorinedutech.utils.validatePassword
 import com.dicoding.tutorinedutech.utils.validateUsername
 import com.google.android.material.snackbar.Snackbar
@@ -103,21 +105,29 @@ class Login : Fragment() {
                                 setSnackBar(Event(result.error))
                             }
 
-                            is ResultState.Success -> {
-                                pbLogin.visibility = View.GONE
-                                btnLogin.text = resources.getString(R.string.btn_login)
-                                if (result.data.data?.tutorId != null) {
-                                    findNavController().setGraph(R.navigation.nav_tutor)
-                                    findNavController().navigate(R.id.action_global_homeTutor)
-                                } else if (result.data.data?.learnerId !== null) {
-                                    findNavController().navigate(LoginDirections.actionLogin2ToRegisterMain())
-                                } else {
-                                    setSnackBar(Event("Ada yang salah, silahkan login ulang!"))
+                                is ResultState.Success -> {
+                                    pbLogin.visibility = View.GONE
+                                    btnLogin.text = resources.getString(R.string.btn_login)
+
+                                    val userType = if (result.data.data?.learnerId != null) {
+                                        UserType.LEARNER
+                                    } else {
+                                        UserType.TUTOR
+                                    }
+
+                                    UserTypeManager.saveUserType(requireContext(), userType)
+
+                                    if (userType == UserType.LEARNER) {
+                                        findNavController().setGraph(R.navigation.nav_learner)
+                                        findNavController().navigate(R.id.action_global_homeLearner)
+                                    } else {
+                                        findNavController().setGraph(R.navigation.nav_tutor)
+                                        findNavController().navigate(R.id.action_global_homeTutor)
+                                    }
                                 }
                             }
                         }
                     }
-                }
         }
     }
 
@@ -130,8 +140,8 @@ class Login : Fragment() {
                 }
 
                 "learner" -> {
-                    // Todo: Buat redirect ketika hasil check merupakan learner
-                    throw NotImplementedError("Redirect ke Home learner belum dibuat")
+                    findNavController().setGraph(R.navigation.nav_learner)
+                    findNavController().navigate(R.id.action_global_homeLearner)
                 }
 
                 else -> {

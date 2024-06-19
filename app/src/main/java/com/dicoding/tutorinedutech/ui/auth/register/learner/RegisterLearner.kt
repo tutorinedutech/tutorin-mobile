@@ -15,8 +15,6 @@ import com.dicoding.tutorinedutech.R
 import com.dicoding.tutorinedutech.databinding.FragmentRegisterLearnerBinding
 import com.dicoding.tutorinedutech.helper.ResultState
 import com.dicoding.tutorinedutech.helper.ViewModelFactory
-import com.dicoding.tutorinedutech.ui.auth.register.tutor.RegisterTutorDirections
-import com.dicoding.tutorinedutech.ui.auth.register.tutor.UploadKtpDirections
 import com.dicoding.tutorinedutech.utils.Event
 import com.dicoding.tutorinedutech.utils.validateMaxLength
 import com.dicoding.tutorinedutech.utils.validatePhoneNumber

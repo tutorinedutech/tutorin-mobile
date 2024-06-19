@@ -8,6 +8,7 @@ import com.dicoding.tutorinedutech.data.response.ResponseDetailTutor
 import com.dicoding.tutorinedutech.data.response.ResponseHomeLearner
 import com.dicoding.tutorinedutech.data.response.ResponseRatingTutoring
 import com.dicoding.tutorinedutech.data.response.ResponseSearchTutor
+import com.dicoding.tutorinedutech.data.response.ResponseUpdateDateTimeTutoring
 import com.dicoding.tutorinedutech.data.response.ResponseUpdateDetailClass
 import com.dicoding.tutorinedutech.data.retrofit.ApiService
 import com.dicoding.tutorinedutech.helper.ResultState
@@ -16,6 +17,7 @@ import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.Date
 
 class LearnerRepository private constructor(
     private val apiService: ApiService,
@@ -245,6 +247,39 @@ class LearnerRepository private constructor(
             override fun onFailure(call: Call<ResponseRatingTutoring>, t: Throwable) {
                 result.value = ResultState.Error(t.message.toString())
             }
+        })
+        return result
+    }
+
+    fun detailDateTimeClassTutoring(
+        timestamp: Date,
+        location: String,
+        classDetailId: Int
+    ): LiveData<ResultState<ResponseUpdateDateTimeTutoring>> {
+        val result = MediatorLiveData<ResultState<ResponseUpdateDateTimeTutoring>>()
+        result.value = ResultState.Loading
+        val client = apiService.updateDateTimeTutoring(timestamp, location, classDetailId)
+
+        client.enqueue(object : Callback<ResponseUpdateDateTimeTutoring> {
+            override fun onResponse(
+                call: Call<ResponseUpdateDateTimeTutoring>,
+                res: Response<ResponseUpdateDateTimeTutoring>
+            ) {
+                if (res.body()?.status != "success") {
+                    val jsonInString = res.errorBody()?.string()
+                    val errorBody =
+                        Gson().fromJson(jsonInString, ResponseUpdateDateTimeTutoring::class.java)
+                    val errorMessage = errorBody.message
+                    result.value = ResultState.Error(errorMessage)
+                } else {
+                    result.value = ResultState.Success(res.body()!!)
+                }
+            }
+
+            override fun onFailure(call: Call<ResponseUpdateDateTimeTutoring>, t: Throwable) {
+                result.value = ResultState.Error(t.message.toString())
+            }
+
         })
         return result
     }

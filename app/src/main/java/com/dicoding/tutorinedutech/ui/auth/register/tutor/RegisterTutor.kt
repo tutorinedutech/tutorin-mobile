@@ -152,7 +152,7 @@ class RegisterTutor : Fragment() {
                 }
 
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                    showInputError("kriteria", s?.validateMaxLength(500))
+                    showInputError("kriteria", s?.validateMaxLength(190))
                 }
 
                 override fun afterTextChanged(s: Editable?) {}

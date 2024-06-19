@@ -1,14 +1,12 @@
 package com.dicoding.tutorinedutech.ui.tutor.home.ongoing
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.dicoding.tutorinedutech.data.db.tutor.Classes
 import com.dicoding.tutorinedutech.data.db.tutor.ClassesAndClassDetail
 import com.dicoding.tutorinedutech.databinding.FragmentTabOngoingTutorBinding
 import com.dicoding.tutorinedutech.helper.ViewModelFactory

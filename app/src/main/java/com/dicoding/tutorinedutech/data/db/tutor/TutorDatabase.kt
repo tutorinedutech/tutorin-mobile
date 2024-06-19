@@ -4,7 +4,6 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.dicoding.tutorinedutech.data.db.learner.LearnerDatabase
 
 @Database(
     entities = [Tutor::class, Classes::class, ClassDetail::class, ClassIncoming::class],

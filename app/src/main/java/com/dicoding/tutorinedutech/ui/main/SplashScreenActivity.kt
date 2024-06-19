@@ -10,8 +10,6 @@ import androidx.core.app.ActivityOptionsCompat
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.util.Pair
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
-import com.dicoding.tutorinedutech.R
 import com.dicoding.tutorinedutech.databinding.ActivitySplashScreenBinding
 import com.dicoding.tutorinedutech.helper.ViewModelFactory
 

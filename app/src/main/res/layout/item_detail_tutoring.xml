@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/cv_popular_tutor"
+    android:id="@+id/cv_detail_learning"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
@@ -37,7 +37,7 @@
             android:layout_marginEnd="8dp"
             android:fontFamily="@font/plus_jakarta_sans_regular"
             android:text="@string/session_location"
-            app:layout_constraintEnd_toStartOf="@+id/bt_location"
+            app:layout_constraintEnd_toStartOf="@+id/btn_complete"
             app:layout_constraintStart_toEndOf="@+id/iv_ic_location"
             app:layout_constraintTop_toBottomOf="@+id/tv_session_title" />
 
@@ -54,8 +54,8 @@
 
         <ImageView
             android:id="@+id/iv_ic_location"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
             android:contentDescription="@string/ic_location"
             android:src="@drawable/ic_location"
             app:layout_constraintBottom_toBottomOf="@+id/tv_session_location"
@@ -64,8 +64,8 @@
 
         <ImageView
             android:id="@+id/iv_ic_clock"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
             android:contentDescription="@string/ic_clock"
             android:padding="2dp"
             android:src="@drawable/baseline_access_time_filled_24"
@@ -74,7 +74,7 @@
             app:layout_constraintTop_toTopOf="@+id/tv_session_date_time" />
 
         <Button
-            android:id="@+id/bt_location"
+            android:id="@+id/btn_complete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/tertiary_blue"
@@ -82,12 +82,13 @@
             android:minHeight="0dp"
             android:paddingHorizontal="10dp"
             android:paddingVertical="6dp"
-            android:text="@string/direct_loc"
+            android:text="Isi Jadwal"
             android:textSize="12sp"
             app:cornerRadius="11dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

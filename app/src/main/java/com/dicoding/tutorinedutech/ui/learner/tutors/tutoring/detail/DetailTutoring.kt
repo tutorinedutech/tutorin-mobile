@@ -1,60 +1,127 @@
 package com.dicoding.tutorinedutech.ui.learner.tutors.tutoring.detail
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.content.res.AppCompatResources
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.tutorinedutech.R
+import com.dicoding.tutorinedutech.data.response.DetailClassData
+import com.dicoding.tutorinedutech.databinding.FragmentDetailTutoringLearnerBinding
+import com.dicoding.tutorinedutech.helper.ResultState
+import com.dicoding.tutorinedutech.helper.ViewModelFactory
+import com.dicoding.tutorinedutech.utils.Event
+import com.dicoding.tutorinedutech.utils.ValidationPhotoData
+import com.google.android.material.snackbar.Snackbar
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [DetailTutoring.newInstance] factory method to
- * create an instance of this fragment.
- */
 class DetailTutoring : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var _binding: FragmentDetailTutoringLearnerBinding? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private val binding get() = _binding!!
+    private lateinit var detailTutoringVM: DetailTutoringVM
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_detail_tutoring_learner, container, false)
+        _binding = FragmentDetailTutoringLearnerBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment DetailTutor.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            DetailTutoring().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val factory: ViewModelFactory = ViewModelFactory.getInstance(requireActivity())
+        detailTutoringVM = ViewModelProvider(this, factory)[DetailTutoringVM::class.java]
+
+        val layoutLineaManager = LinearLayoutManager(requireContext())
+        binding.rvListTutoring.layoutManager = layoutLineaManager
+
+        val sessionId = DetailTutoringArgs.fromBundle(arguments as Bundle).sessionId
+
+        binding.apply {
+
+            tbDetailTutoring.apply {
+                navigationIcon =
+                    AppCompatResources.getDrawable(requireContext(), R.drawable.backward)
+                setNavigationOnClickListener {
+                    findNavController().popBackStack()
                 }
             }
+
+            detailTutoringVM.getDetailClassTutoring(sessionId)
+                .observe(viewLifecycleOwner) { result ->
+                    when (result) {
+                        is ResultState.Loading -> {
+                            pbDetailTutoring.visibility = View.VISIBLE
+                            layoutSessionValidate.visibility = View.GONE
+                            layoutTutorProfile.visibility = View.GONE
+                        }
+
+                        is ResultState.Error -> {
+                            pbDetailTutoring.visibility = View.GONE
+                            setSnackBar(Event(result.error))
+                        }
+
+                        is ResultState.Success -> {
+                            pbDetailTutoring.visibility = View.GONE
+                            layoutTutorProfile.visibility = View.VISIBLE
+
+                            setDetailTutoringData(result.data.data)
+                        }
+                    }
+                }
+        }
+    }
+
+    private fun setDetailTutoringData(data: DetailClassData) {
+        binding.apply {
+            val notValidatedDetails =
+                data.classDetails.filter { it.validationStatus == "not validated" }
+
+            if (notValidatedDetails.isNotEmpty()) {
+                layoutSessionValidate.visibility = View.VISIBLE
+
+                layoutSessionValidate.setOnClickListener {
+                    val firstNotValidatedDetail = notValidatedDetails.first()
+                    val validationData = ValidationPhotoData(
+                        id = firstNotValidatedDetail.id,
+                        nameTutor = data.nameTutor,
+                        usernameTutor = data.usernameTutor,
+                        subject = data.subject,
+                        timestamp = firstNotValidatedDetail.timestamp,
+                        proofImageLink = firstNotValidatedDetail.proofImageLink,
+                        session = firstNotValidatedDetail.session,
+                        location = firstNotValidatedDetail.location
+                    )
+
+                    findNavController().navigate(
+                        DetailTutoringDirections.actionDetailTutoringToValidatePhoto(
+                            validationData
+                        )
+                    )
+                }
+            } else {
+                layoutSessionValidate.visibility = View.GONE
+            }
+
+            tvTutorName.text = data.nameTutor
+            tvTutorUsername.text = "@${data.usernameTutor}"
+            tvTutorTopic.text = data.subject
+
+            val adapter = TutoringAdapter()
+            adapter.submitList(data.classDetails)
+            binding.rvListTutoring.adapter = adapter
+        }
+    }
+
+    private fun setSnackBar(e: Event<String>) {
+        e.getContentIfNotHandled()?.let {
+            Snackbar.make(requireView(), it, Snackbar.LENGTH_SHORT).show()
+        }
     }
 }

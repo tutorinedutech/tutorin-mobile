@@ -29,9 +29,22 @@
             android:hint="@string/searchbar_hint"
             android:textAppearance="@font/plus_jakarta_sans_regular"
             app:hideNavigationIcon="true"
-            app:strokeColor="@color/base_black" />
+            app:strokeColor="@color/base_black"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+
+        <ProgressBar
+            android:id="@+id/pb_homeLearner"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:elevation="8dp"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/primary_yellow"
+            android:indeterminateTintMode="src_in"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
 
         <LinearLayout
+            android:id="@+id/layout_homeLearner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -79,12 +92,11 @@
                     android:layout_height="match_parent"
                     android:fontFamily="@font/plus_jakarta_sans_semibold"
                     android:gravity="bottom"
-                    android:text="@string/total_session"
-                    android:textColor="@color/material_dynamic_neutral60"
-                    android:textSize="14sp" />
+                    android:text="@string/total_session" />
             </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_session"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -106,9 +118,9 @@
                     android:layout_height="15dp"
                     android:alpha="1"
                     android:src="@drawable/circle_active"
+                    app:layout_constraintBottom_toTopOf="@+id/dv_progress_learning"
                     app:layout_constraintEnd_toStartOf="@+id/rv_activities"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:layout_editor_absoluteY="45dp" />
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_activities"
@@ -120,15 +132,29 @@
                     app:layout_constraintTop_toTopOf="parent"
                     tools:listitem="@layout/item_today_activity" />
 
+                <TextView
+                    android:id="@+id/tv_more"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/plus_jakarta_sans_regular"
+                    android:text="@string/see_more_activities"
+                    android:textAlignment="textEnd"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/rv_activities"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_activities" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
+                android:id="@+id/tv_no_session"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/plus_jakarta_sans_regular"
-                android:text="@string/see_more_activities"
-                android:textAlignment="textEnd"
-                android:textSize="12sp" />
+                android:text="@string/tv_no_session"
+                android:paddingVertical="16dp"
+                android:textAlignment="center"
+                android:visibility="gone"/>
 
             <TextView
                 android:layout_width="match_parent"

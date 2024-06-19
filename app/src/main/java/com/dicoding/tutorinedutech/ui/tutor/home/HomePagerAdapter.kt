@@ -13,8 +13,8 @@ class HomePagerAdapter(activity: FragmentActivity):FragmentStateAdapter(activity
     override fun createFragment(position: Int): Fragment {
         var fragment: Fragment? = null
         when (position) {
-            0 -> fragment = TabIncomingTutor()
-            1 -> fragment = TabOngoingTutor()
+            0 -> fragment = TabOngoingTutor()
+            1 -> fragment = TabIncomingTutor()
         }
         return fragment as Fragment
 

@@ -3,6 +3,7 @@ package com.dicoding.tutorinedutech.data.di
 import android.content.Context
 import com.dicoding.tutorinedutech.data.db.learner.LearnerDatabase
 import com.dicoding.tutorinedutech.data.db.tutor.TutorDatabase
+import com.dicoding.tutorinedutech.data.repository.LearnerRepository
 import com.dicoding.tutorinedutech.data.repository.TutoringRepository
 import com.dicoding.tutorinedutech.data.repository.UserRepository
 import com.dicoding.tutorinedutech.data.retrofit.ApiConfig
@@ -21,10 +22,18 @@ object Injection {
         val prefTutor = PrefTutor.getInstance(context.tutorDataStore)
         val prefLearner = PrefLearner.getInstance(context.learnerDataStore)
         val prefMain = PrefMain.getInstance(context.mainDataStore)
-        val apiService = ApiConfig.getApiService(prefTutor, prefLearner)
+        val apiService = ApiConfig.getApiService(context, prefTutor, prefLearner)
         val appExecutor = AppExecutor()
 
         return UserRepository.getInstance(apiService, prefLearner, prefTutor, prefMain, appExecutor, learnerDatabase, tutorDatabase)
+    }
+
+    fun provideLearnerRepository(context: Context): LearnerRepository {
+        val prefTutor = PrefTutor.getInstance(context.tutorDataStore)
+        val prefLearner = PrefLearner.getInstance(context.learnerDataStore)
+        val apiService = ApiConfig.getApiService(context, prefTutor, prefLearner)
+
+        return LearnerRepository.getInstance(apiService, prefLearner)
     }
 
     fun provideRepositoryTutoring(context: Context): TutoringRepository {

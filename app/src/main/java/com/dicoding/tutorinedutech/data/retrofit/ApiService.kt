@@ -1,13 +1,19 @@
 package com.dicoding.tutorinedutech.data.retrofit
 
-import com.dicoding.tutorinedutech.data.response.ResponseBase
+import com.dicoding.tutorinedutech.data.response.ResponseDetailClassTutoring
 import com.dicoding.tutorinedutech.data.response.ResponseDetailLearning
+import com.dicoding.tutorinedutech.data.response.ResponseDetailTutor
+import com.dicoding.tutorinedutech.data.response.ResponseHomeLearner
+import com.dicoding.tutorinedutech.data.response.ResponseRatingTutoring
+import com.dicoding.tutorinedutech.data.response.ResponseSearchTutor
+import com.dicoding.tutorinedutech.data.response.ResponseBase
 import com.dicoding.tutorinedutech.data.response.ResponseDetailLearningUpdate
 import com.dicoding.tutorinedutech.data.response.ResponseHomeTutor
 import com.dicoding.tutorinedutech.data.response.ResponseProfileTutor
 import com.dicoding.tutorinedutech.data.response.ResponseProfileTutorFile
 import com.dicoding.tutorinedutech.data.response.ResponseSignIn
 import com.dicoding.tutorinedutech.data.response.ResponseSignUp
+import com.dicoding.tutorinedutech.data.response.ResponseUpdateDetailClass
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
@@ -69,6 +75,50 @@ interface ApiService {
 
     @POST("signout")
     fun logout()
+
+    @GET("learners/home")
+    fun getLearnerHome(
+    ): Call<ResponseHomeLearner>
+
+    @GET("class-details/detail-tutoring")
+    fun getDetailLearning(
+    ): Call<ResponseDetailLearning>
+
+    @FormUrlEncoded
+    @POST("tutors")
+    fun searchTutor(
+        @Field("educationLevel") educationLevel: String,
+        @Field("gender") gender: String,
+        @Field("domicile") domicile: String,
+        @Field("language") language: String,
+        @Field("subject") subject: String,
+        @Field("learningMethod") learningMethod: String,
+        @Field("day") day: Array<String>,
+        @Field("time") time: Array<String>
+    ): Call<ResponseSearchTutor>
+
+    @GET("class-details/{session_id}")
+    fun getDetailClassTutoring(
+        @Path("session_id") sessionId: String
+    ): Call<ResponseDetailClassTutoring>
+
+    @PUT("class-details/detail-tutoring/{classDetailsId}")
+    fun updateDetailClass(
+        @Path("classDetailsId") classDetailsId: Int
+    ): Call<ResponseUpdateDetailClass>
+
+    @GET("tutors/{tutorId}")
+    fun getDetailTutorById(
+        @Path("tutorId") tutorId: Int
+    ): Call<ResponseDetailTutor>
+
+    @FormUrlEncoded
+    @POST("tutors/{tutorId}/reviews")
+    fun postRatingTutoring(
+        @Field("rating") rating: Int,
+        @Field("comment") comment: String,
+        @Path("tutorId") tutorId: Int
+    ): Call<ResponseRatingTutoring>
 
     @GET("tutors/home")
     fun getHomeTutor(): Call<ResponseHomeTutor>

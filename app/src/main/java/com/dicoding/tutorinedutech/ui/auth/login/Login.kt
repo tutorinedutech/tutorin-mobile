@@ -36,6 +36,8 @@ class Login : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val factory: ViewModelFactory = ViewModelFactory.getInstance(requireActivity())
         loginVM = ViewModelProvider(this, factory)[LoginVM::class.java]
+        loginVM.checkUserLoggedIn()
+        observeLoginStatus()
 
         binding.apply {
             btnLogin.isEnabled = false
@@ -79,37 +81,62 @@ class Login : Fragment() {
             })
 
             btnLogin.setOnClickListener {
-                loginVM.login(etUsername.text.toString(), etPassword.text.toString())
-                    .observe(viewLifecycleOwner) { result ->
-                        if (result != null) {
-                            when (result) {
-                                is ResultState.Loading -> {
-                                    btnLogin.text = null
-                                    pbLogin.visibility = View.VISIBLE
-                                }
+                login()
+            }
+        }
+    }
 
-                                is ResultState.Error -> {
-                                    pbLogin.visibility = View.GONE
-                                    btnLogin.text = resources.getString(R.string.btn_login)
-                                    setSnackBar(Event(result.error))
-                                }
+    private fun login() {
+        binding.apply {
+            loginVM.login(etUsername.text.toString(), etPassword.text.toString())
+                .observe(viewLifecycleOwner) { result ->
+                    if (result != null) {
+                        when (result) {
+                            is ResultState.Loading -> {
+                                btnLogin.text = null
+                                pbLogin.visibility = View.VISIBLE
+                            }
 
-                                is ResultState.Success -> {
-                                    pbLogin.visibility = View.GONE
-                                    btnLogin.text = resources.getString(R.string.btn_login)
-                                    if (result.data.data?.tutorId != null) {
-                                        findNavController().setGraph(R.navigation.nav_tutor)
-                                        findNavController().navigate(R.id.action_global_homeTutor)
-                                    }
-                                    else if (result.data.data?.learnerId !== null) {
-                                        findNavController().navigate(LoginDirections.actionLogin2ToRegisterMain())
-                                    } else {
-                                        setSnackBar(Event("Ada yang salah, silahkan login ulang!"))
-                                    }
+                            is ResultState.Error -> {
+                                pbLogin.visibility = View.GONE
+                                btnLogin.text = resources.getString(R.string.btn_login)
+                                setSnackBar(Event(result.error))
+                            }
+
+                            is ResultState.Success -> {
+                                pbLogin.visibility = View.GONE
+                                btnLogin.text = resources.getString(R.string.btn_login)
+                                if (result.data.data?.tutorId != null) {
+                                    findNavController().setGraph(R.navigation.nav_tutor)
+                                    findNavController().navigate(R.id.action_global_homeTutor)
+                                } else if (result.data.data?.learnerId !== null) {
+                                    findNavController().navigate(LoginDirections.actionLogin2ToRegisterMain())
+                                } else {
+                                    setSnackBar(Event("Ada yang salah, silahkan login ulang!"))
                                 }
                             }
                         }
                     }
+                }
+        }
+    }
+
+    private fun observeLoginStatus() {
+        loginVM.loginStatus.observe(viewLifecycleOwner) {
+            when (it) {
+                "tutor" -> {
+                    findNavController().setGraph(R.navigation.nav_tutor)
+                    findNavController().navigate(R.id.action_global_homeTutor)
+                }
+
+                "learner" -> {
+                    // Todo: Buat redirect ketika hasil check merupakan learner
+                    throw NotImplementedError("Redirect ke Home learner belum dibuat")
+                }
+
+                else -> {
+                    setSnackBar(Event("Data tidak ada"))
+                }
             }
         }
     }

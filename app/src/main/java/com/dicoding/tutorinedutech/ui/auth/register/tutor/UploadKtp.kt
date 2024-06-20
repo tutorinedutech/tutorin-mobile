@@ -87,7 +87,7 @@ class UploadKtp : Fragment() {
     private fun finishRegisterTutor() {
         val imageUri = uploadKtpVM.imageUri.value
         imageUri?.let {
-            val imageFile = uriToFile(it, requireContext()).reduceFileImage()
+            val imageFile = uriToFile(it, requireContext(), ".jpg").reduceFileImage()
 
             uploadKtpVM.getRegisterTutorData().observe(viewLifecycleOwner) { tutor ->
                 val accountNumber = tutor!!.accountNumber!!.toRequestBody(TEXT_PLAIN.toMediaType())

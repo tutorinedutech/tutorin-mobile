@@ -9,10 +9,9 @@
     android:orientation="vertical"
     tools:context=".ui.learner.home.HomeLearner">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
         <!--  TODO  -->
         <!--  Background and textAppearance not working, adding item_menu for ai icon  -->
@@ -22,33 +21,49 @@
             android:id="@+id/searchBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="0dp"
-            android:layout_marginTop="16dp"
             android:background="@drawable/rectangle_border_21"
-            android:backgroundTint="@null"
             android:hint="@string/searchbar_hint"
             android:textAppearance="@font/plus_jakarta_sans_regular"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            app:background="@drawable/rectangle_border_21"
+            app:backgroundTint="@color/primary_yellow"
             app:hideNavigationIcon="true"
-            app:strokeColor="@color/base_black"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_gradient"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:layout_marginTop="-30dp"
+            android:paddingRight="130dp"
+            android:paddingBottom="130dp"
+            android:src="@drawable/home_learner_bg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ProgressBar
             android:id="@+id/pb_homeLearner"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="150dp"
             android:elevation="8dp"
             android:indeterminate="true"
             android:indeterminateTint="@color/primary_yellow"
             android:indeterminateTintMode="src_in"
-            android:layout_gravity="center"
-            android:visibility="gone"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchBar" />
 
         <LinearLayout
             android:id="@+id/layout_homeLearner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingHorizontal="20dp">
+            android:paddingHorizontal="20dp"
+            app:layout_constraintTop_toBottomOf="@id/searchBar">
 
             <TextView
                 android:id="@+id/tv_home_learner"
@@ -151,10 +166,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/plus_jakarta_sans_regular"
-                android:text="@string/tv_no_session"
                 android:paddingVertical="16dp"
+                android:text="@string/tv_no_session"
                 android:textAlignment="center"
-                android:visibility="gone"/>
+                android:visibility="gone" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -165,15 +180,15 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_popular_tutors"
-                android:layout_marginBottom="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:spanCount="2"
                 tools:listitem="@layout/item_popular_tutor" />
 
         </LinearLayout>
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.core.widget.NestedScrollView>

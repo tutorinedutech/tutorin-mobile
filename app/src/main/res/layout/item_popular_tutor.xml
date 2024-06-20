@@ -28,6 +28,7 @@
                 android:id="@+id/iv_tutor_profile"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
+                android:scaleType="centerCrop"
                 tools:src="@tools:sample/avatars" />
 
         </androidx.cardview.widget.CardView>

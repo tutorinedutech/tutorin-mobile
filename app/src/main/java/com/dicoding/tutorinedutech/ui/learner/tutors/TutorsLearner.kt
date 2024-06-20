@@ -13,6 +13,7 @@ import com.dicoding.tutorinedutech.databinding.FragmentTutorsLearnerBinding
 import com.dicoding.tutorinedutech.helper.ResultState
 import com.dicoding.tutorinedutech.helper.ViewModelFactory
 import com.dicoding.tutorinedutech.utils.Event
+import com.dicoding.tutorinedutech.utils.ValidationPhotoData
 import com.google.android.material.snackbar.Snackbar
 
 class TutorsLearner : Fragment() {
@@ -68,9 +69,21 @@ class TutorsLearner : Fragment() {
         adapter.submitList(data)
         binding.rvListTutors.adapter = adapter
 
-        adapter.setOnClickCallback(object : TutorsLearnerAdapter.OnItemClickCallback{
+        adapter.setOnClickCallback(object : TutorsLearnerAdapter.OnItemClickCallback {
             override fun onItemClicked(session: ClassSessionsItem) {
-                findNavController().navigate(TutorsLearnerDirections.actionTutorsLearnerToDetailTutoring(sessionId = session.id))
+                findNavController().navigate(
+                    TutorsLearnerDirections.actionTutorsLearnerToDetailTutoring(
+                        sessionId = session.id
+                    )
+                )
+            }
+
+            override fun onNotValidatedClicked(validationPhotoData: ValidationPhotoData) {
+                findNavController().navigate(
+                    TutorsLearnerDirections.actionTutorsLearnerToValidatePhoto(
+                        validationPhotoData
+                    )
+                )
             }
         })
     }

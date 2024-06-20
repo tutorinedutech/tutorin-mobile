@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dicoding.tutorinedutech.data.response.ClassSessionsItem
 import com.dicoding.tutorinedutech.databinding.ItemTutorListBinding
+import com.dicoding.tutorinedutech.utils.ValidationPhotoData
 
 class TutorsLearnerAdapter :
     ListAdapter<ClassSessionsItem, TutorsLearnerAdapter.MyViewHolder>(DIFF_CALLBACK) {
@@ -19,7 +20,7 @@ class TutorsLearnerAdapter :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val binding =
             ItemTutorListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return MyViewHolder(binding)
+        return MyViewHolder(binding, onItemClickCallback)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
@@ -31,9 +32,21 @@ class TutorsLearnerAdapter :
         }
     }
 
-    class MyViewHolder(val binding: ItemTutorListBinding) : RecyclerView.ViewHolder(binding.root) {
+    class MyViewHolder(
+        val binding: ItemTutorListBinding,
+        private val onItemClickCallback: OnItemClickCallback
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         private val tutorsSessionAdapter = TutorsSessionAdapter()
+        private var validationPhotoData: ValidationPhotoData? = null
+
+        init {
+            binding.btnValidatePhoto.setOnClickListener {
+                validationPhotoData?.let {
+                    onItemClickCallback.onNotValidatedClicked(it)
+                }
+            }
+        }
 
         fun bind(session: ClassSessionsItem, context: Context) {
             Glide.with(context)
@@ -43,17 +56,25 @@ class TutorsLearnerAdapter :
             binding.tvTutorTopic.text = session.subject
             binding.tvLocation.text = session.learningMethod
 
-            val hasToValidationStatus =
-                session.classDetails.any { it.validationStatus == "not validated" }
+            val notValidatedDetails =
+                session.classDetails.filter { it.validationStatus == "not validated" }
 
-            if (hasToValidationStatus) {
+            if (notValidatedDetails.isNotEmpty()) {
+                val firstNotValidatedDetail = notValidatedDetails.first()
+                validationPhotoData = ValidationPhotoData(
+                    id = firstNotValidatedDetail.id,
+                    nameTutor = session.nameTutor,
+                    usernameTutor = session.usernameTutor,
+                    subject = session.subject,
+                    timestamp = firstNotValidatedDetail.timestamp,
+                    proofImageLink = firstNotValidatedDetail.proofImageLink,
+                    session = firstNotValidatedDetail.session,
+                    location = firstNotValidatedDetail.location
+                )
                 binding.btnValidatePhoto.visibility = View.VISIBLE
             } else {
                 binding.btnValidatePhoto.visibility = View.GONE
             }
-
-            // TODO: navigate to validatePhoto fragment
-            binding.btnValidatePhoto.setOnClickListener {}
 
             binding.rvListTutoringTime.layoutManager = LinearLayoutManager(binding.root.context)
             binding.rvListTutoringTime.adapter = tutorsSessionAdapter
@@ -67,6 +88,7 @@ class TutorsLearnerAdapter :
 
     interface OnItemClickCallback {
         fun onItemClicked(session: ClassSessionsItem)
+        fun onNotValidatedClicked(validationPhotoData: ValidationPhotoData)
     }
 
     companion object {

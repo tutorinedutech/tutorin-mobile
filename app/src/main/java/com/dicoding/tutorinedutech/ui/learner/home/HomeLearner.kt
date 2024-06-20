@@ -16,6 +16,7 @@ import com.dicoding.tutorinedutech.helper.ResultState
 import com.dicoding.tutorinedutech.helper.ViewModelFactory
 import com.dicoding.tutorinedutech.utils.Event
 import com.google.android.material.snackbar.Snackbar
+import jp.wasabeef.blurry.Blurry
 
 class HomeLearner : Fragment() {
 
@@ -44,6 +45,13 @@ class HomeLearner : Fragment() {
         binding.rvActivities.layoutManager = layoutLineaManager
 
         binding.apply {
+            ivGradient.post {
+                run {
+                    Blurry.with(requireContext()).radius(25).sampling(30).capture(ivGradient)
+                        .into(ivGradient)
+                }
+            }
+
             homeLearnerVM.getHomeData().observe(viewLifecycleOwner) { result ->
                 if (result != null) {
                     when (result) {

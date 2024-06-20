@@ -103,7 +103,7 @@ class CameraActivity : AppCompatActivity() {
 
     private fun takePhoto() {
         val imageCapture = imageCapture ?: return
-        val photoFile = createCustomTempFile(application)
+        val photoFile = createCustomTempFile(application, ".jpg")
         val outputOptions = ImageCapture.OutputFileOptions.Builder(photoFile).build()
         imageCapture.takePicture(outputOptions,
             ContextCompat.getMainExecutor(this),

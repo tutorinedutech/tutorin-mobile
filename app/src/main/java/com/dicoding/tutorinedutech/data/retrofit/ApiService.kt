@@ -5,15 +5,19 @@ import com.dicoding.tutorinedutech.data.response.ResponseDetailLearning
 import com.dicoding.tutorinedutech.data.response.ResponseDetailLearningUpdate
 import com.dicoding.tutorinedutech.data.response.ResponseHomeTutor
 import com.dicoding.tutorinedutech.data.response.ResponseProfileTutor
+import com.dicoding.tutorinedutech.data.response.ResponseProfileTutorFile
 import com.dicoding.tutorinedutech.data.response.ResponseSignIn
 import com.dicoding.tutorinedutech.data.response.ResponseSignUp
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
+import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
+import retrofit2.http.Header
+import retrofit2.http.Headers
 import retrofit2.http.Multipart
 import retrofit2.http.POST
 import retrofit2.http.PUT
@@ -72,29 +76,23 @@ interface ApiService {
     @GET("tutors/my-profile")
     fun getProfileTutor(): Call<ResponseProfileTutor>
 
-    @FormUrlEncoded
+    @Headers(value = ["Content-Type: application/json"])
     @PUT("tutors/my-profile")
     fun updateTutor(
-        @Field("email") email: String,
-        @Field("username") username: String,
-        @Field("password") password: String,
-        @Field("name") name: String,
-        @Field("phoneNumber") phoneNumber: String,
-        @Field("educationLevel") educationLevel: String,
-        @Field("gender") gender: String,
-        @Field("domicile") domicile: String,
-        @Field("languages") languages: String,
-        @Field("teachingApproach") teachingApproach: String,
-        @Field("accountNumber") accountNumber: String,
-        @Field("learningMethod") learningMethod: String,
+        @Body updateBody: RequestBody,
     ): Call<ResponseProfileTutor>
 
     @Multipart
     @PUT("tutors/my-profile")
-    fun updateTutorFile(
-        @Part profilePicture: MultipartBody.Part?,
+    fun updateTutorCv(
         @Part cv: MultipartBody.Part?,
-    ): Call<ResponseProfileTutor>
+    ): Call<ResponseProfileTutorFile>
+
+    @Multipart
+    @PUT("tutors/my-profile")
+    fun updateTutorPicture(
+        @Part profilePicture: MultipartBody.Part?,
+    ): Call<ResponseProfileTutorFile>
 
     @DELETE("tutors/my-profile")
     fun deleteUserFile(@Query("file") file: String?): Call<ResponseBase>

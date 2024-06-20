@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 import com.dicoding.tutorinedutech.R
 import com.dicoding.tutorinedutech.databinding.FragmentHomeTutorBinding
 import com.dicoding.tutorinedutech.helper.ViewModelFactory
@@ -34,7 +36,7 @@ class HomeTutor : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        homeVM.getHomeData()
+        homeVM.fetchHomeData()
 
         binding.apply {
             vpHome.adapter = homePagerAdapter
@@ -43,8 +45,13 @@ class HomeTutor : Fragment() {
             }.attach()
             homeVM.getUserData().observe(viewLifecycleOwner) { tutor ->
                 tvUserName.text = tutor?.name
+                Glide.with(requireContext())
+                    .load(tutor?.profilePicture)
+                    .into(ivUserTutorProfile)
             }
-
+            tbHomeTutor.setOnClickListener {
+                findNavController().navigate(HomeTutorDirections.actionHomeTutorToProfileTutor())
+            }
         }
 
     }

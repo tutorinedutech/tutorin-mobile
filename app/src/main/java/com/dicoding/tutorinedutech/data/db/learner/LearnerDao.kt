@@ -29,4 +29,7 @@ interface LearnerDao {
 
     @Update(entity = Learner::class)
     fun updateCreateUser(userObject: Learner)
+
+    @Query("SELECT COUNT(*) FROM user_learner WHERE id != 0")
+    fun checkIfUserLoggedIn(): Int
 }

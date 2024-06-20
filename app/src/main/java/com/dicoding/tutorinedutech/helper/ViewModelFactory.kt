@@ -19,6 +19,8 @@ import com.dicoding.tutorinedutech.ui.tutor.detail_tentoring.DetailTentoringTuto
 import com.dicoding.tutorinedutech.ui.tutor.home.HomeVM
 import com.dicoding.tutorinedutech.ui.tutor.home.incoming.TabIncomingVM
 import com.dicoding.tutorinedutech.ui.tutor.home.ongoing.TabOngoingVM
+import com.dicoding.tutorinedutech.ui.tutor.profile.ProfileTutorVM
+import com.dicoding.tutorinedutech.ui.tutor.profile.UpdatePasswordVM
 
 class ViewModelFactory private constructor(
     private val userRepository: UserRepository,
@@ -40,6 +42,8 @@ class ViewModelFactory private constructor(
                 isAssignableFrom(TabOngoingVM::class.java) -> TabOngoingVM(tutoringRepository)
                 isAssignableFrom(TabIncomingVM::class.java) -> TabIncomingVM(tutoringRepository)
                 isAssignableFrom(DetailTentoringTutorVM::class.java) -> DetailTentoringTutorVM(tutoringRepository)
+                isAssignableFrom(ProfileTutorVM::class.java) -> ProfileTutorVM(userRepository)
+                isAssignableFrom(UpdatePasswordVM::class.java) -> UpdatePasswordVM(userRepository)
 
 
                 else -> throw IllegalArgumentException("The viewmodel class: ${modelClass.name} has not been registered in ViewModelFactory")

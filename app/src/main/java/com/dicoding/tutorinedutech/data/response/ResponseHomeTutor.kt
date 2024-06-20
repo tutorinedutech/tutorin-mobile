@@ -70,8 +70,63 @@ data class DataHomeTutor(
     val user: User? = null,
 
     @field:SerializedName("classSessions")
-    val classSessions: List<ClassSessionsItem?>? = null
+    val classSessions: List<ClassSessionsItem?>? = null,
+
+    @field:SerializedName("purchases")
+    val purchases: List<Purchase>? = null
 )
+
+data class Purchase(
+    @field:SerializedName("id")
+    val id: Int,
+
+    @field:SerializedName("tutorId")
+    val tutorId: Int,
+
+    @field:SerializedName("learnerId")
+    val learnerId: Int,
+
+    @field:SerializedName("subject")
+    val subject: String,
+
+    @field:SerializedName("days")
+    val days: List<String?>? = null,
+
+    @field:SerializedName("times")
+    val times: List<String?>? = null,
+
+    @field:SerializedName("learning_method")
+    val learningMethod: String? = null,
+
+    @field:SerializedName("status")
+    val status: String? = null,
+
+    @field:SerializedName("learner")
+    val learner: LearnerData,
+)
+
+data class LearnerData(
+    @field:SerializedName("id")
+    val id: Int,
+
+    @field:SerializedName("userId")
+    val userId: Int,
+
+    @field:SerializedName("name")
+    val name: String? = null,
+
+    @field:SerializedName("education_level")
+    val educationLevel: String? = null,
+
+    @field:SerializedName("gender")
+    val gender: String? = null,
+
+    @field:SerializedName("domicile")
+    val domicile: String? = null,
+
+    @field:SerializedName("phone_number")
+    val phoneNumber: String? = null,
+    )
 
 data class ClassDetailsItem(
 

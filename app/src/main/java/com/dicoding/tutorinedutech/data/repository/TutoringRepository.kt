@@ -3,6 +3,7 @@ package com.dicoding.tutorinedutech.data.repository
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import com.dicoding.tutorinedutech.data.db.tutor.ClassDetail
+import com.dicoding.tutorinedutech.data.db.tutor.ClassIncoming
 import com.dicoding.tutorinedutech.data.db.tutor.Classes
 import com.dicoding.tutorinedutech.data.db.tutor.TutorDatabase
 import com.dicoding.tutorinedutech.data.db.tutor.TutorUpdateHome
@@ -27,6 +28,7 @@ class TutoringRepository private constructor(
 
     fun getAllClass() = tutorDatabase.classesDao().getAllClass()
     fun getAllClassWOneSession() = tutorDatabase.classesDao().getAllClassWDetail()
+    fun getIncomingClass() = tutorDatabase.classIncomingDao().getAllClassIncoming()
 
     fun getHomeData(): LiveData<ResultState<ResponseHomeTutor>> {
         val result = MediatorLiveData<ResultState<ResponseHomeTutor>>()
@@ -49,6 +51,8 @@ class TutoringRepository private constructor(
                     val classList = ArrayList<Classes>()
                     val classDetailData = homeData?.classDetails
                     val classDetailList = ArrayList<ClassDetail>()
+                    val classIncomingData = homeData?.purchases
+                    val classIncomingList = ArrayList<ClassIncoming>()
 
                     val tutorData = TutorUpdateHome(
                         username = homeData?.user?.username,
@@ -85,7 +89,29 @@ class TutoringRepository private constructor(
                             )
                             classDetailList.add(oneClass)
                         }
-                        tutorDatabase.ClassDetailDao().setClassDetail(classDetailList)
+                        tutorDatabase.classDetailDao().setClassDetail(classDetailList)
+                        classIncomingData?.forEach { classIncoming ->
+                            val maxDay = classIncoming.days?.size
+                            val maxTime = classIncoming.times?.size
+                            val oneClass = ClassIncoming(
+                                tutorId = classIncoming.tutorId,
+                                learnerName = classIncoming.learner.name,
+                                learningMethod = classIncoming.learningMethod,
+                                id = classIncoming.id,
+                                session = if (maxDay!! >= maxTime!!) maxDay else if (maxTime >= maxDay) maxTime else 0,
+                                learnerId = classIncoming.learnerId,
+                                subject = classIncoming.subject,
+                                learnerEducationLevel = classIncoming.learner.educationLevel,
+                                learnerPhoneNumber = classIncoming.learner.phoneNumber,
+                                learnerDomicile = classIncoming.learner.domicile,
+                                days = classIncoming.days.joinToString(separator = ","),
+                                learnerGender = classIncoming.learner.gender,
+                                times = classIncoming.times.joinToString(separator = ","),
+                                status = classIncoming.status
+                            )
+                            classIncomingList.add(oneClass)
+                        }
+                        tutorDatabase.classIncomingDao().setClassIncoming(classIncomingList)
                     }
                     result.value = ResultState.Success(res.body()!!)
                 }

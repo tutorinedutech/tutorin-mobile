@@ -32,4 +32,10 @@ interface TutorDao {
 
     @Update(entity = Tutor::class)
     fun updateHomeUser(userObject: TutorUpdateHome)
+
+    @Query("UPDATE user_tutor SET ktp=:ktp, cv=:cv, profilePicture=:profile WHERE id != 0")
+    fun updateUserFile(ktp: String, cv: String, profile: String)
+
+    @Query("SELECT COUNT(*) FROM user_tutor WHERE id != 0")
+    fun checkIfUserLoggedIn(): Int
 }

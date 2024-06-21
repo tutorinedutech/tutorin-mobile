@@ -1,14 +1,344 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profile_tutor"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/base_yellowish"
     tools:context=".ui.learner.profile.ProfileLearner">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/tv_name_profile"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/plus_jakarta_sans_semibold"
+        android:textColor="@color/base_black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Gabriella Natasya" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/tv_username_profile"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/plus_jakarta_sans_medium"
+        android:textColor="@color/base_gray"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_name_profile"
+        tools:text="gabyginting" />
+
+    <TextView
+        android:id="@+id/tv_email_profile"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:fontFamily="@font/plus_jakarta_sans_medium"
+        android:textColor="@color/base_gray"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_username_profile"
+        tools:text="learner@tutorin.com" />
+
+    <ScrollView
+        android:id="@+id/sv_profile"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:paddingTop="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/base_pure_white"
+            android:clipChildren="false"
+            android:clipToPadding="false">
+
+            <ImageView
+                android:id="@+id/iv_bg"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:outlineProvider="bounds"
+                android:scaleType="fitCenter"
+                android:src="@drawable/top_profile"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/base_pure_white" />
+
+
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="20dp"
+                android:background="@android:color/transparent"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_logout"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/iv_bg"
+                app:tint="@color/tertiary_blue" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_edit_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                app:cardBackgroundColor="@color/partially_yellow"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/plus_jakarta_sans_semibold"
+                            android:text="Edit Profil"
+                            android:textColor="@color/base_black"
+                            android:textSize="24sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/plus_jakarta_sans_regular"
+                            android:text="Username"
+                            android:textColor="@color/base_black"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tv_username"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/plus_jakarta_sans_regular"
+                            android:text="gabyginting"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/base_gray"
+                            android:textSize="18sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/plus_jakarta_sans_regular"
+                            android:text="Email"
+                            android:textColor="@color/base_black"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tv_email"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/plus_jakarta_sans_regular"
+                            android:text="learner@tutorin.com"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/base_gray"
+                            android:textSize="18sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/plus_jakarta_sans_regular"
+                            android:text="Jenis Kelamin"
+                            android:textColor="@color/base_black"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tv_gender"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/plus_jakarta_sans_regular"
+                            android:text="Perempuan"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/base_gray"
+                            android:textSize="18sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/plus_jakarta_sans_regular"
+                            android:text="Domisili"
+                            android:textColor="@color/base_black"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tv_domisili"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/plus_jakarta_sans_regular"
+                            android:text="Surabaya"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/base_gray"
+                            android:textSize="18sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/plus_jakarta_sans_regular"
+                            android:text="Password"
+                            android:textColor="@color/base_black"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tv_password"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/plus_jakarta_sans_regular"
+                            android:text="*********"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/base_gray"
+                            android:textSize="18sp" />
+                    </TableRow>
+
+                </TableLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_learning_preference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="15dp"
+                app:cardBackgroundColor="@color/partially_yellow"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cv_edit_profile">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/plus_jakarta_sans_semibold"
+                            android:text="Preferensi Belajar"
+                            android:textColor="@color/base_black"
+                            android:textSize="24sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/plus_jakarta_sans_regular"
+                            android:text="Tingkat Edukasi"
+                            android:textColor="@color/base_black"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tv_education_level"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/plus_jakarta_sans_regular"
+                            android:text="SMA"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/base_gray"
+                            android:textSize="18sp" />
+
+                    </TableRow>
+
+                </TableLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btn_save_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginVertical="16dp"
+                android:layout_marginEnd="10dp"
+                android:height="50dp"
+                android:backgroundTint="@color/primary_yellow"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:includeFontPadding="false"
+                android:text="Simpan perubahan"
+                android:textSize="18sp"
+                app:cornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cv_learning_preference" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

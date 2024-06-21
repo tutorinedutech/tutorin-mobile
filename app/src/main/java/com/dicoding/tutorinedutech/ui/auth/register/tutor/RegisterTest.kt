@@ -9,7 +9,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.dicoding.tutorinedutech.databinding.FragmentRegisterTestBinding
 import com.dicoding.tutorinedutech.helper.ViewModelFactory
-import com.dicoding.tutorinedutech.ui.auth.register.main.RegisterMainVM
 
 
 class RegisterTest : Fragment() {

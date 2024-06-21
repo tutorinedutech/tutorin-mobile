@@ -1,6 +1,5 @@
 package com.dicoding.tutorinedutech.ui.tutor.home
 
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
@@ -13,8 +12,8 @@ class HomePagerAdapter(activity: FragmentActivity):FragmentStateAdapter(activity
     override fun createFragment(position: Int): Fragment {
         var fragment: Fragment? = null
         when (position) {
-            0 -> fragment = TabIncomingTutor()
-            1 -> fragment = TabOngoingTutor()
+            0 -> fragment = TabOngoingTutor()
+            1 -> fragment = TabIncomingTutor()
         }
         return fragment as Fragment
 

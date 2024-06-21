@@ -14,6 +14,8 @@ import com.dicoding.tutorinedutech.databinding.FragmentLoginBinding
 import com.dicoding.tutorinedutech.helper.ResultState
 import com.dicoding.tutorinedutech.helper.ViewModelFactory
 import com.dicoding.tutorinedutech.utils.Event
+import com.dicoding.tutorinedutech.utils.UserType
+import com.dicoding.tutorinedutech.utils.UserTypeManager
 import com.dicoding.tutorinedutech.utils.validatePassword
 import com.dicoding.tutorinedutech.utils.validateUsername
 import com.google.android.material.snackbar.Snackbar
@@ -36,6 +38,8 @@ class Login : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val factory: ViewModelFactory = ViewModelFactory.getInstance(requireActivity())
         loginVM = ViewModelProvider(this, factory)[LoginVM::class.java]
+        loginVM.checkUserLoggedIn()
+        observeLoginStatus()
 
         binding.apply {
             btnLogin.isEnabled = false
@@ -79,33 +83,70 @@ class Login : Fragment() {
             })
 
             btnLogin.setOnClickListener {
-                loginVM.login(etUsername.text.toString(), etPassword.text.toString())
-                    .observe(viewLifecycleOwner) { result ->
-                        if (result != null) {
-                            when (result) {
-                                is ResultState.Loading -> {
-                                    btnLogin.text = null
-                                    pbLogin.visibility = View.VISIBLE
-                                }
+                login()
+            }
+        }
+    }
 
-                                is ResultState.Error -> {
-                                    pbLogin.visibility = View.GONE
-                                    btnLogin.text = resources.getString(R.string.btn_login)
-                                    setSnackBar(Event(result.error))
-                                }
+    private fun login() {
+        binding.apply {
+            loginVM.login(etUsername.text.toString(), etPassword.text.toString())
+                .observe(viewLifecycleOwner) { result ->
+                    if (result != null) {
+                        when (result) {
+                            is ResultState.Loading -> {
+                                btnLogin.text = null
+                                pbLogin.visibility = View.VISIBLE
+                            }
+
+                            is ResultState.Error -> {
+                                pbLogin.visibility = View.GONE
+                                btnLogin.text = resources.getString(R.string.btn_login)
+                                setSnackBar(Event(result.error))
+                            }
 
                                 is ResultState.Success -> {
                                     pbLogin.visibility = View.GONE
                                     btnLogin.text = resources.getString(R.string.btn_login)
-//                                    findNavController()
-//                                        .navigate(
-//                                            LoginDirections.(
-//                                            )
-//                                        )
+
+                                    val userType = if (result.data.data?.learnerId != null) {
+                                        UserType.LEARNER
+                                    } else {
+                                        UserType.TUTOR
+                                    }
+
+                                    UserTypeManager.saveUserType(requireContext(), userType)
+
+                                    if (userType == UserType.LEARNER) {
+                                        findNavController().setGraph(R.navigation.nav_learner)
+                                        findNavController().navigate(R.id.action_global_homeLearner)
+                                    } else {
+                                        findNavController().setGraph(R.navigation.nav_tutor)
+                                        findNavController().navigate(R.id.action_global_homeTutor)
+                                    }
                                 }
                             }
                         }
                     }
+        }
+    }
+
+    private fun observeLoginStatus() {
+        loginVM.loginStatus.observe(viewLifecycleOwner) {
+            when (it) {
+                "tutor" -> {
+                    findNavController().setGraph(R.navigation.nav_tutor)
+                    findNavController().navigate(R.id.action_global_homeTutor)
+                }
+
+                "learner" -> {
+                    findNavController().setGraph(R.navigation.nav_learner)
+                    findNavController().navigate(R.id.action_global_homeLearner)
+                }
+
+                else -> {
+                    setSnackBar(Event("Data tidak ada"))
+                }
             }
         }
     }

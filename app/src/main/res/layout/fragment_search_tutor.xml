@@ -30,6 +30,8 @@
 
             <!--   Input Education     -->
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_pendidikan"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:boxBackgroundColor="@color/partially_yellow"
@@ -38,8 +40,7 @@
                 app:boxCornerRadiusBottomStart="20dp"
                 app:boxCornerRadiusTopEnd="20dp"
                 app:boxCornerRadiusTopStart="20dp"
-                app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color"
-                app:style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+                app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color">
 
                 <AutoCompleteTextView
                     android:id="@+id/actv_tingkat_pendidikan"
@@ -75,6 +76,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:text="@string/rb_male"
+                    android:textSize="18sp"
                     app:buttonTint="@color/primary_yellow" />
 
                 <RadioButton
@@ -82,13 +84,27 @@
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:text="@string/rb_female"
+                    android:textSize="18sp"
                     app:buttonTint="@color/primary_yellow" />
 
             </RadioGroup>
 
+            <TextView
+                android:id="@+id/tv_rg_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/plus_jakarta_sans_medium"
+                android:text="Pilih Jenis Kelamin"
+                android:textColor="@color/error"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
             <!--   Input Domisili     -->
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/domicile_edit_text_layout"
+                android:id="@+id/til_domisili"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:boxBackgroundColor="@color/partially_yellow"
@@ -100,6 +116,7 @@
                 app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color">
 
                 <EditText
+                    android:id="@+id/et_domisili"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:autofillHints="domisili"
@@ -113,7 +130,7 @@
 
             <!--   Input Bahasa     -->
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/language_edit_text_layout"
+                android:id="@+id/til_bahasa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:boxBackgroundColor="@color/partially_yellow"
@@ -125,6 +142,7 @@
                 app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color">
 
                 <EditText
+                    android:id="@+id/et_bahasa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:autofillHints="bahasa"
@@ -138,7 +156,7 @@
 
             <!--   Input Mata Pelajaran     -->
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/topic_edit_text_layout"
+                android:id="@+id/til_mata_pelajaran"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:boxBackgroundColor="@color/partially_yellow"
@@ -150,6 +168,7 @@
                 app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color">
 
                 <EditText
+                    android:id="@+id/et_subject"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:autofillHints="mata pelajaran"
@@ -161,8 +180,9 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!--   Input Education     -->
+            <!--   Input Method     -->
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_metode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:boxBackgroundColor="@color/partially_yellow"
@@ -171,19 +191,44 @@
                 app:boxCornerRadiusBottomStart="20dp"
                 app:boxCornerRadiusTopEnd="20dp"
                 app:boxCornerRadiusTopStart="20dp"
-                app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color"
-                app:style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+                app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color">
 
-                <AutoCompleteTextView
-                    android:id="@+id/actv_jumlah_sesi"
+                <EditText
+                    android:id="@+id/et_metode"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/plus_jakarta_sans_regular"
-                    android:hint="@string/actv_jumlah_sesi"
+                    android:hint="@string/et_hint_metode"
+                    android:inputType="text"
                     android:paddingVertical="10dp"
                     android:textSize="18sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
+
+            <!--   Input jumlah sesi     -->
+            <!--            <com.google.android.material.textfield.TextInputLayout-->
+            <!--                android:id="@+id/til_jumlah_sesi"-->
+            <!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                app:boxBackgroundColor="@color/partially_yellow"-->
+            <!--                app:boxBackgroundMode="outline"-->
+            <!--                app:boxCornerRadiusBottomEnd="20dp"-->
+            <!--                app:boxCornerRadiusBottomStart="20dp"-->
+            <!--                app:boxCornerRadiusTopEnd="20dp"-->
+            <!--                app:boxCornerRadiusTopStart="20dp"-->
+            <!--                app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color">-->
+
+            <!--                <AutoCompleteTextView-->
+            <!--                    android:id="@+id/actv_jumlah_sesi"-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:fontFamily="@font/plus_jakarta_sans_regular"-->
+            <!--                    android:hint="@string/actv_jumlah_sesi"-->
+            <!--                    android:paddingVertical="10dp"-->
+            <!--                    android:textSize="18sp" />-->
+
+            <!--            </com.google.android.material.textfield.TextInputLayout>-->
 
             <!--   Input Days     -->
             <TextView
@@ -210,6 +255,7 @@
                     android:layout_columnWeight="1"
                     android:layout_marginTop="2dp"
                     android:button="@drawable/custom_checkbox"
+                    android:buttonTint="@color/primary_yellow"
                     android:fontFamily="@font/plus_jakarta_sans_regular"
                     android:text="@string/cb_senin"
                     android:textSize="18sp"
@@ -222,6 +268,7 @@
                     android:layout_columnWeight="1"
                     android:layout_marginTop="2dp"
                     android:button="@drawable/custom_checkbox"
+                    android:buttonTint="@color/primary_yellow"
                     android:fontFamily="@font/plus_jakarta_sans_regular"
                     android:text="@string/cb_jumat"
                     android:textSize="18sp"
@@ -234,6 +281,7 @@
                     android:layout_columnWeight="1"
                     android:layout_marginTop="2dp"
                     android:button="@drawable/custom_checkbox"
+                    android:buttonTint="@color/primary_yellow"
                     android:fontFamily="@font/plus_jakarta_sans_regular"
                     android:text="@string/cb_selasa"
                     android:textSize="18sp"
@@ -246,6 +294,7 @@
                     android:layout_columnWeight="1"
                     android:layout_marginTop="2dp"
                     android:button="@drawable/custom_checkbox"
+                    android:buttonTint="@color/primary_yellow"
                     android:fontFamily="@font/plus_jakarta_sans_regular"
                     android:text="@string/cb_sabtu"
                     android:textSize="18sp"
@@ -258,6 +307,7 @@
                     android:layout_columnWeight="1"
                     android:layout_marginTop="2dp"
                     android:button="@drawable/custom_checkbox"
+                    android:buttonTint="@color/primary_yellow"
                     android:fontFamily="@font/plus_jakarta_sans_regular"
                     android:text="@string/cb_rabu"
                     android:textSize="18sp"
@@ -270,6 +320,7 @@
                     android:layout_columnWeight="1"
                     android:layout_marginTop="2dp"
                     android:button="@drawable/custom_checkbox"
+                    android:buttonTint="@color/primary_yellow"
                     android:fontFamily="@font/plus_jakarta_sans_regular"
                     android:text="@string/cb_minggu"
                     android:textSize="18sp"
@@ -282,12 +333,25 @@
                     android:layout_columnWeight="1"
                     android:layout_marginTop="2dp"
                     android:button="@drawable/custom_checkbox"
+                    android:buttonTint="@color/primary_yellow"
                     android:fontFamily="@font/plus_jakarta_sans_regular"
                     android:text="@string/cb_kamis"
                     android:textSize="18sp"
                     android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
             </GridLayout>
+
+            <TextView
+                android:id="@+id/tv_cb_pilihan_hari_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/plus_jakarta_sans_medium"
+                android:text="Pilih Hari Tutoring"
+                android:textColor="@color/error"
+                android:textSize="14sp"
+                android:visibility="gone" />
 
             <!--   Input Time     -->
             <TextView
@@ -314,6 +378,7 @@
                     android:layout_columnWeight="1"
                     android:layout_marginTop="2dp"
                     android:button="@drawable/custom_checkbox"
+                    android:buttonTint="@color/primary_yellow"
                     android:fontFamily="@font/plus_jakarta_sans_regular"
                     android:text="@string/cb_clock_1"
                     android:textSize="18sp"
@@ -326,6 +391,7 @@
                     android:layout_columnWeight="1"
                     android:layout_marginTop="2dp"
                     android:button="@drawable/custom_checkbox"
+                    android:buttonTint="@color/primary_yellow"
                     android:fontFamily="@font/plus_jakarta_sans_regular"
                     android:text="@string/cb_clock_4"
                     android:textSize="18sp"
@@ -338,6 +404,7 @@
                     android:layout_columnWeight="1"
                     android:layout_marginTop="2dp"
                     android:button="@drawable/custom_checkbox"
+                    android:buttonTint="@color/primary_yellow"
                     android:fontFamily="@font/plus_jakarta_sans_regular"
                     android:text="@string/cb_clock_2"
                     android:textSize="18sp"
@@ -350,6 +417,7 @@
                     android:layout_columnWeight="1"
                     android:layout_marginTop="2dp"
                     android:button="@drawable/custom_checkbox"
+                    android:buttonTint="@color/primary_yellow"
                     android:fontFamily="@font/plus_jakarta_sans_regular"
                     android:text="@string/cb_clock_5"
                     android:textSize="18sp"
@@ -362,6 +430,7 @@
                     android:layout_columnWeight="1"
                     android:layout_marginTop="2dp"
                     android:button="@drawable/custom_checkbox"
+                    android:buttonTint="@color/primary_yellow"
                     android:fontFamily="@font/plus_jakarta_sans_regular"
                     android:text="@string/cb_clock_3"
                     android:textSize="18sp"
@@ -374,6 +443,7 @@
                     android:layout_columnWeight="1"
                     android:layout_marginTop="2dp"
                     android:button="@drawable/custom_checkbox"
+                    android:buttonTint="@color/primary_yellow"
                     android:fontFamily="@font/plus_jakarta_sans_regular"
                     android:text="@string/cb_clock_6"
                     android:textSize="18sp"
@@ -381,9 +451,21 @@
 
             </GridLayout>
 
+            <TextView
+                android:id="@+id/tv_cb_pilihan_waktu_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/plus_jakarta_sans_medium"
+                android:text="Pilih Waktu Tutoring"
+                android:textColor="@color/error"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
             <!--   Input Kriteria     -->
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/criteria_edit_text_layout"
+                android:id="@+id/til_kriteria"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:boxBackgroundColor="@color/partially_yellow"
@@ -395,6 +477,7 @@
                 app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color">
 
                 <EditText
+                    android:id="@+id/et_kriteria"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/plus_jakarta_sans_regular"
@@ -409,20 +492,46 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
-                android:id="@+id/btn_search_tutor"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="16dp"
-                android:height="55dp"
-                android:background="@drawable/rectangle_border_28"
-                android:drawableLeft="@drawable/ic_stars"
-                android:fontFamily="@font/plus_jakarta_sans_bold"
-                android:paddingHorizontal="96dp"
-                android:text="@string/btn_search_tutor"
-                android:textSize="18sp"
-                app:backgroundTint="@null"
-                app:cornerRadius="18dp" />
+                android:layout_marginVertical="16dp">
+
+                <ProgressBar
+                    android:id="@+id/pb_search_tutor"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:elevation="8dp"
+                    android:indeterminate="true"
+                    android:indeterminateTint="@color/base_pure_white"
+                    android:indeterminateTintMode="src_in"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_search_tutor"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/btn_search_tutor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:height="55dp"
+                    android:background="@drawable/rectangle_border_28"
+                    android:drawableLeft="@drawable/ic_stars"
+                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                    android:paddingHorizontal="60dp"
+                    android:text="@string/btn_search_tutor"
+                    android:textColor="@color/base_pure_white"
+                    android:textSize="18sp"
+                    app:backgroundTint="@null"
+                    app:cornerRadius="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
 

@@ -9,7 +9,6 @@ import android.view.Surface
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageCapture
@@ -17,9 +16,6 @@ import androidx.camera.core.ImageCaptureException
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.dicoding.tutorinedutech.R
 import com.dicoding.tutorinedutech.databinding.ActivityCameraBinding
 import com.dicoding.tutorinedutech.utils.createCustomTempFile
 
@@ -103,7 +99,7 @@ class CameraActivity : AppCompatActivity() {
 
     private fun takePhoto() {
         val imageCapture = imageCapture ?: return
-        val photoFile = createCustomTempFile(application)
+        val photoFile = createCustomTempFile(application, ".jpg")
         val outputOptions = ImageCapture.OutputFileOptions.Builder(photoFile).build()
         imageCapture.takePicture(outputOptions,
             ContextCompat.getMainExecutor(this),

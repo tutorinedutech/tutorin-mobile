@@ -1,7 +1,7 @@
 package com.dicoding.tutorinedutech.ui.auth.register.tutor
 
 import androidx.lifecycle.ViewModel
-import com.dicoding.tutorinedutech.data.db.tutor.TutorDetail
+import com.dicoding.tutorinedutech.data.db.tutor.TutorUpdateonCreate
 import com.dicoding.tutorinedutech.data.repository.UserRepository
 
 class RegisterTutorVM(private val userRepository: UserRepository) : ViewModel() {
@@ -16,7 +16,7 @@ class RegisterTutorVM(private val userRepository: UserRepository) : ViewModel() 
         accountNumber: String,
         metode: String
     ) {
-        val tutor = TutorDetail(
+        val tutor = TutorUpdateonCreate(
             id = 0,
             learningMethod = metode,
             accountNumber = accountNumber,

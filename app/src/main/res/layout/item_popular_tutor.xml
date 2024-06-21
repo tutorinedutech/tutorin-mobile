@@ -25,8 +25,10 @@
             card_view:cardCornerRadius="10dp">
 
             <ImageView
+                android:id="@+id/iv_tutor_profile"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
+                android:scaleType="centerCrop"
                 tools:src="@tools:sample/avatars" />
 
         </androidx.cardview.widget.CardView>
@@ -83,6 +85,7 @@
             android:text="@string/tutor_total_learner"
             android:textAlignment="center"
             android:textColor="@color/base_pure_white"
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            android:visibility="gone"/>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

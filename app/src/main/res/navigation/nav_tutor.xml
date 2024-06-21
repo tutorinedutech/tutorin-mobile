@@ -12,19 +12,54 @@
         tools:layout="@layout/fragment_home_tutor" >
         <action
             android:id="@+id/action_homeTutor_to_detailTentoringTutor"
-            app:destination="@id/detailTentoringTutor" />
+            app:destination="@id/detailTentoringTutor"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left_shrink"
+            app:popEnterAnim="@anim/pop_enter_grow"
+            app:popExitAnim="@anim/pop_exit_to_right" />
         <action
             android:id="@+id/action_homeTutor_to_profileTutor"
-            app:destination="@id/profileTutor" />
+            app:destination="@id/profileTutor"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left_shrink"
+            app:popEnterAnim="@anim/pop_enter_grow"
+            app:popExitAnim="@anim/pop_exit_to_right" />
     </fragment>
     <fragment
         android:id="@+id/detailTentoringTutor"
         android:name="com.dicoding.tutorinedutech.ui.tutor.detail_tentoring.DetailTentoringTutor"
         android:label="fragment_detail_tentoring_tutor"
-        tools:layout="@layout/fragment_detail_tentoring_tutor" />
+        tools:layout="@layout/fragment_detail_tentoring_tutor" >
+        <argument
+            android:name="classess"
+            app:argType="string" />
+        <argument
+            android:name="status"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/profileTutor"
         android:name="com.dicoding.tutorinedutech.ui.tutor.profile.ProfileTutor"
         android:label="fragment_profile_tutor"
-        tools:layout="@layout/fragment_profile_tutor" />
+        tools:layout="@layout/fragment_profile_tutor" >
+        <action
+            android:id="@+id/action_profileTutor_to_updatePassword"
+            app:destination="@id/updatePassword"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left_shrink"
+            app:popEnterAnim="@anim/pop_enter_grow"
+            app:popExitAnim="@anim/pop_exit_to_right" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_homeTutor"
+        app:destination="@id/homeTutor"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left_shrink"
+        app:popEnterAnim="@anim/pop_enter_grow"
+        app:popExitAnim="@anim/pop_exit_to_right" />
+    <fragment
+        android:id="@+id/updatePassword"
+        android:name="com.dicoding.tutorinedutech.ui.tutor.profile.UpdatePassword"
+        android:label="fragment_update_password"
+        tools:layout="@layout/fragment_update_password" />
 </navigation>

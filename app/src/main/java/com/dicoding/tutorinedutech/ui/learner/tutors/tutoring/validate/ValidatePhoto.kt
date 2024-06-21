@@ -1,60 +1,95 @@
 package com.dicoding.tutorinedutech.ui.learner.tutors.tutoring.validate
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.content.res.AppCompatResources
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 import com.dicoding.tutorinedutech.R
+import com.dicoding.tutorinedutech.databinding.FragmentValidatePhotoBinding
+import com.dicoding.tutorinedutech.helper.Helper
+import com.dicoding.tutorinedutech.helper.ResultState
+import com.dicoding.tutorinedutech.helper.ViewModelFactory
+import com.dicoding.tutorinedutech.utils.Event
+import com.dicoding.tutorinedutech.utils.ValidationPhotoData
+import com.google.android.material.snackbar.Snackbar
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ValidatePhoto.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ValidatePhoto : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private var _binding: FragmentValidatePhotoBinding? = null
+
+    private val binding get() = _binding!!
+    private lateinit var validatePhotoVM: ValidatePhotoVM
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_validate_photo, container, false)
+        _binding = FragmentValidatePhotoBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ValidatePhoto.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ValidatePhoto().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val factory: ViewModelFactory = ViewModelFactory.getInstance(requireActivity())
+        validatePhotoVM = ViewModelProvider(this, factory)[ValidatePhotoVM::class.java]
+
+        val validationData: ValidationPhotoData =
+            ValidatePhotoArgs.fromBundle(arguments as Bundle).validationData
+
+        binding.apply {
+            tbValidatePhoto.apply {
+                navigationIcon =
+                    AppCompatResources.getDrawable(requireContext(), R.drawable.backward)
+                setNavigationOnClickListener {
+                    findNavController().popBackStack()
                 }
             }
+
+            tvTutorName.text = validationData.nameTutor
+            tvTutorUsername.text = "@${validationData.usernameTutor}"
+            tvTutorTopic.text = validationData.subject
+            Glide.with(requireContext())
+                .load(validationData.proofImageLink)
+                .into(ivValidationPhoto)
+            tvSessionTitle.text = getString(R.string.session_number, validationData.session)
+            tvSessionLocation.text = validationData.location
+            tvSessionDateTime.text = Helper.formatDateTime(validationData.timestamp)
+
+            btnAccept.setOnClickListener {
+                validatePhotoVM.updateDetailClass(validationData.id)
+                    .observe(viewLifecycleOwner) { result ->
+                        when (result) {
+                            is ResultState.Loading -> {
+                                pbValidatePhoto.visibility = View.VISIBLE
+                                layoutValidatePhoto.visibility = View.GONE
+                            }
+
+                            is ResultState.Error -> {
+                                pbValidatePhoto.visibility = View.GONE
+                                setSnackBar(Event(result.error))
+                            }
+
+                            is ResultState.Success -> {
+                                pbValidatePhoto.visibility = View.GONE
+
+                                setSnackBar(Event("Validasi kehadiran berhasil diubah"))
+                                findNavController().navigate(ValidatePhotoDirections.actionValidatePhotoToTutorsLearner())
+                            }
+                        }
+                    }
+            }
+        }
+    }
+
+    private fun setSnackBar(e: Event<String>) {
+        e.getContentIfNotHandled()?.let {
+            Snackbar.make(requireView(), it, Snackbar.LENGTH_SHORT).show()
+        }
     }
 }

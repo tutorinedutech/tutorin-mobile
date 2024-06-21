@@ -90,12 +90,17 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             motion:layout_constraintBottom_toTopOf="parent"
-            motion:layout_editor_absoluteX="20dp" />
+            android:visibility="invisible"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
         <Constraint
             android:id="@+id/sv_tutor"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            motion:layout_constraintTop_toBottomOf="parent" />
+            motion:layout_constraintTop_toBottomOf="parent"
+            android:visibility="invisible"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
     </ConstraintSet>
 
     <ConstraintSet
@@ -189,7 +194,8 @@
             android:layout_height="0dp"
             motion:layout_constraintTop_toTopOf="parent"
             motion:layout_constraintEnd_toEndOf="parent"
-            motion:layout_constraintStart_toStartOf="parent" />
+            motion:layout_constraintStart_toStartOf="parent"
+            android:visibility="visible" />
     </ConstraintSet>
     <ConstraintSet
         android:id="@+id/register_learner"
@@ -282,7 +288,8 @@
             android:layout_height="0dp"
             motion:layout_constraintTop_toTopOf="parent"
             motion:layout_constraintEnd_toEndOf="parent"
-            motion:layout_constraintStart_toStartOf="parent" />
+            motion:layout_constraintStart_toStartOf="parent"
+            android:visibility="visible" />
     </ConstraintSet>
     <Transition
         motion:constraintSetStart="@+id/start"

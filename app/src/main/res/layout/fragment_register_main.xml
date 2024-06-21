@@ -21,8 +21,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/primary_yellow"
-        tools:alpha="0" />
+        app:tint="@color/primary_yellow" />
 
     <TextView
         android:id="@+id/textView"
@@ -33,8 +32,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@id/btn_view_register_learner"
         app:layout_constraintStart_toStartOf="@id/btn_view_register_learner"
-        app:layout_constraintTop_toBottomOf="@id/btn_view_register_learner"
-        tools:alpha="0" />
+        app:layout_constraintTop_toBottomOf="@id/btn_view_register_learner" />
 
     <TextView
         android:id="@+id/textView2"
@@ -45,8 +43,7 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@id/btn_view_register_tutor"
         app:layout_constraintEnd_toEndOf="@id/btn_view_register_tutor"
-        app:layout_constraintStart_toStartOf="@id/btn_view_register_tutor"
-        tools:alpha="0" />
+        app:layout_constraintStart_toStartOf="@id/btn_view_register_tutor" />
 
     <ImageView
         android:id="@+id/btn_view_register_tutor"
@@ -59,8 +56,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:tint="@color/primary_yellow"
-        tools:alpha="0" />
+        app:tint="@color/primary_yellow" />
 
     <TextView
         android:id="@+id/tv_header_register"
@@ -71,8 +67,7 @@
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@id/tv_desc_register_1"
         app:layout_constraintEnd_toEndOf="@id/tv_desc_register_1"
-        app:layout_constraintStart_toStartOf="@id/tv_desc_register_1"
-        tools:alpha="0" />
+        app:layout_constraintStart_toStartOf="@id/tv_desc_register_1" />
 
     <TextView
         android:id="@+id/tv_desc_register_1"
@@ -85,8 +80,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:alpha="0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_desc_register_2"
@@ -98,8 +92,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@id/tv_desc_register_1"
         app:layout_constraintStart_toStartOf="@+id/tv_desc_register_1"
-        app:layout_constraintTop_toBottomOf="@+id/tv_desc_register_1"
-        tools:alpha="0" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_desc_register_1" />
 
     <!-- End Main Register -->
 
@@ -109,8 +102,8 @@
         android:id="@+id/sv_learner"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="20dp"
         android:orientation="vertical"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="parent">
 
         <ImageView
@@ -270,6 +263,7 @@
         android:id="@+id/sv_tutor"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:visibility="gone"
         android:layout_marginTop="20dp"
         android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="parent">

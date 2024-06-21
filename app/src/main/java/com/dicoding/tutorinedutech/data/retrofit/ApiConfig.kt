@@ -1,9 +1,12 @@
 package com.dicoding.tutorinedutech.data.retrofit
 
+import android.content.Context
 import android.util.Log
 import com.dicoding.tutorinedutech.BuildConfig
 import com.dicoding.tutorinedutech.utils.PrefLearner
 import com.dicoding.tutorinedutech.utils.PrefTutor
+import com.dicoding.tutorinedutech.utils.UserType
+import com.dicoding.tutorinedutech.utils.UserTypeManager
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import okhttp3.Interceptor
@@ -16,7 +19,7 @@ class ApiConfig {
 
     companion object {
         var baseURL = BuildConfig.BASE_API_URL
-        fun getApiService(prefTutor: PrefTutor?, prefLearner: PrefLearner?): ApiService {
+        fun getApiService(context: Context, prefTutor: PrefTutor?, prefLearner: PrefLearner?): ApiService {
             val loggingInterceptor = if (BuildConfig.DEBUG) {
                 HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
             } else {
@@ -25,10 +28,14 @@ class ApiConfig {
             val authInterceptor = Interceptor { chain ->
                 val req = chain.request()
                 val token = runBlocking {
-                    if (prefTutor != null) {
-                        prefTutor.getUserToken().first()
-                    } else {
-                        prefLearner?.getUserToken()?.first()
+                    when (UserTypeManager.getUserType(context)) {
+                        UserType.TUTOR -> {
+                            prefTutor?.getUserToken()?.first()
+                        }
+                        UserType.LEARNER -> {
+                            prefLearner?.getUserToken()?.first()
+                        }
+                        else -> null
                     }
                 }
                 Log.d("Token APIs", token.toString())

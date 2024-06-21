@@ -25,4 +25,8 @@ interface ClassDao {
     @Transaction
     @Query("SELECT * FROM classes")
     fun getAllClassWDetail(): LiveData<List<ClassesAndClassDetail>>
+
+    @Transaction
+    @Query("SELECT * FROM classes WHERE id=:id LIMIT 1")
+    fun getOneClassWDetail(id: String): LiveData<ClassesAndClassDetail>
 }

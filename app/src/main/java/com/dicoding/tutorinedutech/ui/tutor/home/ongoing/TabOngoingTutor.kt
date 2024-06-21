@@ -55,7 +55,7 @@ class TabOngoingTutor : Fragment() {
         }
         adapter.setOnItemClickCallback(object : ListOngoingAdapter.OnItemClickCallback {
             override fun onItemClicked(data: ClassesAndClassDetail, view: View) {
-                findNavController().navigate(HomeTutorDirections.actionHomeTutorToDetailTentoringTutor(data.classes.id))
+                findNavController().navigate(HomeTutorDirections.actionHomeTutorToDetailTentoringTutor(data.classes.id, "ongoing"))
             }
         })
     }

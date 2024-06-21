@@ -32,7 +32,30 @@ class DetailTentoringTutor : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val idClass = DetailTentoringTutorArgs.fromBundle(arguments as Bundle).classess
+        val status = DetailTentoringTutorArgs.fromBundle(arguments as Bundle).status
 
+        binding.apply {
+            when (status) {
+                "incoming" -> {
+                    tvDescPembayaran.visibility = View.GONE
+                    cvNominalHarga.visibility = View.GONE
+                    tvDescTutoring.visibility = View.GONE
+                    rvTutoring.visibility = View.GONE
+                    tvDescRating.visibility = View.GONE
+                    cvRatingLearner.visibility = View.GONE
+                    tvSelesai.visibility = View.GONE
+                    uploadLearningProof.visibility = View.GONE
+                }
 
+                "ongoing" -> {
+                    tvDescPenerimaan.visibility = View.GONE
+                    lvPilihan.visibility = View.GONE
+                }
+            }
+
+            uploadLearningProof.setOnClickListener {
+
+            }
+        }
     }
 }

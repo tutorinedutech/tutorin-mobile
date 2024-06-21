@@ -5,5 +5,5 @@ import com.dicoding.tutorinedutech.data.repository.TutoringRepository
 
 class DetailTentoringTutorVM(private val tutoringRepository: TutoringRepository): ViewModel() {
 
-
+    fun getClassWithDetail(id:String) = tutoringRepository.getOneClassWOneSession(id)
 }

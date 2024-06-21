@@ -28,6 +28,7 @@ class TutoringRepository private constructor(
 
     fun getAllClass() = tutorDatabase.classesDao().getAllClass()
     fun getAllClassWOneSession() = tutorDatabase.classesDao().getAllClassWDetail()
+    fun getOneClassWOneSession(id:String) = tutorDatabase.classesDao().getOneClassWDetail(id)
     fun getIncomingClass() = tutorDatabase.classIncomingDao().getAllClassIncoming()
 
     fun getHomeData(): LiveData<ResultState<ResponseHomeTutor>> {

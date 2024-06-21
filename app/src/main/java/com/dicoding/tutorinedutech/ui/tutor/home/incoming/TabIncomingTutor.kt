@@ -47,7 +47,8 @@ class TabIncomingTutor : Fragment() {
             override fun onItemClicked(data: ClassesAndClassDetail, view: View) {
                 findNavController().navigate(
                     HomeTutorDirections.actionHomeTutorToDetailTentoringTutor(
-                        data.classes.id
+                        data.classes.id,
+                        "incoming"
                     )
                 )
             }

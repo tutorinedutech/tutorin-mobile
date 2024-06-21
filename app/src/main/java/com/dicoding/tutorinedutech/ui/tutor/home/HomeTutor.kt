@@ -53,7 +53,6 @@ class HomeTutor : Fragment() {
                 findNavController().navigate(HomeTutorDirections.actionHomeTutorToProfileTutor())
             }
         }
-
     }
 
     companion object {

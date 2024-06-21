@@ -14,33 +14,12 @@ data class ResponseHomeTutor(
     val status: String
 )
 
-data class ClassSessionsItem(
-
-    @field:SerializedName("tutor_id")
-    val tutorId: Int,
-
-    @field:SerializedName("sessions")
-    val sessions: Int? = null,
-
-    @field:SerializedName("learner_id")
-    val learnerId: Int? = null,
-
-    @field:SerializedName("learner")
-    val learner: LearnerDetailName? = null,
-
-    @field:SerializedName("subject")
-    val subject: String? = null,
-
-    @field:SerializedName("id")
-    val id: String
-)
-
 data class LearnerDetailName(
     @field:SerializedName("name")
     val name: String
 )
 
-data class User(
+data class TutorUser(
 
     @field:SerializedName("username")
     val username: String? = null
@@ -52,7 +31,7 @@ data class DataHomeTutor(
     val profilePicture: String? = null,
 
     @field:SerializedName("classDetails")
-    val classDetails: List<ClassDetailsItem?>? = null,
+    val classDetails: List<ClassDetailsItemTutor?>? = null,
 
     @field:SerializedName("averageRating")
     val averageRating: Any? = null,
@@ -67,7 +46,7 @@ data class DataHomeTutor(
     val userId: Int,
 
     @field:SerializedName("user")
-    val user: User? = null,
+    val user: TutorUser? = null,
 
     @field:SerializedName("classSessions")
     val classSessions: List<ClassSessionsItem?>? = null,
@@ -128,7 +107,7 @@ data class LearnerData(
     val phoneNumber: String? = null,
     )
 
-data class ClassDetailsItem(
+data class ClassDetailsItemTutor(
 
     @field:SerializedName("class_session_id")
     val classSessionId: String,

@@ -41,7 +41,7 @@ object Injection {
         val prefTutor = PrefTutor.getInstance(context.tutorDataStore)
         val prefLearner = PrefLearner.getInstance(context.learnerDataStore)
         val prefMain = PrefMain.getInstance(context.mainDataStore)
-        val apiService = ApiConfig.getApiService(prefTutor, prefLearner)
+        val apiService = ApiConfig.getApiService(context, prefTutor, prefLearner)
         val appExecutor = AppExecutor()
 
         return TutoringRepository.getInstance(apiService, prefTutor, prefMain, appExecutor, tutorDatabase)

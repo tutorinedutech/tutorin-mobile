@@ -67,7 +67,7 @@ class LearnerRepository private constructor(
                     val errorBody =
                         Gson().fromJson(jsonInString, ResponseDetailLearning::class.java)
                     val errorMessage = errorBody.message
-                    result.value = ResultState.Error(errorMessage)
+                    result.value = errorMessage?.let { ResultState.Error(it) }
                 } else {
                     result.value = ResultState.Success(res.body()!!)
                 }

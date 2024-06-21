@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 data class ResponseDetailLearning(
 
 	@field:SerializedName("data")
-	val data: List<DetailLearningItem?>? = null,
+	val data: List<ClassSessionsItem>? = null,
 
 	@field:SerializedName("message")
 	val message: String? = null,

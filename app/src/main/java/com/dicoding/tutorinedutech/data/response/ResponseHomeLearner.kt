@@ -51,7 +51,11 @@ data class ClassSessionsItem(
     val usernameTutor: String,
 
     @field:SerializedName("learningMethod")
-    val learningMethod: String
+    val learningMethod: String,
+
+    @field:SerializedName("learner")
+    val learner: LearnerDetailName? = null,
+
 )
 
 data class ClassDetailsItem(
@@ -82,6 +86,15 @@ data class ClassDetailsItem(
 
     @field:SerializedName("subject")
     val subject: String,
+
+    @field:SerializedName("learner_id")
+    val learnerId: Int? = null,
+
+    @field:SerializedName("learner")
+    val learner: LearnerDetailName? = null,
+
+    @field:SerializedName("learner_name")
+    val learnerName: String? = null,
 )
 
 data class TopFiveTutorsItem(

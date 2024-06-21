@@ -55,7 +55,7 @@ class TutorsLearner : Fragment() {
                         is ResultState.Success -> {
                             pbTutorsLearner.visibility = View.GONE
 
-                            setTutorsLearnerData(result.data.data)
+                            result.data.data
                         }
                     }
                 }
